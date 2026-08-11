@@ -14,8 +14,6 @@ ET = ZoneInfo("America/New_York")
 
 MAX_BARS_KEPT = 400          # per-ticker rolling history cap
 NOTIONAL_PER_POSITION = 10_000.0
-SEED_RANGE = "3mo"           # initial history fetch, for stable EMA34/50
-INCREMENTAL_RANGE = "5d"     # routine per-run fetch
 
 
 def bar_et_date(ts):
@@ -42,16 +40,20 @@ def _parse_earnings_date(date_str):
     return datetime.date.fromisoformat(date_str)
 
 
-def process_ticker(ticker, tstate, next_earnings_date_str, seed_mode):
-    """Mutates and returns tstate; returns (tstate, events)."""
-    fetch_range = SEED_RANGE if seed_mode else INCREMENTAL_RANGE
-    chart = data_source.fetch_chart(ticker, range_=fetch_range)
-    fresh_closed = data_source.closed_hourly_bars(chart["bars"])
+def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, now_ts=None):
+    """Mutates and returns tstate; returns (tstate, events).
+
+    raw_bars: already-fetched bars for this ticker (list of
+    {ts, open, high, low, close, volume} dicts), e.g. from
+    data_source.parse_historicals. May include a still-forming trailing
+    bar -- this function filters to fully-closed bars itself.
+    """
+    fresh_closed = data_source.closed_hourly_bars(raw_bars, now_ts=now_ts)
 
     existing_bars = tstate.get("bars", [])
     merged_bars = _merge_bars(existing_bars, fresh_closed)
     tstate["bars"] = merged_bars
-    tstate["regular_market_price"] = chart.get("regular_market_price")
+    tstate["regular_market_price"] = raw_bars[-1]["close"] if raw_bars else tstate.get("regular_market_price")
 
     last_processed_ts = tstate.get("last_processed_ts")
     new_bars = [b for b in merged_bars if last_processed_ts is None or b["ts"] > last_processed_ts]

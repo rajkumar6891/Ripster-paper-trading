@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+market_data.json
+earnings.json
+earnings_cache.json
