@@ -22,10 +22,15 @@ import os
 import sys
 import time
 
+from zoneinfo import ZoneInfo
+
 import data_source
+import email_sender
 import engine
 import state as state_mod
 import universe
+
+ET = ZoneInfo("America/New_York")
 
 REQUEST_PAUSE_SECONDS = 0.05
 LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_log.txt")
@@ -72,6 +77,15 @@ def run():
     report = build_report(st, tickers, all_events, errors, seed_mode)
     print(report)
     append_log(report)
+
+    entries = [e for e in all_events if e["type"] == "entry"]
+    subject_stamp = datetime.datetime.now(ET).strftime("%Y-%m-%d %I:%M %p ET")
+    email_result = email_sender.send_report_email(report, entries, seed_mode, subject_stamp)
+    if email_result.get("sent"):
+        print(f"Emailed report to {email_result['to']}.")
+    elif email_result.get("reason"):
+        print(f"Email not sent: {email_result['reason']}")
+
     return report
 
 
