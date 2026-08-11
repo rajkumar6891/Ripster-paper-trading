@@ -2,68 +2,67 @@
 """
 Main entry point for the Ripster EMA Cloud paper-trading monitor.
 
-Market data comes from Robinhood MCP tool calls (get_equity_historicals,
-get_earnings_calendar) made by the *calling agent* -- this script cannot
-call MCP tools itself, it only parses already-fetched JSON. The agent is
-expected to:
-  1. Call get_equity_historicals in batches (<=10 symbols/call) covering
-     the tickers in universe.py, and dump the merged `data.results` array
-     to a JSON file (default: market_data.json).
-  2. Call get_earnings_calendar once for a forward window and dump its
-     `data.results` array to a JSON file (default: earnings.json).
-  3. Run this script pointed at those two files.
-
 Each invocation:
   1. Loads persisted state (or starts fresh/"seed" on the very first run).
-  2. Parses the two input files.
-  3. Evaluates the strategy against any newly-closed 1h candles per ticker,
-     updates positions/trade log/P&L.
-  4. Saves state and prints a chat-ready report.
+  2. Refreshes the earnings-date cache if it's stale.
+  3. Fetches latest bars per ticker in the universe from Yahoo Finance,
+     evaluates the strategy against any newly-closed 1h candles, updates
+     positions/trade log/P&L.
+  4. Saves state, appends the report to run_log.txt, and prints it.
+
+Runs locally only -- Yahoo Finance/Nasdaq are unreachable from a sandboxed
+cloud environment, so this needs to run somewhere with open internet
+access (see SETUP.md for Windows Task Scheduler instructions).
 
 Paper trading only -- no brokerage integration, no live orders.
 """
 
-import argparse
 import datetime
-import json
+import os
 import sys
+import time
 
 import data_source
 import engine
 import state as state_mod
 import universe
 
-
-def load_json(path):
-    with open(path, "r") as f:
-        return json.load(f)
+REQUEST_PAUSE_SECONDS = 0.05
+LOG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "run_log.txt")
 
 
-def run(market_data_path, earnings_path):
+def get_earnings_map():
+    cached = state_mod.load_earnings_cache()
+    if cached is not None:
+        return cached
+    earnings_map = data_source.fetch_upcoming_earnings_map()
+    state_mod.save_earnings_cache(earnings_map)
+    return earnings_map
+
+
+def run():
     st = state_mod.load_state()
     seed_mode = not st.get("seeded", False)
-
-    bars_by_symbol = data_source.parse_historicals(load_json(market_data_path))
-    earnings_map = data_source.parse_earnings_map(load_json(earnings_path))
+    earnings_map = get_earnings_map()
     now_ts = datetime.datetime.now(datetime.timezone.utc).timestamp()
 
     all_events = []
     errors = []
     tickers = universe.UNIVERSE
+    fetch_range = "3mo" if seed_mode else "5d"
 
-    for ticker in tickers:
-        raw_bars = bars_by_symbol.get(ticker)
-        if raw_bars is None:
-            errors.append(f"{ticker}: missing from {market_data_path}")
-            continue
+    for i, ticker in enumerate(tickers):
         tstate = st["tickers"].setdefault(ticker, state_mod.default_ticker_state())
         try:
+            raw_bars = data_source.fetch_raw_bars(ticker, range_=fetch_range)
             tstate, events = engine.process_ticker(
                 ticker, tstate, raw_bars, earnings_map.get(ticker), seed_mode=seed_mode, now_ts=now_ts
             )
             all_events.extend(events)
         except Exception as e:  # noqa: BLE001 - one bad ticker shouldn't kill the run
             errors.append(f"{ticker}: {e}")
+        if i < len(tickers) - 1:
+            time.sleep(REQUEST_PAUSE_SECONDS)
 
     if seed_mode:
         st["seeded"] = True
@@ -72,7 +71,14 @@ def run(market_data_path, earnings_path):
 
     report = build_report(st, tickers, all_events, errors, seed_mode)
     print(report)
+    append_log(report)
     return report
+
+
+def append_log(report):
+    stamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    with open(LOG_PATH, "a", encoding="utf-8") as f:
+        f.write(f"\n===== {stamp} =====\n{report}\n")
 
 
 def build_report(st, tickers, all_events, errors, seed_mode):
@@ -152,12 +158,8 @@ def build_report(st, tickers, all_events, errors, seed_mode):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--market-data-file", default="market_data.json")
-    parser.add_argument("--earnings-file", default="earnings.json")
-    args = parser.parse_args()
     try:
-        run(args.market_data_file, args.earnings_file)
+        run()
     except Exception as exc:  # noqa: BLE001
         print(f"FATAL ERROR: {exc}", file=sys.stderr)
         raise

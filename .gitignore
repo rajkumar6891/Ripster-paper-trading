@@ -3,3 +3,4 @@ __pycache__/
 market_data.json
 earnings.json
 earnings_cache.json
+run_log.txt
