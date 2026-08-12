@@ -5,14 +5,17 @@ Main entry point for the Ripster EMA Cloud paper-trading monitor.
 Each invocation:
   1. Loads persisted state (or starts fresh/"seed" on the very first run).
   2. Refreshes the earnings-date cache if it's stale.
-  3. Fetches latest bars per ticker in the universe from Yahoo Finance,
-     evaluates the strategy against any newly-closed 1h candles, updates
+  3. Fetches latest 5-minute bars per ticker from Yahoo Finance, aggregates
+     to 10-minute candles, evaluates the strategy (with the RVOL/RSI/ADX/
+     cloud-separation entry filter and stop-3%/+15%TP exit -- see
+     strategy.py) against any newly-closed candles, updates
      positions/trade log/P&L.
-  4. Saves state, appends the report to run_log.txt, and prints it.
+  4. Saves state, appends the report to run_log.txt, prints it, and emails
+     it (only when something actually happened -- see should_email below).
 
 Runs locally only -- Yahoo Finance/Nasdaq are unreachable from a sandboxed
 cloud environment, so this needs to run somewhere with open internet
-access (see SETUP.md for Windows Task Scheduler instructions).
+access (Windows Task Scheduler, every 10 minutes during market hours).
 
 Paper trading only -- no brokerage integration, no live orders.
 """
@@ -54,12 +57,13 @@ def run():
     all_events = []
     errors = []
     tickers = universe.UNIVERSE
-    fetch_range = "3mo" if seed_mode else "5d"
+    fetch_range = "60d" if seed_mode else "5d"  # 60d = Yahoo's max for 5m bars
 
     for i, ticker in enumerate(tickers):
         tstate = st["tickers"].setdefault(ticker, state_mod.default_ticker_state())
         try:
-            raw_bars = data_source.fetch_raw_bars(ticker, range_=fetch_range)
+            raw_5m = data_source.fetch_raw_bars(ticker, range_=fetch_range, interval="5m")
+            raw_bars = data_source.aggregate_bars(raw_5m, factor=2)
             tstate, events = engine.process_ticker(
                 ticker, tstate, raw_bars, earnings_map.get(ticker), seed_mode=seed_mode, now_ts=now_ts
             )
@@ -79,12 +83,16 @@ def run():
     append_log(report)
 
     entries = [e for e in all_events if e["type"] == "entry"]
-    subject_stamp = datetime.datetime.now(ET).strftime("%Y-%m-%d %I:%M %p ET")
-    email_result = email_sender.send_report_email(report, entries, seed_mode, subject_stamp)
-    if email_result.get("sent"):
-        print(f"Emailed report to {email_result['to']}.")
-    elif email_result.get("reason"):
-        print(f"Email not sent: {email_result['reason']}")
+    exits = [e for e in all_events if e["type"] == "exit"]
+    if seed_mode or entries or exits:
+        subject_stamp = datetime.datetime.now(ET).strftime("%Y-%m-%d %I:%M %p ET")
+        email_result = email_sender.send_report_email(report, entries, seed_mode, subject_stamp)
+        if email_result.get("sent"):
+            print(f"Emailed report to {email_result['to']}.")
+        elif email_result.get("reason"):
+            print(f"Email not sent: {email_result['reason']}")
+    else:
+        print("No entries/exits this run -- skipping email (still logged above).")
 
     return report
 
@@ -146,6 +154,10 @@ def build_report(st, tickers, all_events, errors, seed_mode):
             lines.append(
                 f"  ENTRY {e['ticker']:6s} @ ${e['price']:.2f}  {e['time_et']}  "
                 f"shares {e['shares']:.4f}"
+            )
+            lines.append(
+                f"        signal: RVOL {e['rvol']:.2f}x, RSI {e['rsi']:.0f}, "
+                f"ADX {e['adx']:.1f}, cloud-sep {e['cloud_sep_pct']*100:.2f}%"
             )
     else:
         lines.append("No new entries/exits this run.")

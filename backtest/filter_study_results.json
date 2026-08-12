@@ -1,0 +1,2441 @@
+{
+  "baseline": {
+    "trades": 229,
+    "win_rate": 0.3624454148471616,
+    "total_pnl": 8774.850689155723,
+    "avg_pnl": 38.318125280155996,
+    "profit_factor": 1.565600247405733
+  },
+  "results": [
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep:off | time:off",
+      "combo": [
+        null,
+        "none",
+        null,
+        null,
+        0
+      ],
+      "trades": 229,
+      "win_rate": 0.3624454148471616,
+      "total_pnl": 8774.850689155723,
+      "avg_pnl": 38.318125280155996,
+      "profit_factor": 1.565600247405733
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        null,
+        null,
+        20
+      ],
+      "trades": 224,
+      "win_rate": 0.3705357142857143,
+      "total_pnl": 8938.212789239296,
+      "avg_pnl": 39.90273566624686,
+      "profit_factor": 1.601840680334543
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "none",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 145,
+      "win_rate": 0.3793103448275862,
+      "total_pnl": 6641.241771714183,
+      "avg_pnl": 45.8016673911323,
+      "profit_factor": 1.5566948462898011
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 145,
+      "win_rate": 0.3724137931034483,
+      "total_pnl": 6582.567979432633,
+      "avg_pnl": 45.397020547811266,
+      "profit_factor": 1.5621059507743913
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "none",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 105,
+      "win_rate": 0.38095238095238093,
+      "total_pnl": 4710.660872806002,
+      "avg_pnl": 44.86343688386668,
+      "profit_factor": 1.502033810960897
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 105,
+      "win_rate": 0.38095238095238093,
+      "total_pnl": 4763.249791945143,
+      "avg_pnl": 45.36428373281089,
+      "profit_factor": 1.5125158135011645
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep:off | time:off",
+      "combo": [
+        null,
+        "none",
+        20,
+        null,
+        0
+      ],
+      "trades": 178,
+      "win_rate": 0.39325842696629215,
+      "total_pnl": 8510.912189014925,
+      "avg_pnl": 47.81411342143217,
+      "profit_factor": 1.654846936014864
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        20,
+        null,
+        20
+      ],
+      "trades": 177,
+      "win_rate": 0.4011299435028249,
+      "total_pnl": 7896.736779082276,
+      "avg_pnl": 44.6143320852106,
+      "profit_factor": 1.6019128733821522
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "none",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 136,
+      "win_rate": 0.40441176470588236,
+      "total_pnl": 6635.6218148382995,
+      "avg_pnl": 48.79133687381103,
+      "profit_factor": 1.5765586707386354
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 136,
+      "win_rate": 0.39705882352941174,
+      "total_pnl": 6681.418170000894,
+      "avg_pnl": 49.12807477941834,
+      "profit_factor": 1.5955808525731714
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "none",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 101,
+      "win_rate": 0.39603960396039606,
+      "total_pnl": 4713.872599753043,
+      "avg_pnl": 46.672005938148935,
+      "profit_factor": 1.5146034781194486
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 101,
+      "win_rate": 0.39603960396039606,
+      "total_pnl": 4795.864531009684,
+      "avg_pnl": 47.48380723771964,
+      "profit_factor": 1.530406243054632
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep:off | time:off",
+      "combo": [
+        null,
+        "none",
+        25,
+        null,
+        0
+      ],
+      "trades": 150,
+      "win_rate": 0.38666666666666666,
+      "total_pnl": 6755.333628720589,
+      "avg_pnl": 45.03555752480393,
+      "profit_factor": 1.5532248782483482
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        25,
+        null,
+        20
+      ],
+      "trades": 150,
+      "win_rate": 0.38666666666666666,
+      "total_pnl": 6625.379068986077,
+      "avg_pnl": 44.16919379324052,
+      "profit_factor": 1.5497577101142814
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "none",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 128,
+      "win_rate": 0.390625,
+      "total_pnl": 5923.605951884346,
+      "avg_pnl": 46.27817149909645,
+      "profit_factor": 1.5409318829711438
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 128,
+      "win_rate": 0.390625,
+      "total_pnl": 5991.056585619825,
+      "avg_pnl": 46.80512957515488,
+      "profit_factor": 1.5616337139976486
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "none",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 98,
+      "win_rate": 0.37755102040816324,
+      "total_pnl": 4117.055122354994,
+      "avg_pnl": 42.01076655464279,
+      "profit_factor": 1.4670873158136422
+    },
+    {
+      "label": "RVOL:off | RSI:off | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "none",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 98,
+      "win_rate": 0.3877551020408163,
+      "total_pnl": 4164.1194110173965,
+      "avg_pnl": 42.4910143981367,
+      "profit_factor": 1.4770707408439199
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep:off | time:off",
+      "combo": [
+        null,
+        "above50",
+        null,
+        null,
+        0
+      ],
+      "trades": 223,
+      "win_rate": 0.3721973094170404,
+      "total_pnl": 8952.800504883004,
+      "avg_pnl": 40.147087465843065,
+      "profit_factor": 1.5838842494738363
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        null,
+        null,
+        20
+      ],
+      "trades": 220,
+      "win_rate": 0.38181818181818183,
+      "total_pnl": 8984.82071276942,
+      "avg_pnl": 40.84009414895191,
+      "profit_factor": 1.6069426683760561
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "above50",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 145,
+      "win_rate": 0.3793103448275862,
+      "total_pnl": 6457.336484670693,
+      "avg_pnl": 44.53335506669443,
+      "profit_factor": 1.5330616884556671
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 145,
+      "win_rate": 0.3724137931034483,
+      "total_pnl": 6398.662692389143,
+      "avg_pnl": 44.128708223373394,
+      "profit_factor": 1.5379535523366217
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "above50",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 104,
+      "win_rate": 0.38461538461538464,
+      "total_pnl": 4843.2469875072,
+      "avg_pnl": 46.56968257218462,
+      "profit_factor": 1.5235620907663077
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 104,
+      "win_rate": 0.38461538461538464,
+      "total_pnl": 4895.835906646342,
+      "avg_pnl": 47.075345256214824,
+      "profit_factor": 1.5344056309942287
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        null,
+        "above50",
+        20,
+        null,
+        0
+      ],
+      "trades": 178,
+      "win_rate": 0.39325842696629215,
+      "total_pnl": 8510.912189014925,
+      "avg_pnl": 47.81411342143217,
+      "profit_factor": 1.654846936014864
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        20,
+        null,
+        20
+      ],
+      "trades": 177,
+      "win_rate": 0.4011299435028249,
+      "total_pnl": 7896.736779082276,
+      "avg_pnl": 44.6143320852106,
+      "profit_factor": 1.6019128733821522
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "above50",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 136,
+      "win_rate": 0.40441176470588236,
+      "total_pnl": 6635.6218148382995,
+      "avg_pnl": 48.79133687381103,
+      "profit_factor": 1.5765586707386354
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 136,
+      "win_rate": 0.39705882352941174,
+      "total_pnl": 6681.418170000894,
+      "avg_pnl": 49.12807477941834,
+      "profit_factor": 1.5955808525731714
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "above50",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 101,
+      "win_rate": 0.39603960396039606,
+      "total_pnl": 4713.872599753043,
+      "avg_pnl": 46.672005938148935,
+      "profit_factor": 1.5146034781194486
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 101,
+      "win_rate": 0.39603960396039606,
+      "total_pnl": 4795.864531009684,
+      "avg_pnl": 47.48380723771964,
+      "profit_factor": 1.530406243054632
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        null,
+        "above50",
+        25,
+        null,
+        0
+      ],
+      "trades": 150,
+      "win_rate": 0.38666666666666666,
+      "total_pnl": 6755.333628720589,
+      "avg_pnl": 45.03555752480393,
+      "profit_factor": 1.5532248782483482
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        25,
+        null,
+        20
+      ],
+      "trades": 150,
+      "win_rate": 0.38666666666666666,
+      "total_pnl": 6625.379068986077,
+      "avg_pnl": 44.16919379324052,
+      "profit_factor": 1.5497577101142814
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "above50",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 128,
+      "win_rate": 0.390625,
+      "total_pnl": 5923.605951884346,
+      "avg_pnl": 46.27817149909645,
+      "profit_factor": 1.5409318829711438
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 128,
+      "win_rate": 0.390625,
+      "total_pnl": 5991.056585619825,
+      "avg_pnl": 46.80512957515488,
+      "profit_factor": 1.5616337139976486
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "above50",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 98,
+      "win_rate": 0.37755102040816324,
+      "total_pnl": 4117.055122354994,
+      "avg_pnl": 42.01076655464279,
+      "profit_factor": 1.4670873158136422
+    },
+    {
+      "label": "RVOL:off | RSI>50 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "above50",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 98,
+      "win_rate": 0.3877551020408163,
+      "total_pnl": 4164.1194110173965,
+      "avg_pnl": 42.4910143981367,
+      "profit_factor": 1.4770707408439199
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep:off | time:off",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        null,
+        0
+      ],
+      "trades": 221,
+      "win_rate": 0.37104072398190047,
+      "total_pnl": 8040.355076434139,
+      "avg_pnl": 36.38169717843502,
+      "profit_factor": 1.5376953559197806
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        null,
+        20
+      ],
+      "trades": 219,
+      "win_rate": 0.3698630136986301,
+      "total_pnl": 8204.718612459039,
+      "avg_pnl": 37.464468550041275,
+      "profit_factor": 1.5578404744691303
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 137,
+      "win_rate": 0.35766423357664234,
+      "total_pnl": 6025.900005141904,
+      "avg_pnl": 43.984671570378865,
+      "profit_factor": 1.5386811886247587
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 137,
+      "win_rate": 0.35766423357664234,
+      "total_pnl": 5855.605231486695,
+      "avg_pnl": 42.74164402545033,
+      "profit_factor": 1.519012590585761
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 94,
+      "win_rate": 0.35106382978723405,
+      "total_pnl": 4209.278881202833,
+      "avg_pnl": 44.77956256598758,
+      "profit_factor": 1.4947103936376243
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 94,
+      "win_rate": 0.35106382978723405,
+      "total_pnl": 4158.1812930172955,
+      "avg_pnl": 44.23597120231165,
+      "profit_factor": 1.4858083445962091
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        null,
+        0
+      ],
+      "trades": 174,
+      "win_rate": 0.39655172413793105,
+      "total_pnl": 7878.548635623378,
+      "avg_pnl": 45.27901514726079,
+      "profit_factor": 1.6281980784003176
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        null,
+        20
+      ],
+      "trades": 173,
+      "win_rate": 0.3930635838150289,
+      "total_pnl": 7628.612491644154,
+      "avg_pnl": 44.096025963261006,
+      "profit_factor": 1.600550356397228
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 129,
+      "win_rate": 0.3798449612403101,
+      "total_pnl": 6379.013883269077,
+      "avg_pnl": 49.44972002534168,
+      "profit_factor": 1.60574855132647
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 129,
+      "win_rate": 0.3798449612403101,
+      "total_pnl": 6265.243599748011,
+      "avg_pnl": 48.567779843007834,
+      "profit_factor": 1.5895809912978986
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 91,
+      "win_rate": 0.3626373626373626,
+      "total_pnl": 4302.493598511584,
+      "avg_pnl": 47.280149434193234,
+      "profit_factor": 1.5249749033558273
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 91,
+      "win_rate": 0.3626373626373626,
+      "total_pnl": 4251.761380537372,
+      "avg_pnl": 46.72265253337772,
+      "profit_factor": 1.5155931332178774
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        null,
+        0
+      ],
+      "trades": 142,
+      "win_rate": 0.3873239436619718,
+      "total_pnl": 7017.595177090199,
+      "avg_pnl": 49.419684345705626,
+      "profit_factor": 1.621588970507514
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        null,
+        20
+      ],
+      "trades": 142,
+      "win_rate": 0.3873239436619718,
+      "total_pnl": 6986.717399811634,
+      "avg_pnl": 49.20223520994109,
+      "profit_factor": 1.6183829997528165
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 117,
+      "win_rate": 0.37606837606837606,
+      "total_pnl": 5977.3343376338635,
+      "avg_pnl": 51.088327672084304,
+      "profit_factor": 1.6041016742039211
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 117,
+      "win_rate": 0.37606837606837606,
+      "total_pnl": 5953.96539209023,
+      "avg_pnl": 50.88859309478829,
+      "profit_factor": 1.6014112138810497
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 87,
+      "win_rate": 0.3563218390804598,
+      "total_pnl": 3931.105370897302,
+      "avg_pnl": 45.18511920571611,
+      "profit_factor": 1.501863175564472
+    },
+    {
+      "label": "RVOL:off | RSI 50-70 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        null,
+        "50to70",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 87,
+      "win_rate": 0.3563218390804598,
+      "total_pnl": 3853.9767891505403,
+      "avg_pnl": 44.298583783339545,
+      "profit_factor": 1.4887966120177625
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep:off | time:off",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        null,
+        0
+      ],
+      "trades": 167,
+      "win_rate": 0.41916167664670656,
+      "total_pnl": 7642.768487072247,
+      "avg_pnl": 45.76508076091166,
+      "profit_factor": 1.630829987482102
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        null,
+        20
+      ],
+      "trades": 156,
+      "win_rate": 0.4423076923076923,
+      "total_pnl": 7728.5541088605205,
+      "avg_pnl": 49.54201351833667,
+      "profit_factor": 1.6960088323376197
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 106,
+      "win_rate": 0.37735849056603776,
+      "total_pnl": 3531.971206773456,
+      "avg_pnl": 33.320483082768455,
+      "profit_factor": 1.3345684241990792
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 100,
+      "win_rate": 0.39,
+      "total_pnl": 4117.588925125444,
+      "avg_pnl": 41.17588925125444,
+      "profit_factor": 1.4358766162356575
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 68,
+      "win_rate": 0.39705882352941174,
+      "total_pnl": 2846.614603563854,
+      "avg_pnl": 41.861979464174325,
+      "profit_factor": 1.4440519207748377
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 64,
+      "win_rate": 0.390625,
+      "total_pnl": 2975.911512565459,
+      "avg_pnl": 46.498617383835295,
+      "profit_factor": 1.4990259128748726
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        null,
+        0
+      ],
+      "trades": 131,
+      "win_rate": 0.4198473282442748,
+      "total_pnl": 6698.110003157683,
+      "avg_pnl": 51.13061071112735,
+      "profit_factor": 1.6628617401705128
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        null,
+        20
+      ],
+      "trades": 122,
+      "win_rate": 0.4426229508196721,
+      "total_pnl": 6802.361432645316,
+      "avg_pnl": 55.757060923322264,
+      "profit_factor": 1.729233060808803
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 99,
+      "win_rate": 0.3939393939393939,
+      "total_pnl": 3624.5266776546864,
+      "avg_pnl": 36.61138058237057,
+      "profit_factor": 1.363217799356666
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 94,
+      "win_rate": 0.40425531914893614,
+      "total_pnl": 4000.2468748023766,
+      "avg_pnl": 42.55581781704656,
+      "profit_factor": 1.4433520980582502
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 65,
+      "win_rate": 0.4,
+      "total_pnl": 2785.1341606144315,
+      "avg_pnl": 42.84821785560664,
+      "profit_factor": 1.4415373359978008
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 63,
+      "win_rate": 0.3968253968253968,
+      "total_pnl": 2726.966536056338,
+      "avg_pnl": 43.28518311200536,
+      "profit_factor": 1.4585332001144558
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        null,
+        0
+      ],
+      "trades": 109,
+      "win_rate": 0.3669724770642202,
+      "total_pnl": 4218.348157307742,
+      "avg_pnl": 38.70044181016277,
+      "profit_factor": 1.4117938196777604
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        null,
+        20
+      ],
+      "trades": 103,
+      "win_rate": 0.3592233009708738,
+      "total_pnl": 3920.785965393895,
+      "avg_pnl": 38.06588315916403,
+      "profit_factor": 1.412816447041661
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 85,
+      "win_rate": 0.4,
+      "total_pnl": 4140.830345875187,
+      "avg_pnl": 48.715651127943374,
+      "profit_factor": 1.4921826902320454
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 83,
+      "win_rate": 0.3855421686746988,
+      "total_pnl": 3635.0724977051786,
+      "avg_pnl": 43.79605418921902,
+      "profit_factor": 1.4582919570363593
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 61,
+      "win_rate": 0.4098360655737705,
+      "total_pnl": 2836.463056772413,
+      "avg_pnl": 46.499394373318246,
+      "profit_factor": 1.5047521787200113
+    },
+    {
+      "label": "RVOL>=1.5x | RSI:off | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "none",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 60,
+      "win_rate": 0.4,
+      "total_pnl": 2774.1377576643026,
+      "avg_pnl": 46.235629294405044,
+      "profit_factor": 1.5044746944373328
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep:off | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        null,
+        0
+      ],
+      "trades": 167,
+      "win_rate": 0.41916167664670656,
+      "total_pnl": 7642.768487072247,
+      "avg_pnl": 45.76508076091166,
+      "profit_factor": 1.630829987482102
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        null,
+        20
+      ],
+      "trades": 156,
+      "win_rate": 0.4423076923076923,
+      "total_pnl": 7728.5541088605205,
+      "avg_pnl": 49.54201351833667,
+      "profit_factor": 1.6960088323376197
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 106,
+      "win_rate": 0.37735849056603776,
+      "total_pnl": 3531.971206773456,
+      "avg_pnl": 33.320483082768455,
+      "profit_factor": 1.3345684241990792
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 100,
+      "win_rate": 0.39,
+      "total_pnl": 4117.588925125444,
+      "avg_pnl": 41.17588925125444,
+      "profit_factor": 1.4358766162356575
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 68,
+      "win_rate": 0.39705882352941174,
+      "total_pnl": 2846.614603563854,
+      "avg_pnl": 41.861979464174325,
+      "profit_factor": 1.4440519207748377
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 64,
+      "win_rate": 0.390625,
+      "total_pnl": 2975.911512565459,
+      "avg_pnl": 46.498617383835295,
+      "profit_factor": 1.4990259128748726
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        null,
+        0
+      ],
+      "trades": 131,
+      "win_rate": 0.4198473282442748,
+      "total_pnl": 6698.110003157683,
+      "avg_pnl": 51.13061071112735,
+      "profit_factor": 1.6628617401705128
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        null,
+        20
+      ],
+      "trades": 122,
+      "win_rate": 0.4426229508196721,
+      "total_pnl": 6802.361432645316,
+      "avg_pnl": 55.757060923322264,
+      "profit_factor": 1.729233060808803
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 99,
+      "win_rate": 0.3939393939393939,
+      "total_pnl": 3624.5266776546864,
+      "avg_pnl": 36.61138058237057,
+      "profit_factor": 1.363217799356666
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 94,
+      "win_rate": 0.40425531914893614,
+      "total_pnl": 4000.2468748023766,
+      "avg_pnl": 42.55581781704656,
+      "profit_factor": 1.4433520980582502
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 65,
+      "win_rate": 0.4,
+      "total_pnl": 2785.1341606144315,
+      "avg_pnl": 42.84821785560664,
+      "profit_factor": 1.4415373359978008
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 63,
+      "win_rate": 0.3968253968253968,
+      "total_pnl": 2726.966536056338,
+      "avg_pnl": 43.28518311200536,
+      "profit_factor": 1.4585332001144558
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        null,
+        0
+      ],
+      "trades": 109,
+      "win_rate": 0.3669724770642202,
+      "total_pnl": 4218.348157307742,
+      "avg_pnl": 38.70044181016277,
+      "profit_factor": 1.4117938196777604
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        null,
+        20
+      ],
+      "trades": 103,
+      "win_rate": 0.3592233009708738,
+      "total_pnl": 3920.785965393895,
+      "avg_pnl": 38.06588315916403,
+      "profit_factor": 1.412816447041661
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 85,
+      "win_rate": 0.4,
+      "total_pnl": 4140.830345875187,
+      "avg_pnl": 48.715651127943374,
+      "profit_factor": 1.4921826902320454
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 83,
+      "win_rate": 0.3855421686746988,
+      "total_pnl": 3635.0724977051786,
+      "avg_pnl": 43.79605418921902,
+      "profit_factor": 1.4582919570363593
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 61,
+      "win_rate": 0.4098360655737705,
+      "total_pnl": 2836.463056772413,
+      "avg_pnl": 46.499394373318246,
+      "profit_factor": 1.5047521787200113
+    },
+    {
+      "label": "RVOL>=1.5x | RSI>50 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "above50",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 60,
+      "win_rate": 0.4,
+      "total_pnl": 2774.1377576643026,
+      "avg_pnl": 46.235629294405044,
+      "profit_factor": 1.5044746944373328
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep:off | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        null,
+        0
+      ],
+      "trades": 159,
+      "win_rate": 0.42138364779874216,
+      "total_pnl": 6875.755055771232,
+      "avg_pnl": 43.24374248912724,
+      "profit_factor": 1.6181434005198754
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        null,
+        20
+      ],
+      "trades": 153,
+      "win_rate": 0.41830065359477125,
+      "total_pnl": 5742.234043520645,
+      "avg_pnl": 37.53094146091925,
+      "profit_factor": 1.514917979899619
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 77,
+      "win_rate": 0.38961038961038963,
+      "total_pnl": 4872.996305104239,
+      "avg_pnl": 63.28566630005505,
+      "profit_factor": 1.7057373465815848
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 74,
+      "win_rate": 0.40540540540540543,
+      "total_pnl": 4741.427760655061,
+      "avg_pnl": 64.07334811696029,
+      "profit_factor": 1.7042607829657
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 31,
+      "win_rate": 0.4838709677419355,
+      "total_pnl": 1726.9275121609417,
+      "avg_pnl": 55.70733910196586,
+      "profit_factor": 1.6625850247696496
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 29,
+      "win_rate": 0.4482758620689655,
+      "total_pnl": 939.1008901702662,
+      "avg_pnl": 32.382789316216076,
+      "profit_factor": 1.3603128574841283
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        null,
+        0
+      ],
+      "trades": 117,
+      "win_rate": 0.42735042735042733,
+      "total_pnl": 6297.430789709377,
+      "avg_pnl": 53.824194783840824,
+      "profit_factor": 1.7130796094827583
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        null,
+        20
+      ],
+      "trades": 112,
+      "win_rate": 0.41964285714285715,
+      "total_pnl": 4842.879126582453,
+      "avg_pnl": 43.23999220162904,
+      "profit_factor": 1.531298752860638
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 73,
+      "win_rate": 0.3972602739726027,
+      "total_pnl": 4793.159994938008,
+      "avg_pnl": 65.6597259580549,
+      "profit_factor": 1.7311920143924888
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 70,
+      "win_rate": 0.4142857142857143,
+      "total_pnl": 4592.242431325708,
+      "avg_pnl": 65.60346330465298,
+      "profit_factor": 1.7194571041030804
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 29,
+      "win_rate": 0.4827586206896552,
+      "total_pnl": 1772.5543071941752,
+      "avg_pnl": 61.122562317040526,
+      "profit_factor": 1.7396404692199696
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 28,
+      "win_rate": 0.4642857142857143,
+      "total_pnl": 926.256022351038,
+      "avg_pnl": 33.08057222682279,
+      "profit_factor": 1.3865023690439149
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        null,
+        0
+      ],
+      "trades": 86,
+      "win_rate": 0.37209302325581395,
+      "total_pnl": 4873.676584563268,
+      "avg_pnl": 56.670657960038,
+      "profit_factor": 1.642595367894432
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        null,
+        20
+      ],
+      "trades": 84,
+      "win_rate": 0.34523809523809523,
+      "total_pnl": 3425.1700460114575,
+      "avg_pnl": 40.77583388108878,
+      "profit_factor": 1.427623815846305
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 59,
+      "win_rate": 0.423728813559322,
+      "total_pnl": 5322.31627529724,
+      "avg_pnl": 90.20875042876679,
+      "profit_factor": 2.002565436556431
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 58,
+      "win_rate": 0.41379310344827586,
+      "total_pnl": 4540.287605160367,
+      "avg_pnl": 78.28082077862702,
+      "profit_factor": 1.837311322682171
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 28,
+      "win_rate": 0.4642857142857143,
+      "total_pnl": 1430.3142484489922,
+      "avg_pnl": 51.08265173032115,
+      "profit_factor": 1.6079701898458152
+    },
+    {
+      "label": "RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        1.5,
+        "50to70",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 27,
+      "win_rate": 0.4444444444444444,
+      "total_pnl": 783.1799113207047,
+      "avg_pnl": 29.006663382248323,
+      "profit_factor": 1.3328988995847635
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep:off | time:off",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        null,
+        0
+      ],
+      "trades": 155,
+      "win_rate": 0.4258064516129032,
+      "total_pnl": 7600.32810172998,
+      "avg_pnl": 49.03437484987084,
+      "profit_factor": 1.706084031777391
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        null,
+        20
+      ],
+      "trades": 135,
+      "win_rate": 0.4444444444444444,
+      "total_pnl": 7237.525497522326,
+      "avg_pnl": 53.61129998164686,
+      "profit_factor": 1.7618597957388533
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 91,
+      "win_rate": 0.38461538461538464,
+      "total_pnl": 2918.8193756012224,
+      "avg_pnl": 32.074938193420024,
+      "profit_factor": 1.3282431960856056
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 78,
+      "win_rate": 0.3974358974358974,
+      "total_pnl": 3661.886667446144,
+      "avg_pnl": 46.947264967258256,
+      "profit_factor": 1.5186459382578146
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 53,
+      "win_rate": 0.41509433962264153,
+      "total_pnl": 3202.3622899044267,
+      "avg_pnl": 60.42192999819673,
+      "profit_factor": 1.6186652013126548
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 46,
+      "win_rate": 0.41304347826086957,
+      "total_pnl": 3097.4778448814454,
+      "avg_pnl": 67.33647488872707,
+      "profit_factor": 1.7359981641457511
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        null,
+        0
+      ],
+      "trades": 116,
+      "win_rate": 0.41379310344827586,
+      "total_pnl": 5437.337482013552,
+      "avg_pnl": 46.87359898287545,
+      "profit_factor": 1.6048702457410293
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        null,
+        20
+      ],
+      "trades": 97,
+      "win_rate": 0.4329896907216495,
+      "total_pnl": 5297.554186269409,
+      "avg_pnl": 54.61396068318978,
+      "profit_factor": 1.6915156485546223
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 85,
+      "win_rate": 0.38823529411764707,
+      "total_pnl": 3088.2579641510297,
+      "avg_pnl": 36.33244663707094,
+      "profit_factor": 1.3711192115756705
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 73,
+      "win_rate": 0.410958904109589,
+      "total_pnl": 3606.2312364003114,
+      "avg_pnl": 49.40042789589468,
+      "profit_factor": 1.5484691266578208
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 51,
+      "win_rate": 0.4117647058823529,
+      "total_pnl": 2854.0322299563927,
+      "avg_pnl": 55.961416273654756,
+      "profit_factor": 1.5326322652512672
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 45,
+      "win_rate": 0.4222222222222222,
+      "total_pnl": 3070.7781429533397,
+      "avg_pnl": 68.23951428785199,
+      "profit_factor": 1.7250541244118935
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        null,
+        0
+      ],
+      "trades": 95,
+      "win_rate": 0.37894736842105264,
+      "total_pnl": 2290.238131355642,
+      "avg_pnl": 24.1077698037436,
+      "profit_factor": 1.2518406413513372
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        null,
+        20
+      ],
+      "trades": 83,
+      "win_rate": 0.39759036144578314,
+      "total_pnl": 2944.067342215683,
+      "avg_pnl": 35.470690870068466,
+      "profit_factor": 1.3868166381676157
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 72,
+      "win_rate": 0.4027777777777778,
+      "total_pnl": 2285.725543185416,
+      "avg_pnl": 31.746188099797443,
+      "profit_factor": 1.3176219781811451
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 65,
+      "win_rate": 0.4,
+      "total_pnl": 2563.3313175529506,
+      "avg_pnl": 39.43586642389155,
+      "profit_factor": 1.4325275728303992
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 47,
+      "win_rate": 0.425531914893617,
+      "total_pnl": 2224.5484382423533,
+      "avg_pnl": 47.33081783494369,
+      "profit_factor": 1.4744065105153197
+    },
+    {
+      "label": "RVOL>=2.0x | RSI:off | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "none",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 43,
+      "win_rate": 0.4186046511627907,
+      "total_pnl": 2270.284915460654,
+      "avg_pnl": 52.79732361536404,
+      "profit_factor": 1.5714194788494247
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep:off | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        null,
+        0
+      ],
+      "trades": 155,
+      "win_rate": 0.4258064516129032,
+      "total_pnl": 7600.32810172998,
+      "avg_pnl": 49.03437484987084,
+      "profit_factor": 1.706084031777391
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        null,
+        20
+      ],
+      "trades": 135,
+      "win_rate": 0.4444444444444444,
+      "total_pnl": 7237.525497522326,
+      "avg_pnl": 53.61129998164686,
+      "profit_factor": 1.7618597957388533
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 91,
+      "win_rate": 0.38461538461538464,
+      "total_pnl": 2918.8193756012224,
+      "avg_pnl": 32.074938193420024,
+      "profit_factor": 1.3282431960856056
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 78,
+      "win_rate": 0.3974358974358974,
+      "total_pnl": 3661.886667446144,
+      "avg_pnl": 46.947264967258256,
+      "profit_factor": 1.5186459382578146
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 53,
+      "win_rate": 0.41509433962264153,
+      "total_pnl": 3202.3622899044267,
+      "avg_pnl": 60.42192999819673,
+      "profit_factor": 1.6186652013126548
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 46,
+      "win_rate": 0.41304347826086957,
+      "total_pnl": 3097.4778448814454,
+      "avg_pnl": 67.33647488872707,
+      "profit_factor": 1.7359981641457511
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        null,
+        0
+      ],
+      "trades": 116,
+      "win_rate": 0.41379310344827586,
+      "total_pnl": 5437.337482013552,
+      "avg_pnl": 46.87359898287545,
+      "profit_factor": 1.6048702457410293
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        null,
+        20
+      ],
+      "trades": 97,
+      "win_rate": 0.4329896907216495,
+      "total_pnl": 5297.554186269409,
+      "avg_pnl": 54.61396068318978,
+      "profit_factor": 1.6915156485546223
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 85,
+      "win_rate": 0.38823529411764707,
+      "total_pnl": 3088.2579641510297,
+      "avg_pnl": 36.33244663707094,
+      "profit_factor": 1.3711192115756705
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 73,
+      "win_rate": 0.410958904109589,
+      "total_pnl": 3606.2312364003114,
+      "avg_pnl": 49.40042789589468,
+      "profit_factor": 1.5484691266578208
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 51,
+      "win_rate": 0.4117647058823529,
+      "total_pnl": 2854.0322299563927,
+      "avg_pnl": 55.961416273654756,
+      "profit_factor": 1.5326322652512672
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 45,
+      "win_rate": 0.4222222222222222,
+      "total_pnl": 3070.7781429533397,
+      "avg_pnl": 68.23951428785199,
+      "profit_factor": 1.7250541244118935
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        null,
+        0
+      ],
+      "trades": 95,
+      "win_rate": 0.37894736842105264,
+      "total_pnl": 2290.238131355642,
+      "avg_pnl": 24.1077698037436,
+      "profit_factor": 1.2518406413513372
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        null,
+        20
+      ],
+      "trades": 83,
+      "win_rate": 0.39759036144578314,
+      "total_pnl": 2944.067342215683,
+      "avg_pnl": 35.470690870068466,
+      "profit_factor": 1.3868166381676157
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 72,
+      "win_rate": 0.4027777777777778,
+      "total_pnl": 2285.725543185416,
+      "avg_pnl": 31.746188099797443,
+      "profit_factor": 1.3176219781811451
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 65,
+      "win_rate": 0.4,
+      "total_pnl": 2563.3313175529506,
+      "avg_pnl": 39.43586642389155,
+      "profit_factor": 1.4325275728303992
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 47,
+      "win_rate": 0.425531914893617,
+      "total_pnl": 2224.5484382423533,
+      "avg_pnl": 47.33081783494369,
+      "profit_factor": 1.4744065105153197
+    },
+    {
+      "label": "RVOL>=2.0x | RSI>50 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "above50",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 43,
+      "win_rate": 0.4186046511627907,
+      "total_pnl": 2270.284915460654,
+      "avg_pnl": 52.79732361536404,
+      "profit_factor": 1.5714194788494247
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep:off | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        null,
+        0
+      ],
+      "trades": 141,
+      "win_rate": 0.3829787234042553,
+      "total_pnl": 4428.039927042961,
+      "avg_pnl": 31.404538489666386,
+      "profit_factor": 1.4020241089923717
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        null,
+        20
+      ],
+      "trades": 128,
+      "win_rate": 0.3984375,
+      "total_pnl": 3856.864883027811,
+      "avg_pnl": 30.131756898654775,
+      "profit_factor": 1.3800557334736947
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        0.003,
+        0
+      ],
+      "trades": 59,
+      "win_rate": 0.3559322033898305,
+      "total_pnl": 1995.0145747323613,
+      "avg_pnl": 33.813806351395954,
+      "profit_factor": 1.3302218317105348
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        0.003,
+        20
+      ],
+      "trades": 55,
+      "win_rate": 0.38181818181818183,
+      "total_pnl": 2040.838846933011,
+      "avg_pnl": 37.106160853327474,
+      "profit_factor": 1.3710950789549232
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        0.005,
+        0
+      ],
+      "trades": 24,
+      "win_rate": 0.4166666666666667,
+      "total_pnl": 903.9902073532136,
+      "avg_pnl": 37.666258639717235,
+      "profit_factor": 1.3812604945350528
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX:off | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        null,
+        0.005,
+        20
+      ],
+      "trades": 20,
+      "win_rate": 0.35,
+      "total_pnl": -162.526264073905,
+      "avg_pnl": -8.12631320369525,
+      "profit_factor": 0.9215249525256748
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        null,
+        0
+      ],
+      "trades": 98,
+      "win_rate": 0.37755102040816324,
+      "total_pnl": 2777.041312364323,
+      "avg_pnl": 28.33715624861554,
+      "profit_factor": 1.3250975854201976
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        null,
+        20
+      ],
+      "trades": 81,
+      "win_rate": 0.37037037037037035,
+      "total_pnl": 2191.738883416224,
+      "avg_pnl": 27.058504733533628,
+      "profit_factor": 1.2966618248156212
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        0.003,
+        0
+      ],
+      "trades": 56,
+      "win_rate": 0.35714285714285715,
+      "total_pnl": 1841.633310919177,
+      "avg_pnl": 32.88630912355673,
+      "profit_factor": 1.3194135120348143
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        0.003,
+        20
+      ],
+      "trades": 49,
+      "win_rate": 0.3877551020408163,
+      "total_pnl": 2149.953934113084,
+      "avg_pnl": 43.87661090026702,
+      "profit_factor": 1.455244510934176
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        0.005,
+        0
+      ],
+      "trades": 23,
+      "win_rate": 0.391304347826087,
+      "total_pnl": 737.7697392126923,
+      "avg_pnl": 32.07694518316054,
+      "profit_factor": 1.3111565295035583
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=20 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        20,
+        0.005,
+        20
+      ],
+      "trades": 20,
+      "win_rate": 0.35,
+      "total_pnl": -162.526264073905,
+      "avg_pnl": -8.12631320369525,
+      "profit_factor": 0.9215249525256748
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep:off | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        null,
+        0
+      ],
+      "trades": 70,
+      "win_rate": 0.34285714285714286,
+      "total_pnl": 2227.5241842361775,
+      "avg_pnl": 31.82177406051682,
+      "profit_factor": 1.3275493057581094
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep:off | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        null,
+        20
+      ],
+      "trades": 61,
+      "win_rate": 0.3114754098360656,
+      "total_pnl": 1132.3153205398046,
+      "avg_pnl": 18.562546238357452,
+      "profit_factor": 1.182029523388755
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep>=0.3% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        0.003,
+        0
+      ],
+      "trades": 46,
+      "win_rate": 0.3695652173913043,
+      "total_pnl": 2346.2765143281704,
+      "avg_pnl": 51.006011181047185,
+      "profit_factor": 1.515248839855189
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep>=0.3% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        0.003,
+        20
+      ],
+      "trades": 41,
+      "win_rate": 0.36585365853658536,
+      "total_pnl": 1774.8690351236678,
+      "avg_pnl": 43.28948866155287,
+      "profit_factor": 1.4472155463879282
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep>=0.5% | time:off",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        0.005,
+        0
+      ],
+      "trades": 23,
+      "win_rate": 0.391304347826087,
+      "total_pnl": 538.6057914978428,
+      "avg_pnl": 23.41764310860186,
+      "profit_factor": 1.2271585563157275
+    },
+    {
+      "label": "RVOL>=2.0x | RSI 50-70 | ADX>=25 | sep>=0.5% | skip first 20m",
+      "combo": [
+        2.0,
+        "50to70",
+        25,
+        0.005,
+        20
+      ],
+      "trades": 20,
+      "win_rate": 0.35,
+      "total_pnl": -162.526264073905,
+      "avg_pnl": -8.12631320369525,
+      "profit_factor": 0.9215249525256748
+    }
+  ]
+}

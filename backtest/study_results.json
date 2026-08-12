@@ -1,0 +1,683 @@
+{
+  "timeframe_baseline": {
+    "10m": {
+      "trades": 225,
+      "win_rate": 0.35555555555555557,
+      "total_pnl": 6942.788436884131,
+      "avg_pnl": 30.856837497262806,
+      "profit_factor": 1.4441276484707943
+    },
+    "30m": {
+      "trades": 90,
+      "win_rate": 0.36666666666666664,
+      "total_pnl": 3779.8999239386108,
+      "avg_pnl": 41.99888804376234,
+      "profit_factor": 1.372047961776872
+    },
+    "60m": {
+      "trades": 58,
+      "win_rate": 0.3275862068965517,
+      "total_pnl": -1428.6274546121513,
+      "avg_pnl": -24.63150783814054,
+      "profit_factor": 0.863942895665114
+    }
+  },
+  "timeframe_baseline_per_ticker": {
+    "10m": {
+      "AAPL": {
+        "trades": 30,
+        "win_rate": 0.26666666666666666,
+        "total_pnl": 576.0667363586481,
+        "avg_pnl": 19.20222454528827,
+        "profit_factor": 1.3809953227380594
+      },
+      "MSFT": {
+        "trades": 18,
+        "win_rate": 0.5555555555555556,
+        "total_pnl": 3248.0393810715677,
+        "avg_pnl": 180.44663228175375,
+        "profit_factor": 6.610648189030557
+      },
+      "NVDA": {
+        "trades": 21,
+        "win_rate": 0.38095238095238093,
+        "total_pnl": 893.8802232758443,
+        "avg_pnl": 42.56572491789735,
+        "profit_factor": 1.4828349904420959
+      },
+      "GOOGL": {
+        "trades": 22,
+        "win_rate": 0.36363636363636365,
+        "total_pnl": -390.45063774619507,
+        "avg_pnl": -17.747756261190684,
+        "profit_factor": 0.7929018131120273
+      },
+      "AMZN": {
+        "trades": 20,
+        "win_rate": 0.4,
+        "total_pnl": 1382.2105059977148,
+        "avg_pnl": 69.11052529988574,
+        "profit_factor": 2.143594330736902
+      },
+      "META": {
+        "trades": 26,
+        "win_rate": 0.2692307692307692,
+        "total_pnl": 608.9331488540685,
+        "avg_pnl": 23.42050572515648,
+        "profit_factor": 1.3373584743292195
+      },
+      "AVGO": {
+        "trades": 27,
+        "win_rate": 0.18518518518518517,
+        "total_pnl": -2549.2148337707745,
+        "avg_pnl": -94.41536421373239,
+        "profit_factor": 0.3949477878146057
+      },
+      "TSLA": {
+        "trades": 18,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": 1206.3672971090102,
+        "avg_pnl": 67.02040539494502,
+        "profit_factor": 1.8650887751438645
+      },
+      "BRK.B": {
+        "trades": 21,
+        "win_rate": 0.5238095238095238,
+        "total_pnl": 903.7484414000216,
+        "avg_pnl": 43.035640066667696,
+        "profit_factor": 2.970817301683893
+      },
+      "JPM": {
+        "trades": 22,
+        "win_rate": 0.4090909090909091,
+        "total_pnl": 1063.208174334226,
+        "avg_pnl": 48.32764428791936,
+        "profit_factor": 2.466676430862706
+      }
+    },
+    "30m": {
+      "AAPL": {
+        "trades": 10,
+        "win_rate": 0.2,
+        "total_pnl": 547.9735357339994,
+        "avg_pnl": 54.79735357339994,
+        "profit_factor": 1.5928075249519185
+      },
+      "MSFT": {
+        "trades": 6,
+        "win_rate": 0.6666666666666666,
+        "total_pnl": 3299.810607068884,
+        "avg_pnl": 549.9684345114807,
+        "profit_factor": 17.75736003061422
+      },
+      "NVDA": {
+        "trades": 10,
+        "win_rate": 0.3,
+        "total_pnl": -63.43684362724602,
+        "avg_pnl": -6.343684362724602,
+        "profit_factor": 0.9562685731967879
+      },
+      "GOOGL": {
+        "trades": 9,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -204.80953784043103,
+        "avg_pnl": -22.756615315603447,
+        "profit_factor": 0.8448089061586841
+      },
+      "AMZN": {
+        "trades": 9,
+        "win_rate": 0.2222222222222222,
+        "total_pnl": 153.33226941192868,
+        "avg_pnl": 17.03691882354763,
+        "profit_factor": 1.102425298744482
+      },
+      "META": {
+        "trades": 7,
+        "win_rate": 0.42857142857142855,
+        "total_pnl": 733.1171444521442,
+        "avg_pnl": 104.7310206360206,
+        "profit_factor": 2.0163437789870784
+      },
+      "AVGO": {
+        "trades": 11,
+        "win_rate": 0.18181818181818182,
+        "total_pnl": -1255.5520145735547,
+        "avg_pnl": -114.14109223395953,
+        "profit_factor": 0.4226574543335073
+      },
+      "TSLA": {
+        "trades": 10,
+        "win_rate": 0.3,
+        "total_pnl": -636.8281213533852,
+        "avg_pnl": -63.68281213533852,
+        "profit_factor": 0.4594066684998018
+      },
+      "BRK.B": {
+        "trades": 8,
+        "win_rate": 0.5,
+        "total_pnl": 227.70277470190473,
+        "avg_pnl": 28.46284683773809,
+        "profit_factor": 1.4562614489066135
+      },
+      "JPM": {
+        "trades": 10,
+        "win_rate": 0.7,
+        "total_pnl": 978.5901099643668,
+        "avg_pnl": 97.85901099643668,
+        "profit_factor": 5.943195746520499
+      }
+    },
+    "60m": {
+      "AAPL": {
+        "trades": 5,
+        "win_rate": 0.4,
+        "total_pnl": -33.23517360396456,
+        "avg_pnl": -6.647034720792912,
+        "profit_factor": 0.9638852112912655
+      },
+      "MSFT": {
+        "trades": 5,
+        "win_rate": 0.6,
+        "total_pnl": 2535.0045237277695,
+        "avg_pnl": 507.0009047455539,
+        "profit_factor": 8.9334353354121
+      },
+      "NVDA": {
+        "trades": 7,
+        "win_rate": 0.14285714285714285,
+        "total_pnl": -1066.1233702138613,
+        "avg_pnl": -152.3033386019802,
+        "profit_factor": 0.3349815827179374
+      },
+      "GOOGL": {
+        "trades": 6,
+        "win_rate": 0.16666666666666666,
+        "total_pnl": -1485.4305899407684,
+        "avg_pnl": -247.57176499012806,
+        "profit_factor": 0.12948816752283748
+      },
+      "AMZN": {
+        "trades": 5,
+        "win_rate": 0.4,
+        "total_pnl": -223.98005294208642,
+        "avg_pnl": -44.79601058841728,
+        "profit_factor": 0.6582063184216266
+      },
+      "META": {
+        "trades": 7,
+        "win_rate": 0.2857142857142857,
+        "total_pnl": -399.383779584334,
+        "avg_pnl": -57.05482565490485,
+        "profit_factor": 0.7319498310338916
+      },
+      "AVGO": {
+        "trades": 6,
+        "win_rate": 0.16666666666666666,
+        "total_pnl": -394.2226550188675,
+        "avg_pnl": -65.70377583647792,
+        "profit_factor": 0.6532898787980999
+      },
+      "TSLA": {
+        "trades": 7,
+        "win_rate": 0.14285714285714285,
+        "total_pnl": -1930.5437271920084,
+        "avg_pnl": -275.79196102742975,
+        "profit_factor": 0.11583689951433813
+      },
+      "BRK.B": {
+        "trades": 5,
+        "win_rate": 0.6,
+        "total_pnl": 261.72179107983544,
+        "avg_pnl": 52.34435821596709,
+        "profit_factor": 2.2744161446913247
+      },
+      "JPM": {
+        "trades": 5,
+        "win_rate": 0.6,
+        "total_pnl": 1307.5655790761346,
+        "avg_pnl": 261.5131158152269,
+        "profit_factor": 5.674416127185134
+      }
+    }
+  },
+  "variant_results": {
+    "10m": [
+      {
+        "label": "stop-3% / +15% TP",
+        "trades": 229,
+        "win_rate": 0.3624454148471616,
+        "total_pnl": 8774.850689155723,
+        "avg_pnl": 38.318125280155996,
+        "profit_factor": 1.565600247405733
+      },
+      {
+        "label": "trailing-5% / +15% TP",
+        "trades": 231,
+        "win_rate": 0.36363636363636365,
+        "total_pnl": 8640.244757416527,
+        "avg_pnl": 37.4036569585131,
+        "profit_factor": 1.5419859697887879
+      },
+      {
+        "label": "trailing-5% / no TP",
+        "trades": 227,
+        "win_rate": 0.36123348017621143,
+        "total_pnl": 8491.87540794636,
+        "avg_pnl": 37.40914276628352,
+        "profit_factor": 1.5485909666601119
+      },
+      {
+        "label": "stop-5% (baseline) / +15% TP",
+        "trades": 229,
+        "win_rate": 0.3624454148471616,
+        "total_pnl": 8267.32722492673,
+        "avg_pnl": 36.10186561103376,
+        "profit_factor": 1.5160064868672019
+      },
+      {
+        "label": "trailing-8% / +15% TP",
+        "trades": 229,
+        "win_rate": 0.3624454148471616,
+        "total_pnl": 8245.743911003263,
+        "avg_pnl": 36.00761533189198,
+        "profit_factor": 1.5139669828493059
+      },
+      {
+        "label": "trailing-8% / no TP",
+        "trades": 225,
+        "win_rate": 0.36,
+        "total_pnl": 8055.828852481769,
+        "avg_pnl": 35.80368378880786,
+        "profit_factor": 1.5274948933409025
+      },
+      {
+        "label": "stop-8% / +15% TP",
+        "trades": 229,
+        "win_rate": 0.3624454148471616,
+        "total_pnl": 7967.327224926731,
+        "avg_pnl": 34.79182194291149,
+        "profit_factor": 1.4881417094881855
+      },
+      {
+        "label": "trailing-5% / +10% TP",
+        "trades": 239,
+        "win_rate": 0.3598326359832636,
+        "total_pnl": 7424.407288556343,
+        "avg_pnl": 31.064465642495158,
+        "profit_factor": 1.4312653177098043
+      },
+      {
+        "label": "stop-3% / +10% TP",
+        "trades": 238,
+        "win_rate": 0.35294117647058826,
+        "total_pnl": 7419.744402913252,
+        "avg_pnl": 31.175396650896015,
+        "profit_factor": 1.434903917923524
+      },
+      {
+        "label": "stop-3% / no TP",
+        "trades": 225,
+        "win_rate": 0.35555555555555557,
+        "total_pnl": 7310.867219726858,
+        "avg_pnl": 32.49274319878604,
+        "profit_factor": 1.4789508260309845
+      },
+      {
+        "label": "cloud-only / +15% TP",
+        "trades": 229,
+        "win_rate": 0.3624454148471616,
+        "total_pnl": 7264.588322102473,
+        "avg_pnl": 31.723093109617786,
+        "profit_factor": 1.4267140188745364
+      },
+      {
+        "label": "trailing-8% / +10% TP",
+        "trades": 237,
+        "win_rate": 0.35443037974683544,
+        "total_pnl": 7043.921128758945,
+        "avg_pnl": 29.721186197295125,
+        "profit_factor": 1.4039762057775418
+      },
+      {
+        "label": "cloud-only / no TP",
+        "trades": 225,
+        "win_rate": 0.35555555555555557,
+        "total_pnl": 6942.788436884131,
+        "avg_pnl": 30.856837497262806,
+        "profit_factor": 1.4441276484707943
+      },
+      {
+        "label": "stop-5% (baseline) / no TP",
+        "trades": 225,
+        "win_rate": 0.35555555555555557,
+        "total_pnl": 6942.788436884131,
+        "avg_pnl": 30.856837497262806,
+        "profit_factor": 1.4441276484707943
+      },
+      {
+        "label": "stop-8% / no TP",
+        "trades": 225,
+        "win_rate": 0.35555555555555557,
+        "total_pnl": 6942.788436884131,
+        "avg_pnl": 30.856837497262806,
+        "profit_factor": 1.4441276484707943
+      },
+      {
+        "label": "stop-5% (baseline) / +10% TP",
+        "trades": 237,
+        "win_rate": 0.35443037974683544,
+        "total_pnl": 6726.517224375451,
+        "avg_pnl": 28.381929216774058,
+        "profit_factor": 1.3788759150433212
+      },
+      {
+        "label": "stop-8% / +10% TP",
+        "trades": 237,
+        "win_rate": 0.35443037974683544,
+        "total_pnl": 6426.517224375452,
+        "avg_pnl": 27.116106431963935,
+        "profit_factor": 1.355963234055622
+      },
+      {
+        "label": "cloud-only / +10% TP",
+        "trades": 237,
+        "win_rate": 0.35443037974683544,
+        "total_pnl": 6027.6753750317475,
+        "avg_pnl": 25.433229430513702,
+        "profit_factor": 1.3266550966429385
+      }
+    ],
+    "30m": [
+      {
+        "label": "trailing-5% / no TP",
+        "trades": 95,
+        "win_rate": 0.4,
+        "total_pnl": 5819.772377279123,
+        "avg_pnl": 61.26076186609603,
+        "profit_factor": 1.5985828117014556
+      },
+      {
+        "label": "trailing-5% / +15% TP",
+        "trades": 98,
+        "win_rate": 0.40816326530612246,
+        "total_pnl": 5677.488365349088,
+        "avg_pnl": 57.93355474846008,
+        "profit_factor": 1.5714269135168213
+      },
+      {
+        "label": "stop-3% / +15% TP",
+        "trades": 98,
+        "win_rate": 0.37755102040816324,
+        "total_pnl": 4686.292062689134,
+        "avg_pnl": 47.81930676213402,
+        "profit_factor": 1.4246280335468797
+      },
+      {
+        "label": "trailing-5% / +10% TP",
+        "trades": 105,
+        "win_rate": 0.4,
+        "total_pnl": 4587.859661638658,
+        "avg_pnl": 43.69390153941578,
+        "profit_factor": 1.416634468700596
+      },
+      {
+        "label": "trailing-8% / no TP",
+        "trades": 91,
+        "win_rate": 0.3956043956043956,
+        "total_pnl": 4110.902536714875,
+        "avg_pnl": 45.17475315071292,
+        "profit_factor": 1.4197747129991305
+      },
+      {
+        "label": "trailing-8% / +15% TP",
+        "trades": 94,
+        "win_rate": 0.40425531914893614,
+        "total_pnl": 3973.0346264998498,
+        "avg_pnl": 42.26632581382819,
+        "profit_factor": 1.397058697104413
+      },
+      {
+        "label": "stop-5% (baseline) / no TP",
+        "trades": 90,
+        "win_rate": 0.36666666666666664,
+        "total_pnl": 3779.8999239386108,
+        "avg_pnl": 41.99888804376234,
+        "profit_factor": 1.372047961776872
+      },
+      {
+        "label": "stop-3% / no TP",
+        "trades": 92,
+        "win_rate": 0.3695652173913043,
+        "total_pnl": 3742.2263339831807,
+        "avg_pnl": 40.67637319546935,
+        "profit_factor": 1.3660530485226356
+      },
+      {
+        "label": "cloud-only / no TP",
+        "trades": 90,
+        "win_rate": 0.36666666666666664,
+        "total_pnl": 3613.4939352710835,
+        "avg_pnl": 40.14993261412315,
+        "profit_factor": 1.3499373282571803
+      },
+      {
+        "label": "stop-8% / no TP",
+        "trades": 90,
+        "win_rate": 0.36666666666666664,
+        "total_pnl": 3613.4939352710835,
+        "avg_pnl": 40.14993261412315,
+        "profit_factor": 1.3499373282571803
+      },
+      {
+        "label": "stop-5% (baseline) / +15% TP",
+        "trades": 94,
+        "win_rate": 0.3723404255319149,
+        "total_pnl": 3323.9656526445656,
+        "avg_pnl": 35.361336730261336,
+        "profit_factor": 1.3057149928711393
+      },
+      {
+        "label": "stop-8% / +10% TP",
+        "trades": 100,
+        "win_rate": 0.39,
+        "total_pnl": 3243.3281819734393,
+        "avg_pnl": 32.43328181973439,
+        "profit_factor": 1.280009548744648
+      },
+      {
+        "label": "stop-3% / +10% TP",
+        "trades": 104,
+        "win_rate": 0.38461538461538464,
+        "total_pnl": 3132.4278481875167,
+        "avg_pnl": 30.119498540264583,
+        "profit_factor": 1.267280766909702
+      },
+      {
+        "label": "stop-5% (baseline) / +10% TP",
+        "trades": 101,
+        "win_rate": 0.38613861386138615,
+        "total_pnl": 3116.2179914172902,
+        "avg_pnl": 30.853643479379112,
+        "profit_factor": 1.266115284082828
+      },
+      {
+        "label": "cloud-only / +15% TP",
+        "trades": 94,
+        "win_rate": 0.3723404255319149,
+        "total_pnl": 3084.669854533186,
+        "avg_pnl": 32.81563675035304,
+        "profit_factor": 1.277596692749351
+      },
+      {
+        "label": "stop-8% / +15% TP",
+        "trades": 94,
+        "win_rate": 0.3723404255319149,
+        "total_pnl": 3084.669854533186,
+        "avg_pnl": 32.81563675035304,
+        "profit_factor": 1.277596692749351
+      },
+      {
+        "label": "trailing-8% / +10% TP",
+        "trades": 101,
+        "win_rate": 0.39603960396039606,
+        "total_pnl": 2878.2325990493664,
+        "avg_pnl": 28.49735246583531,
+        "profit_factor": 1.2395931965086795
+      },
+      {
+        "label": "cloud-only / +10% TP",
+        "trades": 100,
+        "win_rate": 0.39,
+        "total_pnl": 2476.950687303596,
+        "avg_pnl": 24.76950687303596,
+        "profit_factor": 1.2005742191379989
+      }
+    ],
+    "60m": [
+      {
+        "label": "stop-3% / +15% TP",
+        "trades": 62,
+        "win_rate": 0.3387096774193548,
+        "total_pnl": 1507.463047388172,
+        "avg_pnl": 24.313920119164067,
+        "profit_factor": 1.159417333537515
+      },
+      {
+        "label": "trailing-5% / +15% TP",
+        "trades": 66,
+        "win_rate": 0.3787878787878788,
+        "total_pnl": 1343.5373438894587,
+        "avg_pnl": 20.356626422567558,
+        "profit_factor": 1.1428039043873492
+      },
+      {
+        "label": "trailing-5% / no TP",
+        "trades": 64,
+        "win_rate": 0.375,
+        "total_pnl": 1329.7490656802054,
+        "avg_pnl": 20.77732915125321,
+        "profit_factor": 1.1442778408510712
+      },
+      {
+        "label": "trailing-5% / +10% TP",
+        "trades": 72,
+        "win_rate": 0.375,
+        "total_pnl": 1070.66026709309,
+        "avg_pnl": 14.870281487404027,
+        "profit_factor": 1.1046910612363448
+      },
+      {
+        "label": "stop-3% / +10% TP",
+        "trades": 67,
+        "win_rate": 0.3283582089552239,
+        "total_pnl": 779.4779413740486,
+        "avg_pnl": 11.633999124985799,
+        "profit_factor": 1.0774092768356205
+      },
+      {
+        "label": "stop-3% / no TP",
+        "trades": 59,
+        "win_rate": 0.3220338983050847,
+        "total_pnl": -74.78572082999806,
+        "avg_pnl": -1.26755459033895,
+        "profit_factor": 0.9918321245072999
+      },
+      {
+        "label": "stop-5% (baseline) / +15% TP",
+        "trades": 61,
+        "win_rate": 0.3442622950819672,
+        "total_pnl": -482.4015191626588,
+        "avg_pnl": -7.908221625617357,
+        "profit_factor": 0.9578181253183256
+      },
+      {
+        "label": "trailing-8% / +15% TP",
+        "trades": 60,
+        "win_rate": 0.35,
+        "total_pnl": -1366.0267424555134,
+        "avg_pnl": -22.767112374258556,
+        "profit_factor": 0.8790308673499977
+      },
+      {
+        "label": "stop-5% (baseline) / +10% TP",
+        "trades": 66,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -1400.6697265422258,
+        "avg_pnl": -21.22226858397312,
+        "profit_factor": 0.885656955881268
+      },
+      {
+        "label": "trailing-8% / no TP",
+        "trades": 58,
+        "win_rate": 0.3448275862068966,
+        "total_pnl": -1421.3044116041651,
+        "avg_pnl": -24.505248475933882,
+        "profit_factor": 0.8682872417413494
+      },
+      {
+        "label": "stop-5% (baseline) / no TP",
+        "trades": 58,
+        "win_rate": 0.3275862068965517,
+        "total_pnl": -1428.6274546121513,
+        "avg_pnl": -24.63150783814054,
+        "profit_factor": 0.863942895665114
+      },
+      {
+        "label": "stop-8% / +15% TP",
+        "trades": 59,
+        "win_rate": 0.3559322033898305,
+        "total_pnl": -1497.011936765989,
+        "avg_pnl": -25.373083673999815,
+        "profit_factor": 0.8700945655635225
+      },
+      {
+        "label": "trailing-8% / +10% TP",
+        "trades": 66,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -1568.2905727348127,
+        "avg_pnl": -23.76197837476989,
+        "profit_factor": 0.8739837896559978
+      },
+      {
+        "label": "stop-8% / +10% TP",
+        "trades": 65,
+        "win_rate": 0.3384615384615385,
+        "total_pnl": -1957.6791786488611,
+        "avg_pnl": -30.11814120998248,
+        "profit_factor": 0.8471366231015439
+      },
+      {
+        "label": "cloud-only / +15% TP",
+        "trades": 59,
+        "win_rate": 0.3559322033898305,
+        "total_pnl": -2063.0293013499354,
+        "avg_pnl": -34.96659832796501,
+        "profit_factor": 0.8293589443193349
+      },
+      {
+        "label": "stop-8% / no TP",
+        "trades": 57,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -2088.6080952875195,
+        "avg_pnl": -36.64224728574596,
+        "profit_factor": 0.8063923086436797
+      },
+      {
+        "label": "cloud-only / +10% TP",
+        "trades": 65,
+        "win_rate": 0.3384615384615385,
+        "total_pnl": -2177.541400301649,
+        "avg_pnl": -33.50063692771768,
+        "profit_factor": 0.8328386844565142
+      },
+      {
+        "label": "cloud-only / no TP",
+        "trades": 57,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -2216.9315662514236,
+        "avg_pnl": -38.89353625002498,
+        "profit_factor": 0.7969128706852566
+      }
+    ]
+  }
+}

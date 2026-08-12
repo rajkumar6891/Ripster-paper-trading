@@ -1,11 +1,15 @@
 """
 Free, unauthenticated public market-data access -- Yahoo Finance's public
-chart endpoint for 1h OHLC candles, Nasdaq's public earnings-calendar
+chart endpoint for OHLC candles, Nasdaq's public earnings-calendar
 endpoint for upcoming earnings dates. No login, no API key.
 
 This module fetches directly over HTTP, which only works where outbound
 internet access is unrestricted (i.e. run locally, not from a sandboxed
 cloud routine with a locked-down network egress policy).
+
+The live monitor runs on 10-minute candles. Yahoo has no native 10m
+interval, so fetch_raw_bars pulls 5-minute bars and aggregate_bars merges
+consecutive pairs into 10-minute candles.
 """
 
 import datetime
@@ -19,10 +23,10 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) PaperTradingMonitor/1.0"
 CHART_URL = "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
 EARNINGS_URL = "https://api.nasdaq.com/api/calendar/earnings"
 
-CLOSED_BAR_SECONDS = 3600  # a bar counts as closed once a full hour has
-                            # elapsed since it opened (matches the spec's
-                            # "a bar isn't finalized until a full hour has
-                            # passed since it opened").
+BAR_SECONDS = 600  # 10-minute candles: a bar counts as closed once a full
+                    # 10 minutes has elapsed since it opened (matches the
+                    # spec's "a bar isn't finalized until a full <period>
+                    # has passed since it opened", generalized from 1h).
 
 
 def _get_json(url, timeout=15, retries=3, backoff=1.5):
@@ -44,8 +48,8 @@ def yahoo_symbol(ticker):
     return ticker.replace(".", "-")
 
 
-def fetch_raw_bars(ticker, range_="5d", interval="60m"):
-    """Fetch raw hourly bars (including any still-forming trailing bar) as
+def fetch_raw_bars(ticker, range_="5d", interval="5m"):
+    """Fetch raw bars (including any still-forming trailing bar) as
     a list of {ts, open, high, low, close, volume} dicts."""
     symbol = yahoo_symbol(ticker)
     url = CHART_URL.format(symbol=symbol) + f"?interval={interval}&range={range_}"
@@ -80,12 +84,30 @@ def fetch_raw_bars(ticker, range_="5d", interval="60m"):
     return bars
 
 
-def closed_hourly_bars(bars, now_ts=None):
-    """Filter to bars whose full hour has elapsed as of now_ts (defaults to
-    the current wall-clock time)."""
+def aggregate_bars(bars, factor=2):
+    """Merge every `factor` consecutive bars into one OHLCV bar (e.g. two
+    5-minute bars -> one 10-minute bar). A trailing partial group smaller
+    than `factor` is dropped -- it's always the still-forming bar anyway."""
+    out = []
+    for i in range(0, len(bars) - factor + 1, factor):
+        chunk = bars[i:i + factor]
+        out.append({
+            "ts": chunk[0]["ts"],
+            "open": chunk[0]["open"],
+            "high": max(b["high"] for b in chunk),
+            "low": min(b["low"] for b in chunk),
+            "close": chunk[-1]["close"],
+            "volume": sum((b["volume"] or 0) for b in chunk),
+        })
+    return out
+
+
+def closed_bars(bars, bar_seconds=BAR_SECONDS, now_ts=None):
+    """Filter to bars whose full period has elapsed as of now_ts (defaults
+    to the current wall-clock time)."""
     if now_ts is None:
         now_ts = datetime.datetime.now(datetime.timezone.utc).timestamp()
-    return [b for b in bars if now_ts >= b["ts"] + CLOSED_BAR_SECONDS]
+    return [b for b in bars if now_ts >= b["ts"] + bar_seconds]
 
 
 def fetch_upcoming_earnings_map(lookahead_days=21):

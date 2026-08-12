@@ -1,0 +1,1075 @@
+<title>Ripster EMA Cloud &mdash; Timeframe &amp; Exit Study</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .viz-root {
+    color-scheme: light;
+    --bg:              #f9f9f7;
+    --surface:         #fcfcfb;
+    --surface-raised:  #ffffff;
+    --text-primary:    #0b0b0b;
+    --text-secondary:  #52514e;
+    --text-muted:      #898781;
+    --border:          rgba(11,11,11,0.10);
+    --grid:            #e1e0d9;
+    --accent-10m:      #2a78d6;
+    --accent-10m-soft: #cde2fb;
+    --accent-30m:      #eb6834;
+    --accent-30m-soft: #fbdccb;
+    --accent-60m:      #1baf7a;
+    --accent-60m-soft: #c7ecdd;
+    --good:            #0ca30c;
+    --critical:        #d03b3b;
+    --good-soft:       #d9f2d9;
+    --critical-soft:   #f7d9d9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --bg:              #0d0d0d;
+      --surface:         #1a1a19;
+      --surface-raised:  #212120;
+      --text-primary:    #ffffff;
+      --text-secondary:  #c3c2b7;
+      --text-muted:      #898781;
+      --border:          rgba(255,255,255,0.10);
+      --grid:            #2c2c2a;
+      --accent-10m:      #3987e5;
+      --accent-10m-soft: #163156;
+      --accent-30m:      #d95926;
+      --accent-30m-soft: #4a2313;
+      --accent-60m:      #199e70;
+      --accent-60m-soft: #103c2b;
+      --good:            #0ca30c;
+      --critical:        #e66767;
+      --good-soft:       #0f2e10;
+      --critical-soft:   #3a1414;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --bg:              #0d0d0d;
+    --surface:         #1a1a19;
+    --surface-raised:  #212120;
+    --text-primary:    #ffffff;
+    --text-secondary:  #c3c2b7;
+    --text-muted:      #898781;
+    --border:          rgba(255,255,255,0.10);
+    --grid:            #2c2c2a;
+    --accent-10m:      #3987e5;
+    --accent-10m-soft: #163156;
+    --accent-30m:      #d95926;
+    --accent-30m-soft: #4a2313;
+    --accent-60m:      #199e70;
+    --accent-60m-soft: #103c2b;
+    --good:            #0ca30c;
+    --critical:        #e66767;
+    --good-soft:       #0f2e10;
+    --critical-soft:   #3a1414;
+  }
+
+  .viz-root {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", ui-sans-serif, sans-serif;
+    line-height: 1.5;
+    padding: 0 20px 80px;
+  }
+  .viz-root * { box-sizing: border-box; }
+  .num, .stat-pnl, .cell-sub, table td, table th, .bar-stats {
+    font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .page { max-width: 900px; margin: 0 auto; }
+
+  header.hero {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .eyebrow {
+    font-family: ui-monospace, "SF Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 12px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 4px;
+  }
+  .section-sub {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+  section { margin-bottom: 48px; }
+
+  /* Stat tiles */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .tile {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 18px 16px;
+  }
+  .tile-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+  }
+  .tile-value {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: ui-monospace, "SF Mono", monospace;
+    margin: 0 0 4px;
+  }
+  .tile-detail {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* Bar rows */
+  .bars { display: flex; flex-direction: column; gap: 10px; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 220px;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .bar-row.winner { background: var(--surface); border: 1px solid var(--border); }
+  .bar-row.baseline-marker:not(.winner) { background: color-mix(in srgb, var(--surface) 60%, transparent); }
+  .bar-row-label {
+    font-size: 13px;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .bar-track {
+    height: 10px;
+    background: var(--grid);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: var(--bar-accent);
+  }
+  .bar-fill.neg { background: var(--critical); }
+  .bar-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    font-size: 13px;
+  }
+  .stat-pnl { font-weight: 700; font-size: 14px; }
+  .stat-pnl.pos, .pos { color: var(--good); }
+  .stat-pnl.neg, .neg { color: var(--critical); }
+  .stat-sub {
+    color: var(--text-muted);
+    font-size: 11.5px;
+  }
+
+  .pill {
+    display: inline-block;
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 1px 7px;
+    border-radius: 100px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .pill-win { background: var(--good-soft); color: var(--good); }
+  .pill-base { background: var(--grid); color: var(--text-secondary); }
+
+  /* Timeframe panels for exit optimization */
+  .tf-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 20px 16px;
+    margin-bottom: 16px;
+  }
+  .tf-panel-head { margin-bottom: 16px; }
+  .tf-panel h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .tf-panel-sub { font-size: 13px; color: var(--text-secondary); margin: 0; }
+  .tf-panel .bar-row { grid-template-columns: 240px 1fr 200px; }
+
+  .more-variants { margin-top: 12px; }
+  .more-variants summary {
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 8px 4px;
+  }
+  .more-variants summary:hover { color: var(--text-primary); }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  th {
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  td.num, th.num { text-align: right; }
+  tr.baseline-marker td { background: color-mix(in srgb, var(--grid) 40%, transparent); }
+
+  .ticker-table td, .ticker-table th { text-align: right; }
+  .ticker-table td:first-child, .ticker-table th:first-child { text-align: left; }
+  .ticker-cell { font-weight: 700; font-family: ui-monospace, "SF Mono", monospace; }
+  .cell-sub {
+    display: block;
+    font-size: 10.5px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    color: var(--text-muted);
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+  footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin: 0 0 8px; }
+  footer ul { margin: 0 0 16px; padding-left: 18px; }
+
+  @media (max-width: 640px) {
+    .tiles { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 1fr; row-gap: 6px; }
+    .bar-stats { align-items: flex-start; flex-direction: row; gap: 10px; }
+    .tf-panel .bar-row { grid-template-columns: 1fr; }
+  }
+
+  .filter-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+  .subhead { font-size: 14px; font-weight: 700; margin: 20px 0 10px; color: var(--text-secondary); }
+  tr.filter-row.winner td { background: color-mix(in srgb, var(--good-soft) 55%, transparent); }
+  .filter-label { font-size: 12.5px; max-width: 360px; }
+  code { font-family: ui-monospace, "SF Mono", monospace; font-size: 12px; background: var(--surface); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--border); }
+  @media (max-width: 640px) { .filter-tiles { grid-template-columns: 1fr; } }
+</style>
+
+<div class="viz-root">
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Ripster EMA Cloud &middot; Strategy Research</p>
+    <h1>Which candle timeframe wins &mdash; and how to exit it</h1>
+    <p class="hero-sub">Backtest of the same 5/12 vs 34/50 EMA cloud strategy across 10-minute, 30-minute,
+      and 1-hour candles, on the 10 largest S&amp;P&nbsp;500 names by market cap, over the trailing 60 trading
+      days (Yahoo Finance's max intraday history window). 18 exit variants tested per timeframe to find the
+      best risk-exit / take-profit combination.</p>
+  </header>
+
+  <div class="tiles">
+    <div class="tile">
+      <p class="tile-label">Best timeframe (baseline exit)</p>
+      <p class="tile-value" style="color:var(--accent-10m)">10-minute</p>
+      <p class="tile-detail">$6,943 total P&amp;L across 10 tickers</p>
+    </div>
+    <div class="tile">
+      <p class="tile-label">Weakest timeframe</p>
+      <p class="tile-value neg">1-hour</p>
+      <p class="tile-detail">-$1,429 &mdash; baseline exit loses money here</p>
+    </div>
+    <div class="tile">
+      <p class="tile-label">Best exit upgrade found</p>
+      <p class="tile-value pos">+$2,936</p>
+      <p class="tile-detail">on 1-hour, swapping in stop-3% / +15% TP</p>
+    </div>
+  </div>
+
+  <section>
+    <h2>1. Timeframe comparison</h2>
+    <p class="section-sub">Same strategy, same exit rule (cloud-cross OR 5% stop &mdash; what the live monitor
+      uses), same 10 tickers, same 60-day window. Only the candle size changes.</p>
+    <div class="bars">
+      <div class="bar-row ">
+        <div class="bar-row-label">10-minute</div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:100.0%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$6,943</span>
+          <span class="stat-sub">225 trades &middot; 35.6% win &middot; PF 1.44</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">30-minute</div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:54.4%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$3,780</span>
+          <span class="stat-sub">90 trades &middot; 36.7% win &middot; PF 1.37</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">1-hour</div>
+        <div class="bar-track">
+          <div class="bar-fill neg" style="width:20.6%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl neg">-$1,429</span>
+          <span class="stat-sub">58 trades &middot; 32.8% win &middot; PF 0.86</span>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <h2>2. Exit-strategy optimization</h2>
+    <p class="section-sub">For each timeframe: is there a better exit than the live monitor's baseline
+      (cloud-cross OR 5% stop, no take-profit)? Testing 6 risk-exit variants (no stop, fixed stop at 3/5/8%,
+      trailing stop at 5/8%) &times; 3 take-profit caps (none, +10%, +15%) &mdash; 18 combinations per timeframe,
+      ranked by total P&amp;L. Top 6 shown; baseline always marked.</p>
+    
+      <div class="tf-panel">
+        <div class="tf-panel-head">
+          <h3><span class="dot" style="background:var(--accent-10m)"></span>10-minute</h3>
+          <p class="tf-panel-sub">Best: <strong>stop-3% / +15% TP</strong> &mdash; $8,775 total
+            (<span class="pos">+$1,832</span> vs. baseline)</p>
+        </div>
+        <div class="bars">
+      <div class="bar-row winner">
+        <div class="bar-row-label">stop-3% / +15% TP <span class="pill pill-win">best</span></div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:100.0%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,775</span>
+          <span class="stat-sub">229 trades &middot; 36.2% win &middot; PF 1.57</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:98.5%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,640</span>
+          <span class="stat-sub">231 trades &middot; 36.4% win &middot; PF 1.54</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / no TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:96.8%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,492</span>
+          <span class="stat-sub">227 trades &middot; 36.1% win &middot; PF 1.55</span>
+        </div>
+      </div>
+      <div class="bar-row baseline-marker">
+        <div class="bar-row-label">stop-5% (baseline) / +15% TP <span class="pill pill-base">baseline</span></div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:94.2%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,267</span>
+          <span class="stat-sub">229 trades &middot; 36.2% win &middot; PF 1.52</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-8% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:94.0%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,246</span>
+          <span class="stat-sub">229 trades &middot; 36.2% win &middot; PF 1.51</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-8% / no TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:91.8%; --bar-accent:var(--accent-10m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$8,056</span>
+          <span class="stat-sub">225 trades &middot; 36.0% win &middot; PF 1.53</span>
+        </div>
+      </div></div>
+        
+        <details class="more-variants">
+          <summary>Show all 18 variants</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Variant</th><th class="num">Trades</th><th class="num">Win %</th><th class="num">Total P&amp;L</th><th class="num">Profit factor</th></tr></thead>
+              <tbody>
+          <tr class="">
+            <td>stop-8% / +15% TP </td>
+            <td class="num">229</td>
+            <td class="num">36.2%</td>
+            <td class="num pos">$7,967</td>
+            <td class="num">1.49</td>
+          </tr>
+          <tr class="">
+            <td>trailing-5% / +10% TP </td>
+            <td class="num">239</td>
+            <td class="num">36.0%</td>
+            <td class="num pos">$7,424</td>
+            <td class="num">1.43</td>
+          </tr>
+          <tr class="">
+            <td>stop-3% / +10% TP </td>
+            <td class="num">238</td>
+            <td class="num">35.3%</td>
+            <td class="num pos">$7,420</td>
+            <td class="num">1.43</td>
+          </tr>
+          <tr class="">
+            <td>stop-3% / no TP </td>
+            <td class="num">225</td>
+            <td class="num">35.6%</td>
+            <td class="num pos">$7,311</td>
+            <td class="num">1.48</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +15% TP </td>
+            <td class="num">229</td>
+            <td class="num">36.2%</td>
+            <td class="num pos">$7,265</td>
+            <td class="num">1.43</td>
+          </tr>
+          <tr class="">
+            <td>trailing-8% / +10% TP </td>
+            <td class="num">237</td>
+            <td class="num">35.4%</td>
+            <td class="num pos">$7,044</td>
+            <td class="num">1.40</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / no TP </td>
+            <td class="num">225</td>
+            <td class="num">35.6%</td>
+            <td class="num pos">$6,943</td>
+            <td class="num">1.44</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / no TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">225</td>
+            <td class="num">35.6%</td>
+            <td class="num pos">$6,943</td>
+            <td class="num">1.44</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / no TP </td>
+            <td class="num">225</td>
+            <td class="num">35.6%</td>
+            <td class="num pos">$6,943</td>
+            <td class="num">1.44</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / +10% TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">237</td>
+            <td class="num">35.4%</td>
+            <td class="num pos">$6,727</td>
+            <td class="num">1.38</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / +10% TP </td>
+            <td class="num">237</td>
+            <td class="num">35.4%</td>
+            <td class="num pos">$6,427</td>
+            <td class="num">1.36</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +10% TP </td>
+            <td class="num">237</td>
+            <td class="num">35.4%</td>
+            <td class="num pos">$6,028</td>
+            <td class="num">1.33</td>
+          </tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+      <div class="tf-panel">
+        <div class="tf-panel-head">
+          <h3><span class="dot" style="background:var(--accent-30m)"></span>30-minute</h3>
+          <p class="tf-panel-sub">Best: <strong>trailing-5% / no TP</strong> &mdash; $5,820 total
+            (<span class="pos">+$2,040</span> vs. baseline)</p>
+        </div>
+        <div class="bars">
+      <div class="bar-row winner">
+        <div class="bar-row-label">trailing-5% / no TP <span class="pill pill-win">best</span></div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:100.0%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$5,820</span>
+          <span class="stat-sub">95 trades &middot; 40.0% win &middot; PF 1.60</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:97.6%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$5,677</span>
+          <span class="stat-sub">98 trades &middot; 40.8% win &middot; PF 1.57</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">stop-3% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:80.5%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$4,686</span>
+          <span class="stat-sub">98 trades &middot; 37.8% win &middot; PF 1.42</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / +10% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:78.8%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$4,588</span>
+          <span class="stat-sub">105 trades &middot; 40.0% win &middot; PF 1.42</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-8% / no TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:70.6%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$4,111</span>
+          <span class="stat-sub">91 trades &middot; 39.6% win &middot; PF 1.42</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-8% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:68.3%; --bar-accent:var(--accent-30m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$3,973</span>
+          <span class="stat-sub">94 trades &middot; 40.4% win &middot; PF 1.40</span>
+        </div>
+      </div></div>
+        
+        <details class="more-variants">
+          <summary>Show all 18 variants</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Variant</th><th class="num">Trades</th><th class="num">Win %</th><th class="num">Total P&amp;L</th><th class="num">Profit factor</th></tr></thead>
+              <tbody>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / no TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">90</td>
+            <td class="num">36.7%</td>
+            <td class="num pos">$3,780</td>
+            <td class="num">1.37</td>
+          </tr>
+          <tr class="">
+            <td>stop-3% / no TP </td>
+            <td class="num">92</td>
+            <td class="num">37.0%</td>
+            <td class="num pos">$3,742</td>
+            <td class="num">1.37</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / no TP </td>
+            <td class="num">90</td>
+            <td class="num">36.7%</td>
+            <td class="num pos">$3,613</td>
+            <td class="num">1.35</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / no TP </td>
+            <td class="num">90</td>
+            <td class="num">36.7%</td>
+            <td class="num pos">$3,613</td>
+            <td class="num">1.35</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / +15% TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">94</td>
+            <td class="num">37.2%</td>
+            <td class="num pos">$3,324</td>
+            <td class="num">1.31</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / +10% TP </td>
+            <td class="num">100</td>
+            <td class="num">39.0%</td>
+            <td class="num pos">$3,243</td>
+            <td class="num">1.28</td>
+          </tr>
+          <tr class="">
+            <td>stop-3% / +10% TP </td>
+            <td class="num">104</td>
+            <td class="num">38.5%</td>
+            <td class="num pos">$3,132</td>
+            <td class="num">1.27</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / +10% TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">101</td>
+            <td class="num">38.6%</td>
+            <td class="num pos">$3,116</td>
+            <td class="num">1.27</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +15% TP </td>
+            <td class="num">94</td>
+            <td class="num">37.2%</td>
+            <td class="num pos">$3,085</td>
+            <td class="num">1.28</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / +15% TP </td>
+            <td class="num">94</td>
+            <td class="num">37.2%</td>
+            <td class="num pos">$3,085</td>
+            <td class="num">1.28</td>
+          </tr>
+          <tr class="">
+            <td>trailing-8% / +10% TP </td>
+            <td class="num">101</td>
+            <td class="num">39.6%</td>
+            <td class="num pos">$2,878</td>
+            <td class="num">1.24</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +10% TP </td>
+            <td class="num">100</td>
+            <td class="num">39.0%</td>
+            <td class="num pos">$2,477</td>
+            <td class="num">1.20</td>
+          </tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+      <div class="tf-panel">
+        <div class="tf-panel-head">
+          <h3><span class="dot" style="background:var(--accent-60m)"></span>1-hour</h3>
+          <p class="tf-panel-sub">Best: <strong>stop-3% / +15% TP</strong> &mdash; $1,507 total
+            (<span class="pos">+$2,936</span> vs. baseline)</p>
+        </div>
+        <div class="bars">
+      <div class="bar-row winner">
+        <div class="bar-row-label">stop-3% / +15% TP <span class="pill pill-win">best</span></div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:68.0%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$1,507</span>
+          <span class="stat-sub">62 trades &middot; 33.9% win &middot; PF 1.16</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / +15% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:60.6%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$1,344</span>
+          <span class="stat-sub">66 trades &middot; 37.9% win &middot; PF 1.14</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / no TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:60.0%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$1,330</span>
+          <span class="stat-sub">64 trades &middot; 37.5% win &middot; PF 1.14</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">trailing-5% / +10% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:48.3%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$1,071</span>
+          <span class="stat-sub">72 trades &middot; 37.5% win &middot; PF 1.10</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">stop-3% / +10% TP </div>
+        <div class="bar-track">
+          <div class="bar-fill pos" style="width:35.2%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl pos">$779</span>
+          <span class="stat-sub">67 trades &middot; 32.8% win &middot; PF 1.08</span>
+        </div>
+      </div>
+      <div class="bar-row ">
+        <div class="bar-row-label">stop-3% / no TP </div>
+        <div class="bar-track">
+          <div class="bar-fill neg" style="width:3.4%; --bar-accent:var(--accent-60m);"></div>
+        </div>
+        <div class="bar-stats">
+          <span class="stat-pnl neg">-$75</span>
+          <span class="stat-sub">59 trades &middot; 32.2% win &middot; PF 0.99</span>
+        </div>
+      </div></div>
+        
+        <details class="more-variants">
+          <summary>Show all 18 variants</summary>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Variant</th><th class="num">Trades</th><th class="num">Win %</th><th class="num">Total P&amp;L</th><th class="num">Profit factor</th></tr></thead>
+              <tbody>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / +15% TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">61</td>
+            <td class="num">34.4%</td>
+            <td class="num neg">-$482</td>
+            <td class="num">0.96</td>
+          </tr>
+          <tr class="">
+            <td>trailing-8% / +15% TP </td>
+            <td class="num">60</td>
+            <td class="num">35.0%</td>
+            <td class="num neg">-$1,366</td>
+            <td class="num">0.88</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / +10% TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">66</td>
+            <td class="num">33.3%</td>
+            <td class="num neg">-$1,401</td>
+            <td class="num">0.89</td>
+          </tr>
+          <tr class="">
+            <td>trailing-8% / no TP </td>
+            <td class="num">58</td>
+            <td class="num">34.5%</td>
+            <td class="num neg">-$1,421</td>
+            <td class="num">0.87</td>
+          </tr>
+          <tr class="baseline-marker">
+            <td>stop-5% (baseline) / no TP <span class="pill pill-base">baseline</span></td>
+            <td class="num">58</td>
+            <td class="num">32.8%</td>
+            <td class="num neg">-$1,429</td>
+            <td class="num">0.86</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / +15% TP </td>
+            <td class="num">59</td>
+            <td class="num">35.6%</td>
+            <td class="num neg">-$1,497</td>
+            <td class="num">0.87</td>
+          </tr>
+          <tr class="">
+            <td>trailing-8% / +10% TP </td>
+            <td class="num">66</td>
+            <td class="num">33.3%</td>
+            <td class="num neg">-$1,568</td>
+            <td class="num">0.87</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / +10% TP </td>
+            <td class="num">65</td>
+            <td class="num">33.8%</td>
+            <td class="num neg">-$1,958</td>
+            <td class="num">0.85</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +15% TP </td>
+            <td class="num">59</td>
+            <td class="num">35.6%</td>
+            <td class="num neg">-$2,063</td>
+            <td class="num">0.83</td>
+          </tr>
+          <tr class="">
+            <td>stop-8% / no TP </td>
+            <td class="num">57</td>
+            <td class="num">33.3%</td>
+            <td class="num neg">-$2,089</td>
+            <td class="num">0.81</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / +10% TP </td>
+            <td class="num">65</td>
+            <td class="num">33.8%</td>
+            <td class="num neg">-$2,178</td>
+            <td class="num">0.83</td>
+          </tr>
+          <tr class="">
+            <td>cloud-only / no TP </td>
+            <td class="num">57</td>
+            <td class="num">33.3%</td>
+            <td class="num neg">-$2,217</td>
+            <td class="num">0.80</td>
+          </tr></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+  </section>
+
+  <section>
+    <h2>3. Per-ticker breakdown</h2>
+    <p class="section-sub">Baseline exit, by ticker and timeframe. Sorted by 10-minute P&amp;L. Small samples
+      per cell (5&ndash;30 trades) &mdash; read this as directional, not conclusive.</p>
+    <div class="table-wrap">
+      <table class="ticker-table">
+        <thead>
+          <tr><th>Ticker</th><th>10-minute</th><th>30-minute</th><th>1-hour</th></tr>
+        </thead>
+        <tbody><tr><td class="ticker-cell">MSFT</td><td class="num pos">$3,248<span class="cell-sub">18tr &middot; 55.6%</span></td><td class="num pos">$3,300<span class="cell-sub">6tr &middot; 66.7%</span></td><td class="num pos">$2,535<span class="cell-sub">5tr &middot; 60.0%</span></td></tr><tr><td class="ticker-cell">AMZN</td><td class="num pos">$1,382<span class="cell-sub">20tr &middot; 40.0%</span></td><td class="num pos">$153<span class="cell-sub">9tr &middot; 22.2%</span></td><td class="num neg">-$224<span class="cell-sub">5tr &middot; 40.0%</span></td></tr><tr><td class="ticker-cell">TSLA</td><td class="num pos">$1,206<span class="cell-sub">18tr &middot; 33.3%</span></td><td class="num neg">-$637<span class="cell-sub">10tr &middot; 30.0%</span></td><td class="num neg">-$1,931<span class="cell-sub">7tr &middot; 14.3%</span></td></tr><tr><td class="ticker-cell">JPM</td><td class="num pos">$1,063<span class="cell-sub">22tr &middot; 40.9%</span></td><td class="num pos">$979<span class="cell-sub">10tr &middot; 70.0%</span></td><td class="num pos">$1,308<span class="cell-sub">5tr &middot; 60.0%</span></td></tr><tr><td class="ticker-cell">BRK.B</td><td class="num pos">$904<span class="cell-sub">21tr &middot; 52.4%</span></td><td class="num pos">$228<span class="cell-sub">8tr &middot; 50.0%</span></td><td class="num pos">$262<span class="cell-sub">5tr &middot; 60.0%</span></td></tr><tr><td class="ticker-cell">NVDA</td><td class="num pos">$894<span class="cell-sub">21tr &middot; 38.1%</span></td><td class="num neg">-$63<span class="cell-sub">10tr &middot; 30.0%</span></td><td class="num neg">-$1,066<span class="cell-sub">7tr &middot; 14.3%</span></td></tr><tr><td class="ticker-cell">META</td><td class="num pos">$609<span class="cell-sub">26tr &middot; 26.9%</span></td><td class="num pos">$733<span class="cell-sub">7tr &middot; 42.9%</span></td><td class="num neg">-$399<span class="cell-sub">7tr &middot; 28.6%</span></td></tr><tr><td class="ticker-cell">AAPL</td><td class="num pos">$576<span class="cell-sub">30tr &middot; 26.7%</span></td><td class="num pos">$548<span class="cell-sub">10tr &middot; 20.0%</span></td><td class="num neg">-$33<span class="cell-sub">5tr &middot; 40.0%</span></td></tr><tr><td class="ticker-cell">GOOGL</td><td class="num neg">-$390<span class="cell-sub">22tr &middot; 36.4%</span></td><td class="num neg">-$205<span class="cell-sub">9tr &middot; 33.3%</span></td><td class="num neg">-$1,485<span class="cell-sub">6tr &middot; 16.7%</span></td></tr><tr><td class="ticker-cell">AVGO</td><td class="num neg">-$2,549<span class="cell-sub">27tr &middot; 18.5%</span></td><td class="num neg">-$1,256<span class="cell-sub">11tr &middot; 18.2%</span></td><td class="num neg">-$394<span class="cell-sub">6tr &middot; 16.7%</span></td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>4. Entry-filter optimization (10-minute, exit fixed at stop-3% / +15% TP)</h2>
+    <p class="section-sub">Layering RSI(14), ADX(14), relative volume, EMA-cloud separation, and a
+      first-20-minutes-of-session filter on top of the same cloud-crossover entry &mdash; 162 combinations
+      tested, each requiring at least 15 trades across the 10 tickers to count. Unfiltered reference:
+      <strong>229 trades</strong>, 36.2% win rate,
+      $8,775 total, $38 avg/trade.</p>
+
+    <div class="filter-tiles">
+      <div class="tile">
+        <p class="tile-label">Best for raw total P&amp;L</p>
+        <p class="tile-value pos">$8,985</p>
+        <p class="tile-detail">220 trades &middot; RVOL:off | RSI>50 | ADX:off | sep:off | skip first 20m</p>
+      </div>
+      <div class="tile">
+        <p class="tile-label">Best for trade quality</p>
+        <p class="tile-value pos">$90<span style="font-size:13px;color:var(--text-muted)">/trade</span></p>
+        <p class="tile-detail">74% fewer trades, 2.4&times; the avg profit/trade, 42.4% win rate</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">Ranked by total P&amp;L</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Filter combination</th><th class="num">Trades</th><th class="num">Win %</th><th class="num">Total P&amp;L</th><th class="num">Avg/trade</th><th class="num">Profit factor</th></tr></thead>
+        <tbody>
+        <tr class="filter-row winner">
+          <td class="filter-label">RVOL:off | RSI>50 | ADX:off | sep:off | skip first 20m</td>
+          <td class="num">220</td>
+          <td class="num">38.2%</td>
+          <td class="num pos">$8,985</td>
+          <td class="num">$41</td>
+          <td class="num">1.61</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI>50 | ADX:off | sep:off | time:off</td>
+          <td class="num">223</td>
+          <td class="num">37.2%</td>
+          <td class="num pos">$8,953</td>
+          <td class="num">$40</td>
+          <td class="num">1.58</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI:off | ADX:off | sep:off | skip first 20m</td>
+          <td class="num">224</td>
+          <td class="num">37.1%</td>
+          <td class="num pos">$8,938</td>
+          <td class="num">$40</td>
+          <td class="num">1.60</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI:off | ADX:off | sep:off | time:off</td>
+          <td class="num">229</td>
+          <td class="num">36.2%</td>
+          <td class="num pos">$8,775</td>
+          <td class="num">$38</td>
+          <td class="num">1.57</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI:off | ADX>=20 | sep:off | time:off</td>
+          <td class="num">178</td>
+          <td class="num">39.3%</td>
+          <td class="num pos">$8,511</td>
+          <td class="num">$48</td>
+          <td class="num">1.65</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI>50 | ADX>=20 | sep:off | time:off</td>
+          <td class="num">178</td>
+          <td class="num">39.3%</td>
+          <td class="num pos">$8,511</td>
+          <td class="num">$48</td>
+          <td class="num">1.65</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI 50-70 | ADX:off | sep:off | skip first 20m</td>
+          <td class="num">219</td>
+          <td class="num">37.0%</td>
+          <td class="num pos">$8,205</td>
+          <td class="num">$37</td>
+          <td class="num">1.56</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL:off | RSI 50-70 | ADX:off | sep:off | time:off</td>
+          <td class="num">221</td>
+          <td class="num">37.1%</td>
+          <td class="num pos">$8,040</td>
+          <td class="num">$36</td>
+          <td class="num">1.54</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <h3 class="subhead">Ranked by avg P&amp;L per trade &mdash; &ldquo;fewer, more legit trades&rdquo;</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Filter combination</th><th class="num">Trades</th><th class="num">Win %</th><th class="num">Total P&amp;L</th><th class="num">Avg/trade</th><th class="num">Profit factor</th></tr></thead>
+        <tbody>
+        <tr class="filter-row winner">
+          <td class="filter-label">RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.3% | time:off</td>
+          <td class="num">59</td>
+          <td class="num">42.4%</td>
+          <td class="num pos">$5,322</td>
+          <td class="num">$90</td>
+          <td class="num">2.00</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.3% | skip first 20m</td>
+          <td class="num">58</td>
+          <td class="num">41.4%</td>
+          <td class="num pos">$4,540</td>
+          <td class="num">$78</td>
+          <td class="num">1.84</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=2.0x | RSI:off | ADX>=20 | sep>=0.5% | skip first 20m</td>
+          <td class="num">45</td>
+          <td class="num">42.2%</td>
+          <td class="num pos">$3,071</td>
+          <td class="num">$68</td>
+          <td class="num">1.73</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=2.0x | RSI>50 | ADX>=20 | sep>=0.5% | skip first 20m</td>
+          <td class="num">45</td>
+          <td class="num">42.2%</td>
+          <td class="num pos">$3,071</td>
+          <td class="num">$68</td>
+          <td class="num">1.73</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=2.0x | RSI:off | ADX:off | sep>=0.5% | skip first 20m</td>
+          <td class="num">46</td>
+          <td class="num">41.3%</td>
+          <td class="num pos">$3,097</td>
+          <td class="num">$67</td>
+          <td class="num">1.74</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=2.0x | RSI>50 | ADX:off | sep>=0.5% | skip first 20m</td>
+          <td class="num">46</td>
+          <td class="num">41.3%</td>
+          <td class="num pos">$3,097</td>
+          <td class="num">$67</td>
+          <td class="num">1.74</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.3% | time:off</td>
+          <td class="num">73</td>
+          <td class="num">39.7%</td>
+          <td class="num pos">$4,793</td>
+          <td class="num">$66</td>
+          <td class="num">1.73</td>
+        </tr>
+        <tr class="filter-row">
+          <td class="filter-label">RVOL>=1.5x | RSI 50-70 | ADX>=20 | sep>=0.3% | skip first 20m</td>
+          <td class="num">70</td>
+          <td class="num">41.4%</td>
+          <td class="num pos">$4,592</td>
+          <td class="num">$66</td>
+          <td class="num">1.72</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+    <p class="section-sub" style="margin-top:16px;">
+      <strong>Reading this:</strong> the quality-ranked winner
+      (<code>RVOL>=1.5x | RSI 50-70 | ADX>=25 | sep>=0.3% | time:off</code>) cuts trade count from 229 to 59
+      (74% fewer) while lifting win rate from 36.2% to
+      42.4% and profit factor from 1.57 to
+      2.00 &mdash; genuinely higher-conviction setups. Its <em>total</em> P&amp;L
+      is lower only because far less capital-time is deployed at the same fixed $10,000/trade size; sizing
+      each of these higher-conviction trades larger is the natural next lever if the goal is total dollars,
+      not just hit rate.
+    </p>
+  </section>
+
+  <footer>
+    <h4>Methodology &amp; caveats</h4>
+    <ul>
+      <li><strong>Universe:</strong> AAPL, MSFT, NVDA, GOOGL, AMZN, META, AVGO, TSLA, BRK.B, JPM &mdash; the
+        10 largest S&amp;P&nbsp;500 constituents by market cap in the live monitor's universe.</li>
+      <li><strong>Data:</strong> Yahoo Finance. 10-minute bars are built by merging pairs of 5-minute bars
+        (Yahoo has no native 10m interval). 5m/30m cap out at 60 days of history; 1h bars were pulled over
+        the same 60-day window so the three timeframes are compared on identical dates, not different sample
+        depths.</li>
+      <li><strong>Entry rule:</strong> identical to the live monitor &mdash; price and the entire fast cloud
+        (EMA5/12) fully above the entire slow cloud (EMA34/50), one position at a time, sized at $10,000
+        notional per entry.</li>
+      <li><strong>Not applied here:</strong> the live monitor's 2-day earnings blackout is skipped in this
+        backtest (no free historical earnings-date source was available), so trade counts here run slightly
+        higher than the live monitor would produce around earnings dates.</li>
+      <li><strong>Intrabar assumption:</strong> when a bar's low would trigger a stop and its high would
+        trigger a take-profit in the same bar, the stop is assumed to hit first (the conservative case).</li>
+      <li><strong>Read the sample sizes:</strong> 1-hour produces as few as 5 trades for some tickers over
+        this window &mdash; directionally useful, not statistically strong on its own.</li>
+    </ul>
+  </footer>
+
+</div>
+</div>

@@ -8,6 +8,7 @@ import datetime
 from zoneinfo import ZoneInfo
 
 import data_source
+import indicators
 import strategy
 
 ET = ZoneInfo("America/New_York")
@@ -43,12 +44,12 @@ def _parse_earnings_date(date_str):
 def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, now_ts=None):
     """Mutates and returns tstate; returns (tstate, events).
 
-    raw_bars: already-fetched bars for this ticker (list of
-    {ts, open, high, low, close, volume} dicts), e.g. from
-    data_source.parse_historicals. May include a still-forming trailing
-    bar -- this function filters to fully-closed bars itself.
+    raw_bars: already-fetched 10-minute bars for this ticker (list of
+    {ts, open, high, low, close, volume} dicts). May include a
+    still-forming trailing bar -- this function filters to fully-closed
+    bars itself.
     """
-    fresh_closed = data_source.closed_hourly_bars(raw_bars, now_ts=now_ts)
+    fresh_closed = data_source.closed_bars(raw_bars, now_ts=now_ts)
 
     existing_bars = tstate.get("bars", [])
     merged_bars = _merge_bars(existing_bars, fresh_closed)
@@ -70,6 +71,10 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
 
     closes_full = [b["close"] for b in merged_bars]
     clouds = strategy.compute_clouds(closes_full)
+    rsi_full = indicators.compute_rsi(closes_full)
+    adx_full = indicators.compute_adx(merged_bars)
+    rvol_full = indicators.compute_rvol(merged_bars)
+    cloud_sep_full = indicators.compute_cloud_sep_pct(closes_full, clouds)
     ts_to_index = {b["ts"]: i for i, b in enumerate(merged_bars)}
     next_earnings_date = _parse_earnings_date(next_earnings_date_str)
 
@@ -81,27 +86,25 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
         ema50 = clouds[50][idx]
         close = bar["close"]
         low = bar["low"]
+        high = bar["high"]
         position = tstate.get("position")
 
         if position is not None:
             entry_price = position["entry_price"]
+            exit_price, reason = None, None
+
             if strategy.stop_triggered(low, entry_price):
-                exit_price = strategy.stop_price(entry_price)
-                pnl = (exit_price - entry_price) * position["shares"]
-                events.append({
-                    "ticker": ticker, "type": "exit", "reason": "stop-loss",
-                    "price": exit_price, "ts": bar["ts"], "time_et": bar_et_iso(bar["ts"]),
-                    "pnl": pnl, "entry_price": entry_price, "entry_time_et": position["entry_time_et"],
-                })
-                tstate["cumulative_realized_pnl"] = tstate.get("cumulative_realized_pnl", 0.0) + pnl
-                tstate["trade_log"].append(events[-1])
-                tstate["position"] = None
+                exit_price, reason = strategy.stop_price(entry_price), "stop-loss"
+            elif strategy.take_profit_triggered(high, entry_price):
+                exit_price, reason = strategy.take_profit_price(entry_price), "take-profit"
             elif (ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
                   and strategy.bearish_exit_signal(close, ema5, ema12, ema34, ema50)):
-                exit_price = close
+                exit_price, reason = close, "signal"
+
+            if exit_price is not None:
                 pnl = (exit_price - entry_price) * position["shares"]
                 events.append({
-                    "ticker": ticker, "type": "exit", "reason": "signal",
+                    "ticker": ticker, "type": "exit", "reason": reason,
                     "price": exit_price, "ts": bar["ts"], "time_et": bar_et_iso(bar["ts"]),
                     "pnl": pnl, "entry_price": entry_price, "entry_time_et": position["entry_time_et"],
                 })
@@ -110,8 +113,10 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
                 tstate["position"] = None
 
         if tstate.get("position") is None:
+            rsi, adx, rvol, cloud_sep = rsi_full[idx], adx_full[idx], rvol_full[idx], cloud_sep_full[idx]
             if (ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
-                    and strategy.bullish_entry_signal(close, ema5, ema12, ema34, ema50)):
+                    and strategy.bullish_entry_signal(close, ema5, ema12, ema34, ema50)
+                    and strategy.entry_filter_ok(rvol, rsi, adx, cloud_sep)):
                 bar_date = bar_et_date(bar["ts"])
                 if not strategy.within_earnings_blackout(bar_date, next_earnings_date):
                     shares = NOTIONAL_PER_POSITION / close
@@ -125,6 +130,7 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
                         "ticker": ticker, "type": "entry", "reason": "signal",
                         "price": close, "ts": bar["ts"], "time_et": bar_et_iso(bar["ts"]),
                         "shares": shares,
+                        "rvol": rvol, "rsi": rsi, "adx": adx, "cloud_sep_pct": cloud_sep,
                     })
                     tstate["trade_log"].append(events[-1])
 
