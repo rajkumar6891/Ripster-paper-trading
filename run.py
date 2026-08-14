@@ -88,9 +88,11 @@ def run():
         subject_stamp = datetime.datetime.now(ET).strftime("%Y-%m-%d %I:%M %p ET")
         email_result = email_sender.send_report_email(report, entries, seed_mode, subject_stamp)
         if email_result.get("sent"):
-            print(f"Emailed report to {email_result['to']}.")
-        elif email_result.get("reason"):
-            print(f"Email not sent: {email_result['reason']}")
+            status_line = f"Emailed report to {email_result['to']}."
+        else:
+            status_line = f"Email NOT sent: {email_result.get('reason', 'unknown reason')}"
+        print(status_line)
+        append_log(status_line)
     else:
         print("No entries/exits this run -- skipping email (still logged above).")
 
