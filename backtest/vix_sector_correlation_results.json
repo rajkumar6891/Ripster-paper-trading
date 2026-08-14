@@ -1,0 +1,102 @@
+{
+  "PLD": {
+    "sector": "REIT",
+    "corr": -0.10718872597470976,
+    "n_pairs": 4390
+  },
+  "AMT": {
+    "sector": "REIT",
+    "corr": 0.010829562538134682,
+    "n_pairs": 4390
+  },
+  "EQIX": {
+    "sector": "REIT",
+    "corr": -0.14977960015313735,
+    "n_pairs": 4348
+  },
+  "O": {
+    "sector": "REIT",
+    "corr": 0.09282310968546736,
+    "n_pairs": 4390
+  },
+  "SPG": {
+    "sector": "REIT",
+    "corr": -0.08466224446800426,
+    "n_pairs": 4386
+  },
+  "PSA": {
+    "sector": "REIT",
+    "corr": -0.08400327652739835,
+    "n_pairs": 4388
+  },
+  "WELL": {
+    "sector": "REIT",
+    "corr": 0.0488828875563862,
+    "n_pairs": 4390
+  },
+  "DLR": {
+    "sector": "REIT",
+    "corr": -0.201589898430751,
+    "n_pairs": 4390
+  },
+  "VTR": {
+    "sector": "REIT",
+    "corr": 0.042351068359730105,
+    "n_pairs": 4390
+  },
+  "LMT": {
+    "sector": "Defense",
+    "corr": -0.054201496391245274,
+    "n_pairs": 4390
+  },
+  "NOC": {
+    "sector": "Defense",
+    "corr": -0.02144538952243464,
+    "n_pairs": 4390
+  },
+  "GD": {
+    "sector": "Defense",
+    "corr": -0.10770998308945846,
+    "n_pairs": 4390
+  },
+  "LHX": {
+    "sector": "Defense",
+    "corr": -0.09785930241077234,
+    "n_pairs": 4390
+  },
+  "TDY": {
+    "sector": "Defense",
+    "corr": -0.28400101641854003,
+    "n_pairs": 4337
+  },
+  "AMD": {
+    "sector": "Semis(ref)",
+    "corr": -0.5304510950335869,
+    "n_pairs": 4325
+  },
+  "NVDA": {
+    "sector": "Semis(ref)",
+    "corr": -0.5246150134194244,
+    "n_pairs": 4325
+  },
+  "QCOM": {
+    "sector": "Semis(ref)",
+    "corr": -0.4312249706666065,
+    "n_pairs": 4325
+  },
+  "MU": {
+    "sector": "Semis(ref)",
+    "corr": -0.5060023406542024,
+    "n_pairs": 4325
+  },
+  "ADI": {
+    "sector": "Semis(ref)",
+    "corr": -0.5244063669592592,
+    "n_pairs": 4325
+  },
+  "AVGO": {
+    "sector": "Semis(ref)",
+    "corr": -0.49474331639594915,
+    "n_pairs": 4325
+  }
+}

@@ -3,3 +3,5 @@ __pycache__/
 raw_bars.json
 raw_bars_wide.json
 vix_bars.json
+raw_bars_extra.json
+sector_etfs.json
