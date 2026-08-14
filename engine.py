@@ -2,6 +2,11 @@
 Stateful per-ticker evaluation loop: merges freshly-fetched bars into
 persisted history, evaluates the Ripster EMA Cloud strategy on any newly
 closed bars, and updates positions / trade log / realized P&L.
+
+Exit priority per bar (see strategy.py for the backtest history behind
+these): flat 3% stop first (worst case for the trader), then the ATR
+chandelier trailing exit (peak-since-entry minus 8xATR(14), ratcheted up
+only), then the cloud-bearish-cross exit. No hard take-profit cap.
 """
 
 import datetime
@@ -75,8 +80,19 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
     adx_full = indicators.compute_adx(merged_bars)
     rvol_full = indicators.compute_rvol(merged_bars)
     cloud_sep_full = indicators.compute_cloud_sep_pct(closes_full, clouds)
+    atr_full = indicators.compute_atr(merged_bars, period=strategy.ATR_PERIOD)
     ts_to_index = {b["ts"]: i for i, b in enumerate(merged_bars)}
     next_earnings_date = _parse_earnings_date(next_earnings_date_str)
+
+    # Positions opened before the chandelier-exit change won't have "peak"
+    # in their dict yet -- backfill it from real stored history (the true
+    # high-water mark since entry) rather than starting cold from whatever
+    # bar happens to be processed first after the upgrade.
+    position = tstate.get("position")
+    if position is not None and "peak" not in position:
+        highs_since_entry = [b["high"] for b in merged_bars if b["ts"] >= position["entry_ts"]]
+        position["peak"] = max(highs_since_entry, default=position["entry_price"])
+        position["chand_stop"] = None
 
     for bar in new_bars:
         idx = ts_to_index[bar["ts"]]
@@ -87,6 +103,7 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
         close = bar["close"]
         low = bar["low"]
         high = bar["high"]
+        atr_here = atr_full[idx]
         position = tstate.get("position")
 
         if position is not None:
@@ -95,11 +112,18 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
 
             if strategy.stop_triggered(low, entry_price):
                 exit_price, reason = strategy.stop_price(entry_price), "stop-loss"
-            elif strategy.take_profit_triggered(high, entry_price):
-                exit_price, reason = strategy.take_profit_price(entry_price), "take-profit"
-            elif (ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
-                  and strategy.bearish_exit_signal(close, ema5, ema12, ema34, ema50)):
-                exit_price, reason = close, "signal"
+            else:
+                position["peak"] = max(position.get("peak", entry_price), high)
+                if atr_here is not None:
+                    candidate = strategy.chandelier_candidate(position["peak"], atr_here)
+                    position["chand_stop"] = candidate if position.get("chand_stop") is None \
+                        else max(position["chand_stop"], candidate)
+                chand_stop = position.get("chand_stop")
+                if chand_stop is not None and low <= chand_stop:
+                    exit_price, reason = chand_stop, "chandelier-exit"
+                elif (ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
+                      and strategy.bearish_exit_signal(close, ema5, ema12, ema34, ema50)):
+                    exit_price, reason = close, "signal"
 
             if exit_price is not None:
                 pnl = (exit_price - entry_price) * position["shares"]
@@ -114,7 +138,7 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
 
         if tstate.get("position") is None:
             rsi, adx, rvol, cloud_sep = rsi_full[idx], adx_full[idx], rvol_full[idx], cloud_sep_full[idx]
-            if (ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
+            if (atr_here is not None and ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
                     and strategy.bullish_entry_signal(close, ema5, ema12, ema34, ema50)
                     and strategy.entry_filter_ok(rvol, rsi, adx, cloud_sep)):
                 bar_date = bar_et_date(bar["ts"])
@@ -125,12 +149,14 @@ def process_ticker(ticker, tstate, raw_bars, next_earnings_date_str, seed_mode, 
                         "entry_ts": bar["ts"],
                         "entry_time_et": bar_et_iso(bar["ts"]),
                         "shares": shares,
+                        "peak": close,
+                        "chand_stop": strategy.chandelier_candidate(close, atr_here),
                     }
                     events.append({
                         "ticker": ticker, "type": "entry", "reason": "signal",
                         "price": close, "ts": bar["ts"], "time_et": bar_et_iso(bar["ts"]),
                         "shares": shares,
-                        "rvol": rvol, "rsi": rsi, "adx": adx, "cloud_sep_pct": cloud_sep,
+                        "rvol": rvol, "rsi": rsi, "adx": adx, "cloud_sep_pct": cloud_sep, "atr": atr_here,
                     })
                     tstate["trade_log"].append(events[-1])
 

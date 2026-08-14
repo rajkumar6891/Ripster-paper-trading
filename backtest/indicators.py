@@ -87,6 +87,29 @@ def compute_adx(bars, period=14):
     return adx
 
 
+def compute_atr(bars, period=14):
+    """Wilder's ATR: average true range, smoothed the same way as compute_adx's
+    internal ATR (first value = simple mean of the first `period` true ranges,
+    then Wilder-smoothed). Used for volatility-normalized stop distance."""
+    n = len(bars)
+    atr = [None] * n
+    if n <= period:
+        return atr
+
+    tr = [0.0] * n
+    for i in range(1, n):
+        high, low, prev_close = bars[i]["high"], bars[i]["low"], bars[i - 1]["close"]
+        tr[i] = max(high - low, abs(high - prev_close), abs(low - prev_close))
+
+    val = sum(tr[1:period + 1]) / period
+    atr[period] = val
+    for i in range(period + 1, n):
+        val = (val * (period - 1) + tr[i]) / period
+        atr[i] = val
+
+    return atr
+
+
 def compute_rvol(bars, period=20):
     n = len(bars)
     rvol = [None] * n

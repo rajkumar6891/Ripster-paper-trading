@@ -10,6 +10,11 @@ All return lists aligned 1:1 with the input bars; entries without enough
 history are None.
 """
 
+import datetime
+from zoneinfo import ZoneInfo
+
+ET = ZoneInfo("America/New_York")
+
 
 def compute_rsi(closes, period=14):
     n = len(closes)
@@ -85,6 +90,29 @@ def compute_adx(bars, period=14):
     return adx
 
 
+def compute_atr(bars, period=14):
+    """Wilder's ATR: average true range, smoothed the same way as compute_adx's
+    internal ATR (first value = simple mean of the first `period` true ranges,
+    then Wilder-smoothed)."""
+    n = len(bars)
+    atr = [None] * n
+    if n <= period:
+        return atr
+
+    tr = [0.0] * n
+    for i in range(1, n):
+        high, low, prev_close = bars[i]["high"], bars[i]["low"], bars[i - 1]["close"]
+        tr[i] = max(high - low, abs(high - prev_close), abs(low - prev_close))
+
+    val = sum(tr[1:period + 1]) / period
+    atr[period] = val
+    for i in range(period + 1, n):
+        val = (val * (period - 1) + tr[i]) / period
+        atr[i] = val
+
+    return atr
+
+
 def compute_rvol(bars, period=20):
     n = len(bars)
     rvol = [None] * n
@@ -105,3 +133,12 @@ def compute_cloud_sep_pct(closes, clouds):
         fast_low, slow_high = min(e5, e12), max(e34, e50)
         sep[i] = (fast_low - slow_high) / closes[i]
     return sep
+
+
+def compute_minutes_since_open(bars):
+    out = []
+    for b in bars:
+        dt = datetime.datetime.fromtimestamp(b["ts"], tz=datetime.timezone.utc).astimezone(ET)
+        minutes = (dt.hour * 60 + dt.minute) - (9 * 60 + 30)
+        out.append(minutes)
+    return out

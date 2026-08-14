@@ -9,10 +9,10 @@ can compare variants: the always-on cloud bearish-cross exit, plus an
 optional risk exit (fixed stop or trailing stop) and an optional take-
 profit target.
 
-Intrabar ambiguity: when a bar's low would trigger a stop/trailing exit
-AND its high would trigger a take-profit in the same bar, we conservatively
-assume the stop hit first (worse case for the trader), then take-profit,
-then the close-based cloud exit last.
+Intrabar ambiguity: when a bar's low would trigger a stop/trailing/chandelier
+exit AND its high would trigger a take-profit in the same bar, we
+conservatively assume the downside exit hit first (worse case for the
+trader), then take-profit, then the close-based cloud exit last.
 """
 
 import strategy
@@ -20,11 +20,28 @@ import strategy
 NOTIONAL_PER_POSITION = 10_000.0
 
 
-def simulate(bars, risk_exit=None, risk_pct=None, take_profit_pct=None, entry_filter=None):
+def simulate(bars, risk_exit=None, risk_pct=None, take_profit_pct=None, entry_filter=None,
+             atr=None, atr_mult=None, chandelier_mult=None):
     """
     bars: chronological list of {ts, open, high, low, close, volume}.
-    risk_exit: None | "stop" | "trailing".
-    risk_pct: stop/trailing distance as a fraction (e.g. 0.05 for 5%).
+    risk_exit: None | "stop" | "trailing" | "atr_stop".
+    risk_pct: stop/trailing distance as a fraction (e.g. 0.05 for 5%), used
+    for risk_exit in ("stop", "trailing").
+    atr / atr_mult: for risk_exit == "atr_stop", atr is a list of ATR values
+    aligned 1:1 with bars (see indicators.compute_atr) and atr_mult is the
+    multiple of ATR-at-entry used as stop distance (stop = entry_price -
+    atr_mult * atr[entry_index]), fixed for the life of the trade -- not
+    trailing, matching the classic Turtle-style "entry - 2xATR" stop. A bar
+    can't open a position under this mode if ATR isn't available yet.
+    chandelier_mult: independent of risk_exit -- when set, adds an ATR
+    trailing exit on top of whatever risk_exit is doing: stop = (highest
+    high since entry) - chandelier_mult * ATR[i], recomputed every bar off
+    the *current* bar's ATR (so it reacts to changing volatility, unlike
+    the fixed-at-entry atr_stop) and ratcheted so it only ever moves up,
+    never down. Meant to replace a hard take_profit_pct cap -- pass
+    take_profit_pct=None when using this so winners aren't capped early.
+    Requires `atr` to be provided; a bar can't open a position if ATR isn't
+    available there yet.
     take_profit_pct: fraction above entry to take profit, or None.
     entry_filter: optional list of booleans aligned 1:1 with bars -- when
     given, a bar can only open a new position if entry_filter[i] is True in
@@ -60,6 +77,19 @@ def simulate(bars, risk_exit=None, risk_pct=None, take_profit_pct=None, entry_fi
                 trail_price = position["peak"] * (1 - risk_pct)
                 if low <= trail_price:
                     exit_price, reason = trail_price, "trailing"
+            elif risk_exit == "atr_stop":
+                stop_price = position["stop_price"]
+                if low <= stop_price:
+                    exit_price, reason = stop_price, "atr-stop"
+
+            if exit_price is None and chandelier_mult is not None:
+                position["peak"] = max(position["peak"], high)
+                if atr[i] is not None:
+                    candidate = position["peak"] - chandelier_mult * atr[i]
+                    position["chand_stop"] = candidate if position["chand_stop"] is None \
+                        else max(position["chand_stop"], candidate)
+                if position["chand_stop"] is not None and low <= position["chand_stop"]:
+                    exit_price, reason = position["chand_stop"], "chandelier"
 
             if exit_price is None and take_profit_pct is not None:
                 tp_price = entry_price * (1 + take_profit_pct)
@@ -74,18 +104,29 @@ def simulate(bars, risk_exit=None, risk_pct=None, take_profit_pct=None, entry_fi
             if exit_price is not None:
                 shares = NOTIONAL_PER_POSITION / entry_price
                 pnl = (exit_price - entry_price) * shares
-                trades.append({
+                trade = {
                     "entry_ts": position["entry_ts"], "entry_price": entry_price,
                     "exit_ts": bar["ts"], "exit_price": exit_price, "reason": reason,
                     "pnl": pnl, "return_pct": (exit_price / entry_price - 1),
-                })
+                }
+                if "entry_atr" in position:
+                    trade["entry_atr"] = position["entry_atr"]
+                    trade["stop_pct"] = 1 - position["stop_price"] / entry_price
+                trades.append(trade)
                 position = None
 
         if position is None and i < len(bars) - 1:  # don't open brand-new positions on the last bar
             filter_ok = entry_filter is None or bool(entry_filter[i])
-            if (filter_ok and ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
+            atr_needed = risk_exit == "atr_stop" or chandelier_mult is not None
+            atr_ok = not atr_needed or (atr is not None and atr[i] is not None)
+            if (filter_ok and atr_ok and ema5 is not None and ema12 is not None and ema34 is not None and ema50 is not None
                     and strategy.bullish_entry_signal(close, ema5, ema12, ema34, ema50)):
                 position = {"entry_ts": bar["ts"], "entry_price": close, "peak": close}
+                if risk_exit == "atr_stop":
+                    position["stop_price"] = close - atr_mult * atr[i]
+                    position["entry_atr"] = atr[i]
+                if chandelier_mult is not None:
+                    position["chand_stop"] = close - chandelier_mult * atr[i]
 
     if position is not None:
         last = bars[-1]

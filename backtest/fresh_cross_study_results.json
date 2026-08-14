@@ -1,0 +1,979 @@
+{
+  "fresh_cross": {
+    "summary": {
+      "trades": 31,
+      "win_rate": 0.41935483870967744,
+      "total_pnl": 2858.2524764945833,
+      "avg_pnl": 92.20169279014785,
+      "profit_factor": 2.1146006869226985
+    },
+    "per_ticker": {
+      "AAPL": {
+        "trades": 5,
+        "win_rate": 0.6,
+        "total_pnl": 711.1602974424828,
+        "avg_pnl": 142.23205948849656,
+        "profit_factor": 5.135850546189896
+      },
+      "MSFT": {
+        "trades": 5,
+        "win_rate": 0.4,
+        "total_pnl": 798.6133376441995,
+        "avg_pnl": 159.7226675288399,
+        "profit_factor": 3.681607420902851
+      },
+      "NVDA": {
+        "trades": 4,
+        "win_rate": 0.5,
+        "total_pnl": 676.3917256299108,
+        "avg_pnl": 169.0979314074777,
+        "profit_factor": 2.8573744646940282
+      },
+      "GOOGL": {
+        "trades": 3,
+        "win_rate": 0.6666666666666666,
+        "total_pnl": 277.625281134558,
+        "avg_pnl": 92.541760378186,
+        "profit_factor": 4.787528725128035
+      },
+      "AMZN": {
+        "trades": 5,
+        "win_rate": 0.0,
+        "total_pnl": -727.5745710680126,
+        "avg_pnl": -145.5149142136025,
+        "profit_factor": 0.0
+      },
+      "META": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 719.1451831926062,
+        "avg_pnl": 719.1451831926062,
+        "profit_factor": Infinity
+      },
+      "AVGO": {
+        "trades": 3,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": 263.8794691737662,
+        "avg_pnl": 87.95982305792207,
+        "profit_factor": 1.5543879740511626
+      },
+      "TSLA": {
+        "trades": 2,
+        "win_rate": 0.5,
+        "total_pnl": -236.63450676628577,
+        "avg_pnl": -118.31725338314288,
+        "profit_factor": 0.050332201063265594
+      },
+      "BRK.B": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -204.41247529507194,
+        "avg_pnl": -102.20623764753597,
+        "profit_factor": 0.0
+      },
+      "JPM": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 580.05873540643,
+        "avg_pnl": 580.05873540643,
+        "profit_factor": Infinity
+      }
+    },
+    "trades": [
+      {
+        "entry_ts": 1779306600,
+        "entry_price": 302.2650146484375,
+        "exit_ts": 1779822600,
+        "exit_price": 308.489990234375,
+        "reason": "cloud-exit",
+        "pnl": 205.94429670194316,
+        "return_pct": 0.020594429670194314
+      },
+      {
+        "entry_ts": 1780429800,
+        "entry_price": 315.19000244140625,
+        "exit_ts": 1780500600,
+        "exit_price": 311.45001220703125,
+        "reason": "cloud-exit",
+        "pnl": -118.65827613203764,
+        "return_pct": -0.011865827613203761
+      },
+      {
+        "entry_ts": 1782928800,
+        "entry_price": 294.6199951171875,
+        "exit_ts": 1783452600,
+        "exit_price": 311.8994140625,
+        "reason": "cloud-exit",
+        "pnl": 586.4985144147962,
+        "return_pct": 0.05864985144147972
+      },
+      {
+        "entry_ts": 1784145000,
+        "entry_price": 327.57000732421875,
+        "exit_ts": 1784308800,
+        "exit_price": 330.5400085449219,
+        "reason": "cloud-exit",
+        "pnl": 90.66767879525395,
+        "return_pct": 0.009066767879525317
+      },
+      {
+        "entry_ts": 1784922600,
+        "entry_price": 333.07000732421875,
+        "exit_ts": 1785418200,
+        "exit_price": 331.2950134277344,
+        "reason": "cloud-exit",
+        "pnl": -53.29191633747289,
+        "return_pct": -0.005329191633747343
+      },
+      {
+        "entry_ts": 1779996600,
+        "entry_price": 426.5050048828125,
+        "exit_ts": 1780408800,
+        "exit_price": 445.8550109863281,
+        "reason": "cloud-exit",
+        "pnl": 453.6876679520391,
+        "return_pct": 0.04536876679520385
+      },
+      {
+        "entry_ts": 1782501000,
+        "entry_price": 371.17999267578125,
+        "exit_ts": 1782752400,
+        "exit_price": 368.3599853515625,
+        "reason": "cloud-exit",
+        "pnl": -75.97411983037495,
+        "return_pct": -0.007597411983037539
+      },
+      {
+        "entry_ts": 1782932400,
+        "entry_price": 387.4649963378906,
+        "exit_ts": 1783346400,
+        "exit_price": 384.3450012207031,
+        "reason": "cloud-exit",
+        "pnl": -80.52327685535481,
+        "return_pct": -0.008052327685535432
+      },
+      {
+        "entry_ts": 1785259800,
+        "entry_price": 399.1099853515625,
+        "exit_ts": 1785268200,
+        "exit_price": 393.4700012207031,
+        "reason": "cloud-exit",
+        "pnl": -141.31403216813288,
+        "return_pct": -0.014131403216813276
+      },
+      {
+        "entry_ts": 1785504600,
+        "entry_price": 458.42999267578125,
+        "exit_ts": 1785939000,
+        "exit_price": 487.8949890136719,
+        "reason": "cloud-exit",
+        "pnl": 642.737098546023,
+        "return_pct": 0.06427370985460223
+      },
+      {
+        "entry_ts": 1780343400,
+        "entry_price": 224.4199981689453,
+        "exit_ts": 1780424400,
+        "exit_price": 222.97999572753906,
+        "reason": "cloud-exit",
+        "pnl": -64.16551346383149,
+        "return_pct": -0.0064165513463831925
+      },
+      {
+        "entry_ts": 1782849000,
+        "entry_price": 199.77000427246094,
+        "exit_ts": 1782912600,
+        "exit_price": 193.7769041442871,
+        "reason": "stop",
+        "pnl": -300.0000000000004,
+        "return_pct": -0.030000000000000027
+      },
+      {
+        "entry_ts": 1783690200,
+        "entry_price": 203.5749969482422,
+        "exit_ts": 1783957200,
+        "exit_price": 207.0850067138672,
+        "reason": "cloud-exit",
+        "pnl": 172.41851004509167,
+        "return_pct": 0.017241851004509146
+      },
+      {
+        "entry_ts": 1785525000,
+        "entry_price": 200.50360107421875,
+        "exit_ts": 1786031400,
+        "exit_price": 217.91009521484375,
+        "reason": "cloud-exit",
+        "pnl": 868.1387290486509,
+        "return_pct": 0.08681387290486509
+      },
+      {
+        "entry_ts": 1781207400,
+        "entry_price": 357.6600036621094,
+        "exit_ts": 1781704200,
+        "exit_price": 366.19500732421875,
+        "reason": "cloud-exit",
+        "pnl": 238.63455725322345,
+        "return_pct": 0.023863455725322336
+      },
+      {
+        "entry_ts": 1785331800,
+        "entry_price": 335.5400085449219,
+        "exit_ts": 1785420600,
+        "exit_price": 333.08050537109375,
+        "reason": "cloud-exit",
+        "pnl": -73.29984833980978,
+        "return_pct": -0.0073299848339809515
+      },
+      {
+        "entry_ts": 1785525000,
+        "entry_price": 355.3299865722656,
+        "exit_ts": 1785945600,
+        "exit_price": 359.32000732421875,
+        "reason": "cloud-exit",
+        "pnl": 112.29057222114437,
+        "return_pct": 0.011229057222114536
+      },
+      {
+        "entry_ts": 1779456600,
+        "entry_price": 268.9599914550781,
+        "exit_ts": 1779478200,
+        "exit_price": 267.1199951171875,
+        "reason": "cloud-exit",
+        "pnl": -68.41152574166193,
+        "return_pct": -0.006841152574166176
+      },
+      {
+        "entry_ts": 1780062000,
+        "entry_price": 274.135009765625,
+        "exit_ts": 1780075800,
+        "exit_price": 271.1099853515625,
+        "reason": "cloud-exit",
+        "pnl": -110.34797841577333,
+        "return_pct": -0.011034797841577348
+      },
+      {
+        "entry_ts": 1781552400,
+        "entry_price": 246.2449951171875,
+        "exit_ts": 1781703000,
+        "exit_price": 242.89999389648438,
+        "reason": "cloud-exit",
+        "pnl": -135.84037389719316,
+        "return_pct": -0.013584037389719361
+      },
+      {
+        "entry_ts": 1782759000,
+        "entry_price": 241.2050018310547,
+        "exit_ts": 1782843600,
+        "exit_price": 238.47999572753906,
+        "reason": "cloud-exit",
+        "pnl": -112.9746930133845,
+        "return_pct": -0.011297469301338459
+      },
+      {
+        "entry_ts": 1785784800,
+        "entry_price": 284.635009765625,
+        "exit_ts": 1785850200,
+        "exit_price": 276.09595947265626,
+        "reason": "stop",
+        "pnl": -299.9999999999996,
+        "return_pct": -0.029999999999999916
+      },
+      {
+        "entry_ts": 1783620000,
+        "entry_price": 612.6701049804688,
+        "exit_ts": 1783972200,
+        "exit_price": 656.72998046875,
+        "reason": "cloud-exit",
+        "pnl": 719.1451831926062,
+        "return_pct": 0.07191451831926066
+      },
+      {
+        "entry_ts": 1781551800,
+        "entry_price": 394.2650146484375,
+        "exit_ts": 1781619000,
+        "exit_price": 382.43706420898434,
+        "reason": "stop",
+        "pnl": -300.00000000000097,
+        "return_pct": -0.030000000000000138
+      },
+      {
+        "entry_ts": 1782848400,
+        "entry_price": 378.44500732421875,
+        "exit_ts": 1782913800,
+        "exit_price": 371.7850036621094,
+        "reason": "cloud-exit",
+        "pnl": -175.98339344462968,
+        "return_pct": -0.017598339344462977
+      },
+      {
+        "entry_ts": 1785786600,
+        "entry_price": 392.3699951171875,
+        "exit_ts": 1786379400,
+        "exit_price": 421.3999938964844,
+        "reason": "cloud-exit",
+        "pnl": 739.8628626183969,
+        "return_pct": 0.07398628626183967
+      },
+      {
+        "entry_ts": 1783626600,
+        "entry_price": 406.5400085449219,
+        "exit_ts": 1783949400,
+        "exit_price": 396.4100036621094,
+        "reason": "cloud-exit",
+        "pnl": -249.17608771322574,
+        "return_pct": -0.02491760877132254
+      },
+      {
+        "entry_ts": 1785850200,
+        "entry_price": 322.5354919433594,
+        "exit_ts": 1785942600,
+        "exit_price": 322.94000244140625,
+        "reason": "cloud-exit",
+        "pnl": 12.541580946939982,
+        "return_pct": 0.0012541580946940911
+      },
+      {
+        "entry_ts": 1785268200,
+        "entry_price": 512.4199829101562,
+        "exit_ts": 1785353400,
+        "exit_price": 507.3900146484375,
+        "reason": "cloud-exit",
+        "pnl": -98.1610481533595,
+        "return_pct": -0.009816104815335902
+      },
+      {
+        "entry_ts": 1786045800,
+        "entry_price": 524.969970703125,
+        "exit_ts": 1786116000,
+        "exit_price": 519.39208984375,
+        "reason": "cloud-exit",
+        "pnl": -106.25142714171244,
+        "return_pct": -0.010625142714171254
+      },
+      {
+        "entry_ts": 1781206200,
+        "entry_price": 314.364990234375,
+        "exit_ts": 1781792400,
+        "exit_price": 332.6000061035156,
+        "reason": "cloud-exit",
+        "pnl": 580.05873540643,
+        "return_pct": 0.058005873540643016
+      }
+    ],
+    "total_crosses": 1468
+  },
+  "within_30min": {
+    "summary": {
+      "trades": 50,
+      "win_rate": 0.44,
+      "total_pnl": 4447.210303059921,
+      "avg_pnl": 88.94420606119841,
+      "profit_factor": 2.0584452526157704
+    },
+    "per_ticker": {
+      "AAPL": {
+        "trades": 6,
+        "win_rate": 0.5,
+        "total_pnl": 616.9999154851505,
+        "avg_pnl": 102.83331924752508,
+        "profit_factor": 3.318584734237127
+      },
+      "MSFT": {
+        "trades": 6,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": 697.2749498144502,
+        "avg_pnl": 116.2124916357417,
+        "profit_factor": 2.746900338343757
+      },
+      "NVDA": {
+        "trades": 6,
+        "win_rate": 0.5,
+        "total_pnl": 823.6873536575702,
+        "avg_pnl": 137.28122560959503,
+        "profit_factor": 2.576855842864907
+      },
+      "GOOGL": {
+        "trades": 6,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -381.62937865517137,
+        "avg_pnl": -63.60489644252856,
+        "profit_factor": 0.4790430276245232
+      },
+      "AMZN": {
+        "trades": 6,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": 920.4560359841449,
+        "avg_pnl": 153.4093393306908,
+        "profit_factor": 2.3964011522041995
+      },
+      "META": {
+        "trades": 3,
+        "win_rate": 1.0,
+        "total_pnl": 818.8929516410877,
+        "avg_pnl": 272.9643172136959,
+        "profit_factor": Infinity
+      },
+      "AVGO": {
+        "trades": 5,
+        "win_rate": 0.4,
+        "total_pnl": 216.18662883143077,
+        "avg_pnl": 43.237325766286155,
+        "profit_factor": 1.399917161140563
+      },
+      "TSLA": {
+        "trades": 6,
+        "win_rate": 0.5,
+        "total_pnl": 476.6116695086417,
+        "avg_pnl": 79.43527825144028,
+        "profit_factor": 1.7487781183810347
+      },
+      "BRK.B": {
+        "trades": 3,
+        "win_rate": 0.0,
+        "total_pnl": -321.69765256344374,
+        "avg_pnl": -107.23255085448125,
+        "profit_factor": 0.0
+      },
+      "JPM": {
+        "trades": 3,
+        "win_rate": 0.6666666666666666,
+        "total_pnl": 580.4278293560602,
+        "avg_pnl": 193.47594311868673,
+        "profit_factor": 5.699432082485895
+      }
+    },
+    "trades": [
+      {
+        "entry_ts": 1779306600,
+        "entry_price": 302.2650146484375,
+        "exit_ts": 1779822600,
+        "exit_price": 308.489990234375,
+        "reason": "cloud-exit",
+        "pnl": 205.94429670194316,
+        "return_pct": 0.020594429670194314
+      },
+      {
+        "entry_ts": 1779894000,
+        "entry_price": 312.7650146484375,
+        "exit_ts": 1779909600,
+        "exit_price": 309.82000732421875,
+        "reason": "cloud-exit",
+        "pnl": -94.16038195733228,
+        "return_pct": -0.009416038195733223
+      },
+      {
+        "entry_ts": 1780429800,
+        "entry_price": 315.19000244140625,
+        "exit_ts": 1780500600,
+        "exit_price": 311.45001220703125,
+        "reason": "cloud-exit",
+        "pnl": -118.65827613203764,
+        "return_pct": -0.011865827613203761
+      },
+      {
+        "entry_ts": 1782928800,
+        "entry_price": 294.6199951171875,
+        "exit_ts": 1783452600,
+        "exit_price": 311.8994140625,
+        "reason": "cloud-exit",
+        "pnl": 586.4985144147962,
+        "return_pct": 0.05864985144147972
+      },
+      {
+        "entry_ts": 1784145000,
+        "entry_price": 327.57000732421875,
+        "exit_ts": 1784308800,
+        "exit_price": 330.5400085449219,
+        "reason": "cloud-exit",
+        "pnl": 90.66767879525395,
+        "return_pct": 0.009066767879525317
+      },
+      {
+        "entry_ts": 1784922600,
+        "entry_price": 333.07000732421875,
+        "exit_ts": 1785418200,
+        "exit_price": 331.2950134277344,
+        "reason": "cloud-exit",
+        "pnl": -53.29191633747289,
+        "return_pct": -0.005329191633747343
+      },
+      {
+        "entry_ts": 1779996600,
+        "entry_price": 426.5050048828125,
+        "exit_ts": 1780408800,
+        "exit_price": 445.8550109863281,
+        "reason": "cloud-exit",
+        "pnl": 453.6876679520391,
+        "return_pct": 0.04536876679520385
+      },
+      {
+        "entry_ts": 1782501000,
+        "entry_price": 371.17999267578125,
+        "exit_ts": 1782752400,
+        "exit_price": 368.3599853515625,
+        "reason": "cloud-exit",
+        "pnl": -75.97411983037495,
+        "return_pct": -0.007597411983037539
+      },
+      {
+        "entry_ts": 1782932400,
+        "entry_price": 387.4649963378906,
+        "exit_ts": 1783346400,
+        "exit_price": 384.3450012207031,
+        "reason": "cloud-exit",
+        "pnl": -80.52327685535481,
+        "return_pct": -0.008052327685535432
+      },
+      {
+        "entry_ts": 1783950600,
+        "entry_price": 387.31500244140625,
+        "exit_ts": 1784036400,
+        "exit_price": 383.3900146484375,
+        "reason": "cloud-exit",
+        "pnl": -101.33838782974924,
+        "return_pct": -0.010133838782974913
+      },
+      {
+        "entry_ts": 1785259800,
+        "entry_price": 399.1099853515625,
+        "exit_ts": 1785268200,
+        "exit_price": 393.4700012207031,
+        "reason": "cloud-exit",
+        "pnl": -141.31403216813288,
+        "return_pct": -0.014131403216813276
+      },
+      {
+        "entry_ts": 1785504600,
+        "entry_price": 458.42999267578125,
+        "exit_ts": 1785939000,
+        "exit_price": 487.8949890136719,
+        "reason": "cloud-exit",
+        "pnl": 642.737098546023,
+        "return_pct": 0.06427370985460223
+      },
+      {
+        "entry_ts": 1780063200,
+        "entry_price": 216.14500427246094,
+        "exit_ts": 1780424400,
+        "exit_price": 222.97999572753906,
+        "reason": "cloud-exit",
+        "pnl": 316.2225043361306,
+        "return_pct": 0.031622250433613
+      },
+      {
+        "entry_ts": 1781553000,
+        "entry_price": 212.4600067138672,
+        "exit_ts": 1781621400,
+        "exit_price": 209.33030700683594,
+        "reason": "cloud-exit",
+        "pnl": -147.3077100692276,
+        "return_pct": -0.014730771006922772
+      },
+      {
+        "entry_ts": 1782846600,
+        "entry_price": 199.0749969482422,
+        "exit_ts": 1782914400,
+        "exit_price": 195.77999877929688,
+        "reason": "cloud-exit",
+        "pnl": -165.51541978935626,
+        "return_pct": -0.016551541978935602
+      },
+      {
+        "entry_ts": 1783624800,
+        "entry_price": 203.7899932861328,
+        "exit_ts": 1783957200,
+        "exit_price": 207.0850067138672,
+        "reason": "cloud-exit",
+        "pnl": 161.68671359186845,
+        "return_pct": 0.01616867135918687
+      },
+      {
+        "entry_ts": 1784058600,
+        "entry_price": 211.8000030517578,
+        "exit_ts": 1784131200,
+        "exit_price": 207.36199951171875,
+        "reason": "cloud-exit",
+        "pnl": -209.53746346049593,
+        "return_pct": -0.02095374634604963
+      },
+      {
+        "entry_ts": 1785525000,
+        "entry_price": 200.50360107421875,
+        "exit_ts": 1786031400,
+        "exit_price": 217.91009521484375,
+        "reason": "cloud-exit",
+        "pnl": 868.1387290486509,
+        "return_pct": 0.08681387290486509
+      },
+      {
+        "entry_ts": 1780602600,
+        "entry_price": 372.3299865722656,
+        "exit_ts": 1780677600,
+        "exit_price": 367.9700012207031,
+        "reason": "cloud-exit",
+        "pnl": -117.1000324658586,
+        "return_pct": -0.011710003246585887
+      },
+      {
+        "entry_ts": 1781207400,
+        "entry_price": 357.6600036621094,
+        "exit_ts": 1781704200,
+        "exit_price": 366.19500732421875,
+        "reason": "cloud-exit",
+        "pnl": 238.63455725322345,
+        "return_pct": 0.023863455725322336
+      },
+      {
+        "entry_ts": 1781811600,
+        "entry_price": 369.2799987792969,
+        "exit_ts": 1782135000,
+        "exit_price": 358.201598815918,
+        "reason": "stop",
+        "pnl": -299.99999999999983,
+        "return_pct": -0.030000000000000027
+      },
+      {
+        "entry_ts": 1784138400,
+        "entry_price": 371.864990234375,
+        "exit_ts": 1784225400,
+        "exit_price": 362.860107421875,
+        "reason": "cloud-exit",
+        "pnl": -242.15462732387098,
+        "return_pct": -0.02421546273238706
+      },
+      {
+        "entry_ts": 1785331800,
+        "entry_price": 335.5400085449219,
+        "exit_ts": 1785420600,
+        "exit_price": 333.08050537109375,
+        "reason": "cloud-exit",
+        "pnl": -73.29984833980978,
+        "return_pct": -0.0073299848339809515
+      },
+      {
+        "entry_ts": 1785525000,
+        "entry_price": 355.3299865722656,
+        "exit_ts": 1785945600,
+        "exit_price": 359.32000732421875,
+        "reason": "cloud-exit",
+        "pnl": 112.29057222114437,
+        "return_pct": 0.011229057222114536
+      },
+      {
+        "entry_ts": 1779306600,
+        "entry_price": 265.010009765625,
+        "exit_ts": 1779478200,
+        "exit_price": 267.1199951171875,
+        "reason": "cloud-exit",
+        "pnl": 79.61908131049736,
+        "return_pct": 0.0079619081310498
+      },
+      {
+        "entry_ts": 1780062000,
+        "entry_price": 274.135009765625,
+        "exit_ts": 1780075800,
+        "exit_price": 271.1099853515625,
+        "reason": "cloud-exit",
+        "pnl": -110.34797841577333,
+        "return_pct": -0.011034797841577348
+      },
+      {
+        "entry_ts": 1781552400,
+        "entry_price": 246.2449951171875,
+        "exit_ts": 1781703000,
+        "exit_price": 242.89999389648438,
+        "reason": "cloud-exit",
+        "pnl": -135.84037389719316,
+        "return_pct": -0.013584037389719361
+      },
+      {
+        "entry_ts": 1782759000,
+        "entry_price": 241.2050018310547,
+        "exit_ts": 1782843600,
+        "exit_price": 238.47999572753906,
+        "reason": "cloud-exit",
+        "pnl": -112.9746930133845,
+        "return_pct": -0.011297469301338459
+      },
+      {
+        "entry_ts": 1785438000,
+        "entry_price": 238.10000610351562,
+        "exit_ts": 1785763800,
+        "exit_price": 273.8150070190429,
+        "reason": "take-profit",
+        "pnl": 1499.9999999999982,
+        "return_pct": 0.1499999999999999
+      },
+      {
+        "entry_ts": 1785784800,
+        "entry_price": 284.635009765625,
+        "exit_ts": 1785850200,
+        "exit_price": 276.09595947265626,
+        "reason": "stop",
+        "pnl": -299.9999999999996,
+        "return_pct": -0.029999999999999916
+      },
+      {
+        "entry_ts": 1780509000,
+        "entry_price": 622.5300903320312,
+        "exit_ts": 1780600800,
+        "exit_price": 624.4650268554688,
+        "reason": "cloud-exit",
+        "pnl": 31.081815216441772,
+        "return_pct": 0.003108181521644271
+      },
+      {
+        "entry_ts": 1783361400,
+        "entry_price": 597.0900268554688,
+        "exit_ts": 1783521000,
+        "exit_price": 601.1900024414062,
+        "reason": "cloud-exit",
+        "pnl": 68.66595323203978,
+        "return_pct": 0.0068665953232038834
+      },
+      {
+        "entry_ts": 1783620000,
+        "entry_price": 612.6701049804688,
+        "exit_ts": 1783972200,
+        "exit_price": 656.72998046875,
+        "reason": "cloud-exit",
+        "pnl": 719.1451831926062,
+        "return_pct": 0.07191451831926066
+      },
+      {
+        "entry_ts": 1781551800,
+        "entry_price": 394.2650146484375,
+        "exit_ts": 1781619000,
+        "exit_price": 382.43706420898434,
+        "reason": "stop",
+        "pnl": -300.00000000000097,
+        "return_pct": -0.030000000000000138
+      },
+      {
+        "entry_ts": 1781721600,
+        "entry_price": 399.364990234375,
+        "exit_ts": 1782137400,
+        "exit_price": 400.0400085449219,
+        "reason": "cloud-exit",
+        "pnl": 16.90229056259357,
+        "return_pct": 0.0016902290562592626
+      },
+      {
+        "entry_ts": 1782848400,
+        "entry_price": 378.44500732421875,
+        "exit_ts": 1782913800,
+        "exit_price": 371.7850036621094,
+        "reason": "cloud-exit",
+        "pnl": -175.98339344462968,
+        "return_pct": -0.017598339344462977
+      },
+      {
+        "entry_ts": 1783538400,
+        "entry_price": 392.44500732421875,
+        "exit_ts": 1783949400,
+        "exit_price": 389.9100036621094,
+        "reason": "cloud-exit",
+        "pnl": -64.59513090492905,
+        "return_pct": -0.006459513090492863
+      },
+      {
+        "entry_ts": 1785786600,
+        "entry_price": 392.3699951171875,
+        "exit_ts": 1786379400,
+        "exit_price": 421.3999938964844,
+        "reason": "cloud-exit",
+        "pnl": 739.8628626183969,
+        "return_pct": 0.07398628626183967
+      },
+      {
+        "entry_ts": 1779285000,
+        "entry_price": 409.79998779296875,
+        "exit_ts": 1780062600,
+        "exit_price": 436.81500244140625,
+        "reason": "cloud-exit",
+        "pnl": 659.2243888031911,
+        "return_pct": 0.06592243888031901
+      },
+      {
+        "entry_ts": 1781293800,
+        "entry_price": 406.44500732421875,
+        "exit_ts": 1781620200,
+        "exit_price": 402.8949890136719,
+        "reason": "cloud-exit",
+        "pnl": -87.3431398239577,
+        "return_pct": -0.00873431398239577
+      },
+      {
+        "entry_ts": 1783367400,
+        "entry_price": 419.7699890136719,
+        "exit_ts": 1783434000,
+        "exit_price": 407.17688934326173,
+        "reason": "stop",
+        "pnl": -299.9999999999996,
+        "return_pct": -0.029999999999999916
+      },
+      {
+        "entry_ts": 1783626600,
+        "entry_price": 406.5400085449219,
+        "exit_ts": 1783949400,
+        "exit_price": 396.4100036621094,
+        "reason": "cloud-exit",
+        "pnl": -249.17608771322574,
+        "return_pct": -0.02491760877132254
+      },
+      {
+        "entry_ts": 1785764400,
+        "entry_price": 316.7698059082031,
+        "exit_ts": 1785942600,
+        "exit_price": 322.94000244140625,
+        "reason": "cloud-exit",
+        "pnl": 194.78486958416704,
+        "return_pct": 0.019478486958416807
+      },
+      {
+        "entry_ts": 1786111200,
+        "entry_price": 324.364990234375,
+        "exit_ts": 1786477800,
+        "exit_price": 332.7699890136719,
+        "reason": "end-of-data",
+        "pnl": 259.12163865846657,
+        "return_pct": 0.025912163865846605
+      },
+      {
+        "entry_ts": 1785268200,
+        "entry_price": 512.4199829101562,
+        "exit_ts": 1785353400,
+        "exit_price": 507.3900146484375,
+        "reason": "cloud-exit",
+        "pnl": -98.1610481533595,
+        "return_pct": -0.009816104815335902
+      },
+      {
+        "entry_ts": 1785765000,
+        "entry_price": 517.5399780273438,
+        "exit_ts": 1785777600,
+        "exit_price": 511.4700012207031,
+        "reason": "cloud-exit",
+        "pnl": -117.28517726837178,
+        "return_pct": -0.01172851772683714
+      },
+      {
+        "entry_ts": 1786045800,
+        "entry_price": 524.969970703125,
+        "exit_ts": 1786116000,
+        "exit_price": 519.39208984375,
+        "reason": "cloud-exit",
+        "pnl": -106.25142714171244,
+        "return_pct": -0.010625142714171254
+      },
+      {
+        "entry_ts": 1779303600,
+        "entry_price": 302.30999755859375,
+        "exit_ts": 1779818400,
+        "exit_price": 306.05499267578125,
+        "reason": "cloud-exit",
+        "pnl": 123.87930096362905,
+        "return_pct": 0.012387930096362965
+      },
+      {
+        "entry_ts": 1780429200,
+        "entry_price": 301.5950012207031,
+        "exit_ts": 1780496400,
+        "exit_price": 297.8699951171875,
+        "reason": "cloud-exit",
+        "pnl": -123.51020701399875,
+        "return_pct": -0.012351020701399928
+      },
+      {
+        "entry_ts": 1781206200,
+        "entry_price": 314.364990234375,
+        "exit_ts": 1781792400,
+        "exit_price": 332.6000061035156,
+        "reason": "cloud-exit",
+        "pnl": 580.05873540643,
+        "return_pct": 0.058005873540643016
+      }
+    ]
+  },
+  "any_time_filter": {
+    "summary": {
+      "trades": 59,
+      "win_rate": 0.423728813559322,
+      "total_pnl": 5322.31627529724,
+      "avg_pnl": 90.20875042876679,
+      "profit_factor": 2.002565436556431
+    },
+    "per_ticker": {
+      "AAPL": {
+        "trades": 6,
+        "win_rate": 0.5,
+        "total_pnl": 616.9999154851505,
+        "avg_pnl": 102.83331924752508,
+        "profit_factor": 3.318584734237127
+      },
+      "MSFT": {
+        "trades": 7,
+        "win_rate": 0.5714285714285714,
+        "total_pnl": 2365.0907418972765,
+        "avg_pnl": 337.8701059853252,
+        "profit_factor": 10.172856848950266
+      },
+      "NVDA": {
+        "trades": 7,
+        "win_rate": 0.42857142857142855,
+        "total_pnl": 633.9012657392249,
+        "avg_pnl": 90.55732367703213,
+        "profit_factor": 1.8933794468079217
+      },
+      "GOOGL": {
+        "trades": 6,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -381.62937865517137,
+        "avg_pnl": -63.60489644252856,
+        "profit_factor": 0.4790430276245232
+      },
+      "AMZN": {
+        "trades": 7,
+        "win_rate": 0.2857142857142857,
+        "total_pnl": 702.9476229879847,
+        "avg_pnl": 100.42108899828352,
+        "profit_factor": 1.8018370123889487
+      },
+      "META": {
+        "trades": 4,
+        "win_rate": 1.0,
+        "total_pnl": 1261.3007704584732,
+        "avg_pnl": 315.3251926146183,
+        "profit_factor": Infinity
+      },
+      "AVGO": {
+        "trades": 7,
+        "win_rate": 0.2857142857142857,
+        "total_pnl": -258.8687711170468,
+        "avg_pnl": -36.98125301672097,
+        "profit_factor": 0.7451160650271053
+      },
+      "TSLA": {
+        "trades": 8,
+        "win_rate": 0.375,
+        "total_pnl": 120.19786916478577,
+        "avg_pnl": 15.024733645598221,
+        "profit_factor": 1.1210533498128197
+      },
+      "BRK.B": {
+        "trades": 3,
+        "win_rate": 0.0,
+        "total_pnl": -321.69765256344374,
+        "avg_pnl": -107.23255085448125,
+        "profit_factor": 0.0
+      },
+      "JPM": {
+        "trades": 4,
+        "win_rate": 0.5,
+        "total_pnl": 584.0738919000067,
+        "avg_pnl": 146.01847297500169,
+        "profit_factor": 5.303969024463801
+      }
+    }
+  }
+}

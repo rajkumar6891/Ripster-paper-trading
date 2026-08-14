@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 raw_bars.json
+raw_bars_wide.json
+vix_bars.json

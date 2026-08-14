@@ -13,23 +13,46 @@ RVOL + RSI + ADX + cloud-separation filter on top cut trade count ~74%
 while lifting win rate 36%->42% and profit factor 1.57->2.00 (at the cost
 of lower *total* P&L per unit time, since far fewer trades are taken at
 the same fixed position size -- see the study report for the full tradeoff).
+
+Take-profit was tightened from 15%->10% after run_fresh_cross_study.py /
+run_pure_cloud_exit_study.py follow-up testing, then the hard cap was
+dropped entirely in favor of an ATR/chandelier trailing exit (stop = peak
+price since entry, minus CHANDELIER_MULT x ATR(14), ratcheted to only ever
+move up -- see backtest/run_chandelier_study.py and
+run_chandelier_study_wide.py) after research into professional/CTA
+practice (backtest/research_notes.md) flagged hard profit caps as
+nonstandard versus trailing exits. A naive fixed-at-entry ATR *stop* was
+tested and rejected (backtest/run_atr_stop_study.py) -- ATR(14) on 10-min
+bars is too tight to use as the initial stop distance, so STOP_LOSS_PCT
+stays a flat percentage; ATR is only used for the trailing exit once a
+trade is already open. CHANDELIER_MULT=8 was chosen because it's the best
+or near-best value on two independent backtests (10 mega-cap/tech tickers,
+then a 41-ticker sector-diverse set) -- see research_notes.md for the full
+multiplier sweep.
+
+CLOUD_SEP_MIN was raised 0.3%->0.5% after run_tighter_filter_study.py
+showed it's the one entry-filter tightening that improves win rate *and*
+profit factor together (not just a fewer-trades-for-quality tradeoff) --
+raising ADX_MIN instead made both worse, so that was left unchanged.
 """
 
 STOP_LOSS_PCT = 0.03
-TAKE_PROFIT_PCT = 0.15
 EARNINGS_AVOID_DAYS = 2
+
+ATR_PERIOD = 14
+CHANDELIER_MULT = 8.0
 
 FAST_PERIODS = (5, 12)
 SLOW_PERIODS = (34, 50)
 
 # Entry-quality filter thresholds (backtest-validated best "fewer, higher-
 # conviction trades" combination: RVOL>=1.5x | RSI 50-70 | ADX>=25 | cloud
-# separation >=0.3% of price).
+# separation >=0.5% of price).
 RVOL_MIN = 1.5
 RSI_MIN = 50
 RSI_MAX = 70
 ADX_MIN = 25
-CLOUD_SEP_MIN = 0.003
+CLOUD_SEP_MIN = 0.005
 
 
 def compute_ema(closes, period):
@@ -77,15 +100,12 @@ def stop_triggered(bar_low, entry_price):
     return bar_low <= stop_price(entry_price)
 
 
-def take_profit_price(entry_price):
-    """Resting take-profit level: 15% above entry."""
-    return entry_price * (1 + TAKE_PROFIT_PCT)
-
-
-def take_profit_triggered(bar_high, entry_price):
-    """Intrabar take-profit check, using the bar's high like a resting
-    limit order."""
-    return bar_high >= take_profit_price(entry_price)
+def chandelier_candidate(peak, atr_value):
+    """One bar's candidate trailing-stop level: peak price since entry,
+    minus CHANDELIER_MULT x current ATR. Callers ratchet this against the
+    previous stop level themselves (max(), never move down) since that's
+    stateful across bars -- see engine.py."""
+    return peak - CHANDELIER_MULT * atr_value
 
 
 def entry_filter_ok(rvol, rsi, adx, cloud_sep_pct):

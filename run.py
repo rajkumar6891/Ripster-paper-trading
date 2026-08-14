@@ -6,10 +6,10 @@ Each invocation:
   1. Loads persisted state (or starts fresh/"seed" on the very first run).
   2. Refreshes the earnings-date cache if it's stale.
   3. Fetches latest 5-minute bars per ticker from Yahoo Finance, aggregates
-     to 10-minute candles, evaluates the strategy (with the RVOL/RSI/ADX/
-     cloud-separation entry filter and stop-3%/+15%TP exit -- see
-     strategy.py) against any newly-closed candles, updates
-     positions/trade log/P&L.
+     to 10-minute candles, evaluates the strategy (RVOL/RSI/ADX/cloud-
+     separation entry filter; stop-3% + ATR-chandelier trailing exit, no
+     hard take-profit cap -- see strategy.py) against any newly-closed
+     candles, updates positions/trade log/P&L.
   4. Saves state, appends the report to run_log.txt, prints it, and emails
      it (only when something actually happened -- see should_email below).
 
