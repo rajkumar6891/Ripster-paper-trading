@@ -1,0 +1,643 @@
+{
+  "overlap_window": {
+    "start_utc": 1785312000.0,
+    "end_utc": 1786631400,
+    "days": 15.270833333333334
+  },
+  "tickers_with_alerts": [
+    "AAPL",
+    "MSFT",
+    "NVDA",
+    "GOOGL",
+    "AMZN",
+    "META",
+    "AVGO",
+    "TSLA",
+    "BRK.B",
+    "JPM",
+    "LLY",
+    "UNH",
+    "JNJ",
+    "ABBV",
+    "MRK",
+    "V",
+    "MA",
+    "GS",
+    "MS",
+    "BAC",
+    "HD",
+    "MCD",
+    "COST",
+    "PG",
+    "CAT",
+    "RTX",
+    "HON",
+    "BA",
+    "GE",
+    "XOM",
+    "CVX",
+    "COP",
+    "AMD",
+    "QCOM",
+    "MU",
+    "ADI",
+    "ADBE",
+    "PANW"
+  ],
+  "ungated": {
+    "summary": {
+      "trades": 34,
+      "win_rate": 0.4411764705882353,
+      "total_pnl": 6763.7680144830965,
+      "avg_pnl": 198.9343533671499,
+      "profit_factor": 3.7907288000252883
+    },
+    "per_ticker": {
+      "AAPL": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MSFT": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 2248.956184637639,
+        "avg_pnl": 2248.956184637639,
+        "profit_factor": Infinity
+      },
+      "NVDA": {
+        "trades": 2,
+        "win_rate": 1.0,
+        "total_pnl": 896.9297390903984,
+        "avg_pnl": 448.4648695451992,
+        "profit_factor": Infinity
+      },
+      "GOOGL": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "AMZN": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 1769.2021526674441,
+        "avg_pnl": 1769.2021526674441,
+        "profit_factor": Infinity
+      },
+      "META": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 442.4078188173855,
+        "avg_pnl": 442.4078188173855,
+        "profit_factor": Infinity
+      },
+      "AVGO": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 609.5147330756624,
+        "avg_pnl": 609.5147330756624,
+        "profit_factor": Infinity
+      },
+      "TSLA": {
+        "trades": 2,
+        "win_rate": 1.0,
+        "total_pnl": 266.11859072956935,
+        "avg_pnl": 133.05929536478467,
+        "profit_factor": Infinity
+      },
+      "BRK.B": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "JPM": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "LLY": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -110.08022451786817,
+        "avg_pnl": -110.08022451786817,
+        "profit_factor": 0.0
+      },
+      "UNH": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "JNJ": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "ABBV": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MRK": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -52.056029178008835,
+        "avg_pnl": -52.056029178008835,
+        "profit_factor": 0.0
+      },
+      "V": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MA": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -188.65584326552715,
+        "avg_pnl": -188.65584326552715,
+        "profit_factor": 0.0
+      },
+      "GS": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -126.60103072805735,
+        "avg_pnl": -126.60103072805735,
+        "profit_factor": 0.0
+      },
+      "MS": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -114.11467889750685,
+        "avg_pnl": -57.057339448753424,
+        "profit_factor": 0.0
+      },
+      "BAC": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "HD": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 287.32501360742987,
+        "avg_pnl": 287.32501360742987,
+        "profit_factor": Infinity
+      },
+      "MCD": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -153.6829769567211,
+        "avg_pnl": -153.6829769567211,
+        "profit_factor": 0.0
+      },
+      "COST": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "WMT": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "PG": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "CAT": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -228.17197125065957,
+        "avg_pnl": -114.08598562532978,
+        "profit_factor": 0.0
+      },
+      "RTX": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -19.823841601354644,
+        "avg_pnl": -19.823841601354644,
+        "profit_factor": 0.0
+      },
+      "HON": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -120.62499357521737,
+        "avg_pnl": -120.62499357521737,
+        "profit_factor": 0.0
+      },
+      "BA": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "GE": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 471.09030264557254,
+        "avg_pnl": 471.09030264557254,
+        "profit_factor": Infinity
+      },
+      "XOM": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -20.176578237365312,
+        "avg_pnl": -20.176578237365312,
+        "profit_factor": 0.0
+      },
+      "CVX": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "COP": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -230.18430727142982,
+        "avg_pnl": -115.09215363571491,
+        "profit_factor": 0.0
+      },
+      "AMD": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 499.1352538694297,
+        "avg_pnl": 499.1352538694297,
+        "profit_factor": Infinity
+      },
+      "QCOM": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -68.4328872768467,
+        "avg_pnl": -68.4328872768467,
+        "profit_factor": 0.0
+      },
+      "MU": {
+        "trades": 2,
+        "win_rate": 0.5,
+        "total_pnl": -130.9078386028416,
+        "avg_pnl": -65.4539193014208,
+        "profit_factor": 0.5636405379905276
+      },
+      "ADI": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "CRM": {
+        "trades": 3,
+        "win_rate": 0.3333333333333333,
+        "total_pnl": -458.93649939445663,
+        "avg_pnl": -152.97883313148554,
+        "profit_factor": 0.2351058343425731
+      },
+      "NOW": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 112.3055626551012,
+        "avg_pnl": 112.3055626551012,
+        "profit_factor": Infinity
+      },
+      "ADBE": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "PANW": {
+        "trades": 2,
+        "win_rate": 0.5,
+        "total_pnl": 1183.2323634413253,
+        "avg_pnl": 591.6161817206627,
+        "profit_factor": 13.99524984328576
+      }
+    }
+  },
+  "gated": {
+    "summary": {
+      "trades": 23,
+      "win_rate": 0.391304347826087,
+      "total_pnl": 3217.3597239867204,
+      "avg_pnl": 139.88520539072698,
+      "profit_factor": 3.054670042380576
+    },
+    "per_ticker": {
+      "AAPL": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MSFT": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "NVDA": {
+        "trades": 2,
+        "win_rate": 1.0,
+        "total_pnl": 403.48640997873343,
+        "avg_pnl": 201.74320498936672,
+        "profit_factor": Infinity
+      },
+      "GOOGL": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "AMZN": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 1704.4486655815988,
+        "avg_pnl": 1704.4486655815988,
+        "profit_factor": Infinity
+      },
+      "META": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "AVGO": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 609.5147330756624,
+        "avg_pnl": 609.5147330756624,
+        "profit_factor": Infinity
+      },
+      "TSLA": {
+        "trades": 2,
+        "win_rate": 1.0,
+        "total_pnl": 266.11859072956935,
+        "avg_pnl": 133.05929536478467,
+        "profit_factor": Infinity
+      },
+      "BRK.B": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "JPM": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "LLY": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -110.08022451786817,
+        "avg_pnl": -110.08022451786817,
+        "profit_factor": 0.0
+      },
+      "UNH": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "JNJ": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "ABBV": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MRK": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -52.056029178008835,
+        "avg_pnl": -52.056029178008835,
+        "profit_factor": 0.0
+      },
+      "V": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MA": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "GS": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MS": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -81.76098963213583,
+        "avg_pnl": -81.76098963213583,
+        "profit_factor": 0.0
+      },
+      "BAC": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "HD": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "MCD": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -153.6829769567211,
+        "avg_pnl": -153.6829769567211,
+        "profit_factor": 0.0
+      },
+      "COST": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "WMT": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "PG": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "CAT": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -228.17197125065957,
+        "avg_pnl": -114.08598562532978,
+        "profit_factor": 0.0
+      },
+      "RTX": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -19.823841601354644,
+        "avg_pnl": -19.823841601354644,
+        "profit_factor": 0.0
+      },
+      "HON": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -210.45564234707896,
+        "avg_pnl": -210.45564234707896,
+        "profit_factor": 0.0
+      },
+      "BA": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "GE": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 471.09030264557254,
+        "avg_pnl": 471.09030264557254,
+        "profit_factor": Infinity
+      },
+      "XOM": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -20.176578237365312,
+        "avg_pnl": -20.176578237365312,
+        "profit_factor": 0.0
+      },
+      "CVX": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "COP": {
+        "trades": 2,
+        "win_rate": 0.0,
+        "total_pnl": -230.18430727142982,
+        "avg_pnl": -115.09215363571491,
+        "profit_factor": 0.0
+      },
+      "AMD": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -300.00000000000045,
+        "avg_pnl": -300.00000000000045,
+        "profit_factor": 0.0
+      },
+      "QCOM": {
+        "trades": 1,
+        "win_rate": 0.0,
+        "total_pnl": -68.4328872768467,
+        "avg_pnl": -68.4328872768467,
+        "profit_factor": 0.0
+      },
+      "MU": {
+        "trades": 1,
+        "win_rate": 1.0,
+        "total_pnl": 169.09216139715812,
+        "avg_pnl": 169.09216139715812,
+        "profit_factor": Infinity
+      },
+      "ADI": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "CRM": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "NOW": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "ADBE": {
+        "trades": 0,
+        "win_rate": null,
+        "total_pnl": 0.0,
+        "avg_pnl": null,
+        "profit_factor": null
+      },
+      "PANW": {
+        "trades": 2,
+        "win_rate": 0.5,
+        "total_pnl": 1068.4343088478952,
+        "avg_pnl": 534.2171544239476,
+        "profit_factor": 12.734441360473534
+      }
+    }
+  }
+}

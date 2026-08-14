@@ -1,0 +1,611 @@
+{
+  "AAPL": [
+    {
+      "ts_utc": "2026-07-30T20:00:00Z",
+      "direction": "bearish",
+      "price": 318.2
+    },
+    {
+      "ts_utc": "2026-08-07T14:00:00Z",
+      "direction": "bullish",
+      "price": 314.33
+    },
+    {
+      "ts_utc": "2026-08-10T13:00:00Z",
+      "direction": "bearish",
+      "price": 306.94
+    }
+  ],
+  "ABBV": [
+    {
+      "ts_utc": "2026-07-30T20:00:00Z",
+      "direction": "bearish",
+      "price": 257.69
+    },
+    {
+      "ts_utc": "2026-08-11T12:00:00Z",
+      "direction": "bullish",
+      "price": 247.87
+    }
+  ],
+  "ADBE": [
+    {
+      "ts_utc": "2026-08-12T15:00:00Z",
+      "direction": "bearish",
+      "price": 255.84
+    },
+    {
+      "ts_utc": "2026-08-13T22:00:00Z",
+      "direction": "bullish",
+      "price": 268.46
+    }
+  ],
+  "ADI": [
+    {
+      "ts_utc": "2026-07-31T17:00:00Z",
+      "direction": "bullish",
+      "price": 368.36
+    },
+    {
+      "ts_utc": "2026-07-31T21:00:00Z",
+      "direction": "bearish",
+      "price": 366.0
+    },
+    {
+      "ts_utc": "2026-08-04T13:00:00Z",
+      "direction": "bullish",
+      "price": 373.27
+    },
+    {
+      "ts_utc": "2026-08-13T23:00:00Z",
+      "direction": "bearish",
+      "price": 383.97
+    }
+  ],
+  "AMD": [
+    {
+      "ts_utc": "2026-07-31T11:00:00Z",
+      "direction": "bullish",
+      "price": 507.0
+    },
+    {
+      "ts_utc": "2026-08-03T13:00:00Z",
+      "direction": "bearish",
+      "price": 470.66
+    },
+    {
+      "ts_utc": "2026-08-03T14:00:00Z",
+      "direction": "bullish",
+      "price": 486.3
+    },
+    {
+      "ts_utc": "2026-08-05T23:00:00Z",
+      "direction": "bearish",
+      "price": 481.26
+    },
+    {
+      "ts_utc": "2026-08-06T18:00:00Z",
+      "direction": "bullish",
+      "price": 492.75
+    },
+    {
+      "ts_utc": "2026-08-07T19:00:00Z",
+      "direction": "bearish",
+      "price": 483.47
+    },
+    {
+      "ts_utc": "2026-08-12T18:00:00Z",
+      "direction": "bullish",
+      "price": 485.62
+    }
+  ],
+  "AMZN": [
+    {
+      "ts_utc": "2026-07-30T18:00:00Z",
+      "direction": "bullish",
+      "price": 237.78
+    },
+    {
+      "ts_utc": "2026-08-11T23:00:00Z",
+      "direction": "bearish",
+      "price": 272.27
+    }
+  ],
+  "AVGO": [
+    {
+      "ts_utc": "2026-07-30T22:00:00Z",
+      "direction": "bullish",
+      "price": 389.71
+    },
+    {
+      "ts_utc": "2026-08-12T10:00:00Z",
+      "direction": "bearish",
+      "price": 419.77
+    },
+    {
+      "ts_utc": "2026-08-12T11:00:00Z",
+      "direction": "bullish",
+      "price": 421.26
+    },
+    {
+      "ts_utc": "2026-08-12T18:00:00Z",
+      "direction": "bearish",
+      "price": 416.74
+    }
+  ],
+  "BA": [
+    {
+      "ts_utc": "2026-08-11T10:00:00Z",
+      "direction": "bearish",
+      "price": 232.26
+    },
+    {
+      "ts_utc": "2026-08-11T11:00:00Z",
+      "direction": "bullish",
+      "price": 234.7
+    },
+    {
+      "ts_utc": "2026-08-12T13:00:00Z",
+      "direction": "bearish",
+      "price": 229.72
+    }
+  ],
+  "BAC": [
+    {
+      "ts_utc": "2026-07-29T21:00:00Z",
+      "direction": "bearish",
+      "price": 61.11
+    },
+    {
+      "ts_utc": "2026-07-31T22:00:00Z",
+      "direction": "bullish",
+      "price": 62.02
+    }
+  ],
+  "BRK.B": [
+    {
+      "ts_utc": "2026-08-12T08:00:00Z",
+      "direction": "bearish",
+      "price": 515.81
+    }
+  ],
+  "CAT": [
+    {
+      "ts_utc": "2026-08-03T23:00:00Z",
+      "direction": "bullish",
+      "price": 841.0
+    },
+    {
+      "ts_utc": "2026-08-07T17:00:00Z",
+      "direction": "bearish",
+      "price": 842.62
+    },
+    {
+      "ts_utc": "2026-08-12T15:00:00Z",
+      "direction": "bullish",
+      "price": 862.84
+    }
+  ],
+  "COP": [
+    {
+      "ts_utc": "2026-07-30T18:00:00Z",
+      "direction": "bullish",
+      "price": 118.55
+    },
+    {
+      "ts_utc": "2026-08-05T13:00:00Z",
+      "direction": "bearish",
+      "price": 116.86
+    },
+    {
+      "ts_utc": "2026-08-10T11:00:00Z",
+      "direction": "bullish",
+      "price": 118.43
+    }
+  ],
+  "COST": [
+    {
+      "ts_utc": "2026-07-31T12:00:00Z",
+      "direction": "bearish",
+      "price": 948.72
+    },
+    {
+      "ts_utc": "2026-08-10T23:00:00Z",
+      "direction": "bullish",
+      "price": 950.5
+    },
+    {
+      "ts_utc": "2026-08-11T16:00:00Z",
+      "direction": "bearish",
+      "price": 940.28
+    },
+    {
+      "ts_utc": "2026-08-13T10:00:00Z",
+      "direction": "bullish",
+      "price": 950.79
+    }
+  ],
+  "CRM": [],
+  "CVX": [
+    {
+      "ts_utc": "2026-07-30T20:00:00Z",
+      "direction": "bullish",
+      "price": 192.5
+    },
+    {
+      "ts_utc": "2026-08-04T15:00:00Z",
+      "direction": "bearish",
+      "price": 190.82
+    },
+    {
+      "ts_utc": "2026-08-10T17:00:00Z",
+      "direction": "bullish",
+      "price": 194.33
+    }
+  ],
+  "GE": [
+    {
+      "ts_utc": "2026-07-30T10:00:00Z",
+      "direction": "bearish",
+      "price": 353.12
+    },
+    {
+      "ts_utc": "2026-07-31T16:00:00Z",
+      "direction": "bullish",
+      "price": 360.47
+    },
+    {
+      "ts_utc": "2026-08-07T23:00:00Z",
+      "direction": "bearish",
+      "price": 370.5
+    }
+  ],
+  "GOOGL": [
+    {
+      "ts_utc": "2026-08-06T21:00:00Z",
+      "direction": "bearish",
+      "price": 358.3
+    }
+  ],
+  "GS": [
+    {
+      "ts_utc": "2026-08-04T11:00:00Z",
+      "direction": "bullish",
+      "price": 1038.0
+    },
+    {
+      "ts_utc": "2026-08-07T15:00:00Z",
+      "direction": "bearish",
+      "price": 1038.18
+    },
+    {
+      "ts_utc": "2026-08-13T13:00:00Z",
+      "direction": "bullish",
+      "price": 1048.35
+    },
+    {
+      "ts_utc": "2026-08-14T18:00:00Z",
+      "direction": "bearish",
+      "price": 1039.48
+    }
+  ],
+  "HD": [
+    {
+      "ts_utc": "2026-07-30T17:00:00Z",
+      "direction": "bearish",
+      "price": 333.61
+    },
+    {
+      "ts_utc": "2026-08-03T21:00:00Z",
+      "direction": "bullish",
+      "price": 338.44
+    },
+    {
+      "ts_utc": "2026-08-12T18:00:00Z",
+      "direction": "bearish",
+      "price": 344.47
+    }
+  ],
+  "HON": [
+    {
+      "ts_utc": "2026-07-30T13:00:00Z",
+      "direction": "bearish",
+      "price": 238.61
+    },
+    {
+      "ts_utc": "2026-08-03T12:00:00Z",
+      "direction": "bullish",
+      "price": 246.9
+    },
+    {
+      "ts_utc": "2026-08-06T19:00:00Z",
+      "direction": "bearish",
+      "price": 240.8
+    }
+  ],
+  "JNJ": [
+    {
+      "ts_utc": "2026-07-30T13:00:00Z",
+      "direction": "bearish",
+      "price": 256.44
+    },
+    {
+      "ts_utc": "2026-08-06T09:00:00Z",
+      "direction": "bullish",
+      "price": 259.18
+    }
+  ],
+  "JPM": [
+    {
+      "ts_utc": "2026-07-29T20:00:00Z",
+      "direction": "bearish",
+      "price": 344.84
+    },
+    {
+      "ts_utc": "2026-08-03T08:00:00Z",
+      "direction": "bullish",
+      "price": 354.07
+    }
+  ],
+  "LLY": [
+    {
+      "ts_utc": "2026-07-30T15:00:00Z",
+      "direction": "bearish",
+      "price": 1162.42
+    },
+    {
+      "ts_utc": "2026-08-05T21:00:00Z",
+      "direction": "bullish",
+      "price": 1170.0
+    },
+    {
+      "ts_utc": "2026-08-14T14:00:00Z",
+      "direction": "bearish",
+      "price": 1183.8
+    }
+  ],
+  "MA": [
+    {
+      "ts_utc": "2026-08-07T17:00:00Z",
+      "direction": "bearish",
+      "price": 563.38
+    },
+    {
+      "ts_utc": "2026-08-14T12:00:00Z",
+      "direction": "bullish",
+      "price": 567.61
+    }
+  ],
+  "MCD": [
+    {
+      "ts_utc": "2026-07-30T22:00:00Z",
+      "direction": "bearish",
+      "price": 268.78
+    },
+    {
+      "ts_utc": "2026-07-31T23:00:00Z",
+      "direction": "bullish",
+      "price": 270.95
+    },
+    {
+      "ts_utc": "2026-08-03T20:00:00Z",
+      "direction": "bearish",
+      "price": 267.1
+    },
+    {
+      "ts_utc": "2026-08-05T15:00:00Z",
+      "direction": "bullish",
+      "price": 273.56
+    },
+    {
+      "ts_utc": "2026-08-11T17:00:00Z",
+      "direction": "bearish",
+      "price": 272.09
+    },
+    {
+      "ts_utc": "2026-08-11T21:00:00Z",
+      "direction": "bullish",
+      "price": 273.87
+    },
+    {
+      "ts_utc": "2026-08-13T23:00:00Z",
+      "direction": "bearish",
+      "price": 272.61
+    }
+  ],
+  "META": [
+    {
+      "ts_utc": "2026-08-03T18:00:00Z",
+      "direction": "bullish",
+      "price": 593.46
+    },
+    {
+      "ts_utc": "2026-08-12T18:00:00Z",
+      "direction": "bearish",
+      "price": 579.82
+    },
+    {
+      "ts_utc": "2026-08-14T13:00:00Z",
+      "direction": "bullish",
+      "price": 598.12
+    }
+  ],
+  "MRK": [
+    {
+      "ts_utc": "2026-07-30T10:00:00Z",
+      "direction": "bearish",
+      "price": 128.53
+    },
+    {
+      "ts_utc": "2026-08-03T11:00:00Z",
+      "direction": "bullish",
+      "price": 131.83
+    },
+    {
+      "ts_utc": "2026-08-03T14:00:00Z",
+      "direction": "bearish",
+      "price": 127.98
+    },
+    {
+      "ts_utc": "2026-08-10T16:00:00Z",
+      "direction": "bullish",
+      "price": 130.89
+    }
+  ],
+  "MS": [
+    {
+      "ts_utc": "2026-08-04T08:00:00Z",
+      "direction": "bullish",
+      "price": 211.88
+    },
+    {
+      "ts_utc": "2026-08-12T09:00:00Z",
+      "direction": "bearish",
+      "price": 215.0
+    },
+    {
+      "ts_utc": "2026-08-12T13:00:00Z",
+      "direction": "bullish",
+      "price": 218.96
+    }
+  ],
+  "MSFT": [
+    {
+      "ts_utc": "2026-08-12T20:00:00Z",
+      "direction": "bearish",
+      "price": 491.45
+    }
+  ],
+  "MU": [
+    {
+      "ts_utc": "2026-07-31T10:00:00Z",
+      "direction": "bullish",
+      "price": 908.75
+    },
+    {
+      "ts_utc": "2026-07-31T20:00:00Z",
+      "direction": "bearish",
+      "price": 818.02
+    },
+    {
+      "ts_utc": "2026-08-04T12:00:00Z",
+      "direction": "bullish",
+      "price": 868.0
+    },
+    {
+      "ts_utc": "2026-08-10T21:00:00Z",
+      "direction": "bearish",
+      "price": 864.4
+    },
+    {
+      "ts_utc": "2026-08-12T12:00:00Z",
+      "direction": "bullish",
+      "price": 903.61
+    }
+  ],
+  "NOW": [],
+  "NVDA": [
+    {
+      "ts_utc": "2026-07-31T23:00:00Z",
+      "direction": "bullish",
+      "price": 198.95
+    }
+  ],
+  "PANW": [
+    {
+      "ts_utc": "2026-07-31T09:00:00Z",
+      "direction": "bullish",
+      "price": 331.2
+    }
+  ],
+  "PG": [
+    {
+      "ts_utc": "2026-07-29T14:00:00Z",
+      "direction": "bearish",
+      "price": 144.73
+    },
+    {
+      "ts_utc": "2026-08-04T17:00:00Z",
+      "direction": "bullish",
+      "price": 147.54
+    },
+    {
+      "ts_utc": "2026-08-07T17:00:00Z",
+      "direction": "bearish",
+      "price": 145.69
+    }
+  ],
+  "QCOM": [
+    {
+      "ts_utc": "2026-08-04T17:00:00Z",
+      "direction": "bullish",
+      "price": 162.12
+    }
+  ],
+  "RTX": [
+    {
+      "ts_utc": "2026-07-31T12:00:00Z",
+      "direction": "bearish",
+      "price": 214.0
+    },
+    {
+      "ts_utc": "2026-07-31T20:00:00Z",
+      "direction": "bullish",
+      "price": 215.48
+    },
+    {
+      "ts_utc": "2026-08-13T14:00:00Z",
+      "direction": "bearish",
+      "price": 219.75
+    }
+  ],
+  "TSLA": [
+    {
+      "ts_utc": "2026-08-03T12:00:00Z",
+      "direction": "bullish",
+      "price": 312.61
+    }
+  ],
+  "UNH": [
+    {
+      "ts_utc": "2026-07-29T08:00:00Z",
+      "direction": "bullish",
+      "price": 427.99
+    },
+    {
+      "ts_utc": "2026-07-29T22:00:00Z",
+      "direction": "bearish",
+      "price": 419.71
+    }
+  ],
+  "V": [
+    {
+      "ts_utc": "2026-08-07T17:00:00Z",
+      "direction": "bearish",
+      "price": 362.93
+    },
+    {
+      "ts_utc": "2026-08-14T10:00:00Z",
+      "direction": "bullish",
+      "price": 365.31
+    }
+  ],
+  "WMT": [],
+  "XOM": [
+    {
+      "ts_utc": "2026-07-29T10:00:00Z",
+      "direction": "bullish",
+      "price": 156.01
+    },
+    {
+      "ts_utc": "2026-08-03T09:00:00Z",
+      "direction": "bearish",
+      "price": 153.08
+    },
+    {
+      "ts_utc": "2026-08-10T13:00:00Z",
+      "direction": "bullish",
+      "price": 157.68
+    }
+  ]
+}
