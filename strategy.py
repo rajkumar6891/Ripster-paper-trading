@@ -34,6 +34,19 @@ CLOUD_SEP_MIN was raised 0.3%->0.5% after run_tighter_filter_study.py
 showed it's the one entry-filter tightening that improves win rate *and*
 profit factor together (not just a fewer-trades-for-quality tradeoff) --
 raising ADX_MIN instead made both worse, so that was left unchanged.
+
+CLOUD_SEP_MIN was then moved again, 0.5%->0.4%, after
+run_cloud_sep_04_study.py re-swept CHANDELIER_MULT at 0.4% (8x remained
+best, unchanged) and ran the same first-half/second-half stability check
+used to catch the 0.5% config's regime-fragility (see
+regime_vix_sector_research.md SS7-9): 0.4% trades more, makes ~38% more
+total backtest P&L, and is meaningfully more stable across the two halves
+of the backtest window (win-rate swing 46%->36% vs 0.5%'s sharper
+55%->31%; ~4x better second-half P&L; second-half profit factor 1.77 vs
+1.21, i.e. still solidly profitable in the weaker regime instead of barely
+breakeven) -- at the cost of a ~1.6-point-lower blended win rate (41.3% vs
+42.9%). Chosen for the more consistent, less regime-fragile behavior over
+the marginally higher single win-rate number.
 """
 
 STOP_LOSS_PCT = 0.03
@@ -47,12 +60,12 @@ SLOW_PERIODS = (34, 50)
 
 # Entry-quality filter thresholds (backtest-validated best "fewer, higher-
 # conviction trades" combination: RVOL>=1.5x | RSI 50-70 | ADX>=25 | cloud
-# separation >=0.5% of price).
+# separation >=0.4% of price).
 RVOL_MIN = 1.5
 RSI_MIN = 50
 RSI_MAX = 70
 ADX_MIN = 25
-CLOUD_SEP_MIN = 0.005
+CLOUD_SEP_MIN = 0.004
 
 
 def compute_ema(closes, period):
