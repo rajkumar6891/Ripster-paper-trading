@@ -234,6 +234,45 @@ threshold is the one place with a legitimate, if modest, overfitting-
 adjacent concern, and 0.4% deserves a look as a possible improvement on
 0.5% independent of the regime question.
 
+## 9. Follow-up: proper 0.4% cloud-sep backtest (chandelier re-swept, IS/OOS checked)
+
+§8 only checked cloud-sep=0.4% with chandelier held fixed at the value tuned
+for 0.5%. Redid this properly (`run_cloud_sep_04_study.py`,
+`cloud_sep_04_study_results.json`): re-swept the chandelier multiplier AT
+cloud-sep=0.4% first (8x remained best there too, no change needed there),
+then ran the same full/first-half/second-half IS/OOS check applied to the
+deployed config, for a fair side-by-side:
+
+| Config | Window | Trades | Win rate | Total P&L | PF |
+|---|---|---|---|---|---|
+| **Deployed (8x, 0.5%)** | Full | 140 | **42.9%** | $12,365 | 1.96 |
+| | First half | 71 | 54.9% | $11,253 | 3.14 |
+| | Second half | 67 | 31.3% | $1,519 | 1.21 |
+| **Candidate (8x, 0.4%)** | Full | 189 | 41.3% | **$17,012** | **2.05** |
+| | First half | 95 | 46.3% | $10,526 | 2.37 |
+| | Second half | 91 | 36.3% | **$6,232** | **1.77** |
+
+**This is a genuine tradeoff, not a strict win either direction.** 0.4%
+trades more (189 vs 140), makes meaningfully more money ($17,012 vs
+$12,365, +38%), and is *more stable* across the two halves — its
+win-rate swing is 46.3%->36.3% (10pts) versus the deployed config's much
+sharper 54.9%->31.3% (23.6pts), and its second-half P&L is 4x higher
+($6,232 vs $1,519) with a meaningfully better profit factor (1.77 vs 1.21,
+i.e. still solidly profitable in the weak regime vs. barely breakeven).
+But its **blended win rate is lower** (41.3% vs 42.9%) — because the wider
+filter takes more marginal trades that slightly dilute the average, even
+though the extra trades are net profitable in aggregate.
+
+**Framing for the paper**: if the objective is strictly "maximize the
+single win-rate number," 0.5% remains ahead by 1.6pts. If the objective is
+"maximize risk-adjusted profitability and behave more consistently across
+regimes" — arguably the more defensible objective for a live strategy —
+0.4% is the better choice on every other metric, including being
+demonstrably less regime-fragile, which is exactly the property §7/§8
+found lacking in the deployed config. This is presented as a decision
+point, not resolved here — the user should choose which objective the
+paper (and the live deployment) optimizes for.
+
 ## Methodology notes / limitations for the paper
 
 - Universe: 41 tickers (mega-cap-tech-heavy but sector-diversified), ~60

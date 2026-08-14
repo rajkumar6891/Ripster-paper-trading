@@ -1,0 +1,406 @@
+{
+  "chandelier_sweep_at_0.4pct": {
+    "4.0": {
+      "trades": 240,
+      "win_rate": 0.43333333333333335,
+      "total_pnl": 4306.110455412969,
+      "avg_pnl": 17.942126897554036,
+      "profit_factor": 1.288849865758531
+    },
+    "6.0": {
+      "trades": 204,
+      "win_rate": 0.4166666666666667,
+      "total_pnl": 10161.428674528526,
+      "avg_pnl": 49.81092487513983,
+      "profit_factor": 1.6509383224277758
+    },
+    "7.0": {
+      "trades": 192,
+      "win_rate": 0.4114583333333333,
+      "total_pnl": 15020.913881528097,
+      "avg_pnl": 78.23392646629217,
+      "profit_factor": 1.9528872627003262
+    },
+    "8.0": {
+      "trades": 189,
+      "win_rate": 0.4126984126984127,
+      "total_pnl": 17012.398204789548,
+      "avg_pnl": 90.01268891423041,
+      "profit_factor": 2.054502025413189
+    },
+    "9.0": {
+      "trades": 188,
+      "win_rate": 0.39893617021276595,
+      "total_pnl": 14393.205113443277,
+      "avg_pnl": 76.55960166725147,
+      "profit_factor": 1.8448888021685683
+    },
+    "10.0": {
+      "trades": 187,
+      "win_rate": 0.4117647058823529,
+      "total_pnl": 13191.059442685657,
+      "avg_pnl": 70.54042482719602,
+      "profit_factor": 1.7515909011858235
+    },
+    "12.0": {
+      "trades": 186,
+      "win_rate": 0.4032258064516129,
+      "total_pnl": 11333.272508835282,
+      "avg_pnl": 60.931572628146675,
+      "profit_factor": 1.6452061085305765
+    }
+  },
+  "best_mult_at_0.4pct": 8.0,
+  "best_config_full": {
+    "trades": 189,
+    "win_rate": 0.4126984126984127,
+    "total_pnl": 17012.398204789548,
+    "avg_pnl": 90.01268891423041,
+    "profit_factor": 2.054502025413189
+  },
+  "best_config_first_half": {
+    "trades": 95,
+    "win_rate": 0.4631578947368421,
+    "total_pnl": 10525.951734151124,
+    "avg_pnl": 110.79949193843288,
+    "profit_factor": 2.3703971223327733
+  },
+  "best_config_second_half": {
+    "trades": 91,
+    "win_rate": 0.3626373626373626,
+    "total_pnl": 6231.679030908565,
+    "avg_pnl": 68.47998935064358,
+    "profit_factor": 1.7685400239589533
+  },
+  "best_config_per_ticker": {
+    "AAPL": {
+      "trades": 4,
+      "win_rate": 0.75,
+      "total_pnl": 700.8724057194867,
+      "avg_pnl": 175.21810142987167,
+      "profit_factor": 6.906645777826632
+    },
+    "MSFT": {
+      "trades": 5,
+      "win_rate": 0.6,
+      "total_pnl": 2675.1483434002025,
+      "avg_pnl": 535.0296686800405,
+      "profit_factor": 12.568794936490887
+    },
+    "NVDA": {
+      "trades": 8,
+      "win_rate": 0.375,
+      "total_pnl": 99.43295377576453,
+      "avg_pnl": 12.429119221970566,
+      "profit_factor": 1.1220524586898781
+    },
+    "GOOGL": {
+      "trades": 4,
+      "win_rate": 0.25,
+      "total_pnl": -77.9173190191653,
+      "avg_pnl": -19.479329754791326,
+      "profit_factor": 0.7819208776798969
+    },
+    "AMZN": {
+      "trades": 5,
+      "win_rate": 0.2,
+      "total_pnl": 1119.0333963227133,
+      "avg_pnl": 223.80667926454265,
+      "profit_factor": 2.911517547130145
+    },
+    "META": {
+      "trades": 4,
+      "win_rate": 1.0,
+      "total_pnl": 1250.4072578290225,
+      "avg_pnl": 312.6018144572556,
+      "profit_factor": Infinity
+    },
+    "AVGO": {
+      "trades": 6,
+      "win_rate": 0.6666666666666666,
+      "total_pnl": 893.7505639571611,
+      "avg_pnl": 148.95842732619352,
+      "profit_factor": 2.8813607087806847
+    },
+    "TSLA": {
+      "trades": 8,
+      "win_rate": 0.375,
+      "total_pnl": 211.1794558491371,
+      "avg_pnl": 26.397431981142137,
+      "profit_factor": 1.2963971406324362
+    },
+    "BRK.B": {
+      "trades": 1,
+      "win_rate": 0.0,
+      "total_pnl": -98.1610481533595,
+      "avg_pnl": -98.1610481533595,
+      "profit_factor": 0.0
+    },
+    "JPM": {
+      "trades": 1,
+      "win_rate": 0.0,
+      "total_pnl": -13.319178655494373,
+      "avg_pnl": -13.319178655494373,
+      "profit_factor": 0.0
+    },
+    "LLY": {
+      "trades": 4,
+      "win_rate": 0.25,
+      "total_pnl": 380.63632443823985,
+      "avg_pnl": 95.15908110955996,
+      "profit_factor": 2.179074007959227
+    },
+    "UNH": {
+      "trades": 3,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": -128.40025328938248,
+      "avg_pnl": -42.80008442979416,
+      "profit_factor": 0.4773387990422284
+    },
+    "JNJ": {
+      "trades": 2,
+      "win_rate": 1.0,
+      "total_pnl": 76.27711959317888,
+      "avg_pnl": 38.13855979658944,
+      "profit_factor": Infinity
+    },
+    "ABBV": {
+      "trades": 4,
+      "win_rate": 0.5,
+      "total_pnl": 663.7612818251894,
+      "avg_pnl": 165.94032045629734,
+      "profit_factor": 3.732184168308548
+    },
+    "MRK": {
+      "trades": 5,
+      "win_rate": 0.6,
+      "total_pnl": 906.3598087200357,
+      "avg_pnl": 181.27196174400714,
+      "profit_factor": 4.663723506380477
+    },
+    "V": {
+      "trades": 3,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": -104.93781619777235,
+      "avg_pnl": -34.979272065924114,
+      "profit_factor": 0.3444334252851756
+    },
+    "MA": {
+      "trades": 1,
+      "win_rate": 1.0,
+      "total_pnl": 153.9122529245443,
+      "avg_pnl": 153.9122529245443,
+      "profit_factor": Infinity
+    },
+    "GS": {
+      "trades": 3,
+      "win_rate": 0.0,
+      "total_pnl": -554.2632305055614,
+      "avg_pnl": -184.75441016852048,
+      "profit_factor": 0.0
+    },
+    "MS": {
+      "trades": 6,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": 375.6186811025092,
+      "avg_pnl": 62.603113517084864,
+      "profit_factor": 1.882512333029921
+    },
+    "BAC": {
+      "trades": 5,
+      "win_rate": 0.2,
+      "total_pnl": -112.95134236313417,
+      "avg_pnl": -22.590268472626835,
+      "profit_factor": 0.7089324549955547
+    },
+    "HD": {
+      "trades": 5,
+      "win_rate": 0.8,
+      "total_pnl": 765.4526966383918,
+      "avg_pnl": 153.09053932767836,
+      "profit_factor": 18.819454399030935
+    },
+    "MCD": {
+      "trades": 2,
+      "win_rate": 0.0,
+      "total_pnl": -203.24232420227568,
+      "avg_pnl": -101.62116210113784,
+      "profit_factor": 0.0
+    },
+    "COST": {
+      "trades": 2,
+      "win_rate": 0.0,
+      "total_pnl": -169.7806089607873,
+      "avg_pnl": -84.89030448039365,
+      "profit_factor": 0.0
+    },
+    "WMT": {
+      "trades": 4,
+      "win_rate": 0.5,
+      "total_pnl": 22.529119823830534,
+      "avg_pnl": 5.6322799559576335,
+      "profit_factor": 1.145406843718155
+    },
+    "PG": {
+      "trades": 2,
+      "win_rate": 0.0,
+      "total_pnl": -298.46681579430526,
+      "avg_pnl": -149.23340789715263,
+      "profit_factor": 0.0
+    },
+    "CAT": {
+      "trades": 10,
+      "win_rate": 0.5,
+      "total_pnl": 882.4651270568879,
+      "avg_pnl": 88.24651270568879,
+      "profit_factor": 2.208024187108794
+    },
+    "RTX": {
+      "trades": 5,
+      "win_rate": 0.4,
+      "total_pnl": 218.80292316802579,
+      "avg_pnl": 43.760584633605156,
+      "profit_factor": 2.022470643022734
+    },
+    "HON": {
+      "trades": 4,
+      "win_rate": 0.5,
+      "total_pnl": 107.72949588158397,
+      "avg_pnl": 26.932373970395993,
+      "profit_factor": 1.3727697311692315
+    },
+    "BA": {
+      "trades": 4,
+      "win_rate": 0.25,
+      "total_pnl": -345.127123994049,
+      "avg_pnl": -86.28178099851225,
+      "profit_factor": 0.43327330421354765
+    },
+    "GE": {
+      "trades": 7,
+      "win_rate": 0.42857142857142855,
+      "total_pnl": 846.6881605374995,
+      "avg_pnl": 120.95545150535706,
+      "profit_factor": 2.5047185127373814
+    },
+    "XOM": {
+      "trades": 4,
+      "win_rate": 0.0,
+      "total_pnl": -144.85552981888983,
+      "avg_pnl": -36.21388245472246,
+      "profit_factor": 0.0
+    },
+    "CVX": {
+      "trades": 2,
+      "win_rate": 0.5,
+      "total_pnl": 201.20567207477546,
+      "avg_pnl": 100.60283603738773,
+      "profit_factor": 4.096434902400481
+    },
+    "COP": {
+      "trades": 3,
+      "win_rate": 0.0,
+      "total_pnl": -372.2172395767257,
+      "avg_pnl": -124.07241319224191,
+      "profit_factor": 0.0
+    },
+    "AMD": {
+      "trades": 8,
+      "win_rate": 0.25,
+      "total_pnl": -563.155436277763,
+      "avg_pnl": -70.39442953472037,
+      "profit_factor": 0.5327926041424415
+    },
+    "QCOM": {
+      "trades": 6,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": 2205.334841816306,
+      "avg_pnl": 367.5558069693843,
+      "profit_factor": 5.104980985871577
+    },
+    "MU": {
+      "trades": 9,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": -217.3127359094439,
+      "avg_pnl": -24.145859545493764,
+      "profit_factor": 0.8738085573030977
+    },
+    "ADI": {
+      "trades": 3,
+      "win_rate": 0.3333333333333333,
+      "total_pnl": -187.78898583289148,
+      "avg_pnl": -62.59632861096383,
+      "profit_factor": 0.43714424516752864
+    },
+    "CRM": {
+      "trades": 10,
+      "win_rate": 0.3,
+      "total_pnl": -39.94104068831988,
+      "avg_pnl": -3.994104068831988,
+      "profit_factor": 0.9725674739130531
+    },
+    "NOW": {
+      "trades": 7,
+      "win_rate": 0.7142857142857143,
+      "total_pnl": 3540.0649126927196,
+      "avg_pnl": 505.7235589561028,
+      "profit_factor": 8.192997784330371
+    },
+    "ADBE": {
+      "trades": 3,
+      "win_rate": 1.0,
+      "total_pnl": 1027.5010952235707,
+      "avg_pnl": 342.5003650745236,
+      "profit_factor": Infinity
+    },
+    "PANW": {
+      "trades": 7,
+      "win_rate": 0.42857142857142855,
+      "total_pnl": 1320.072343658093,
+      "avg_pnl": 188.58176337972756,
+      "profit_factor": 3.4586176326630236
+    }
+  },
+  "chand8_at_0.4pct_full": {
+    "trades": 189,
+    "win_rate": 0.4126984126984127,
+    "total_pnl": 17012.398204789548,
+    "avg_pnl": 90.01268891423041,
+    "profit_factor": 2.054502025413189
+  },
+  "chand8_at_0.4pct_first": {
+    "trades": 95,
+    "win_rate": 0.4631578947368421,
+    "total_pnl": 10525.951734151124,
+    "avg_pnl": 110.79949193843288,
+    "profit_factor": 2.3703971223327733
+  },
+  "chand8_at_0.4pct_second": {
+    "trades": 91,
+    "win_rate": 0.3626373626373626,
+    "total_pnl": 6231.679030908565,
+    "avg_pnl": 68.47998935064358,
+    "profit_factor": 1.7685400239589533
+  },
+  "deployed_full": {
+    "trades": 140,
+    "win_rate": 0.42857142857142855,
+    "total_pnl": 12364.564707858057,
+    "avg_pnl": 88.31831934184326,
+    "profit_factor": 1.963233859801704
+  },
+  "deployed_first": {
+    "trades": 71,
+    "win_rate": 0.5492957746478874,
+    "total_pnl": 11252.946300478281,
+    "avg_pnl": 158.49220141518705,
+    "profit_factor": 3.1411497810088287
+  },
+  "deployed_second": {
+    "trades": 67,
+    "win_rate": 0.31343283582089554,
+    "total_pnl": 1518.644989020755,
+    "avg_pnl": 22.66634311971276,
+    "profit_factor": 1.2075308355538104
+  }
+}
