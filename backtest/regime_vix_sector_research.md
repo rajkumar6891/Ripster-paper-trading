@@ -195,6 +195,45 @@ have been more stable) — but it is a reason to caveat any absolute win-rate
 number from this dataset heavily, and to treat the live paper-trading data
 now accumulating as the real test, not the backtest number.
 
+## 8. Follow-up: is the instability parameter-overfitting, or regime-dependence?
+
+Prompted directly by the user asking whether the deployed filters (chandelier
+mult=8x, cloud-sep=0.5%) are themselves overfit, given §7's IS/OOS collapse.
+These are different claims and worth separating (`run_parameter_stability_check.py`,
+`parameter_stability_results.json`): re-swept both parameters *independently*
+on the first half and second half of the window, to see whether 8x/0.5% are
+only "best" on the full sample (overfitting) or remain best/near-best even
+when a genuinely different sub-sample is used to pick them (not overfitting
+in the classic sense -- more likely a real, if regime-conditional, effect).
+
+**Chandelier multiplier: stable, not overfit.** 8x is independently the best
+choice on the first half alone (54.9% WR, PF 3.14) -- not just on the full
+window it was originally chosen on. In the second half, 6x edges out 8x
+only marginally (33.3% vs 31.3% WR), and **every multiplier from 6x-12x is
+stuck in the 30-33% win-rate range** in the second half regardless of choice.
+No chandelier value rescues second-half performance, which is the signature
+of a market-conditions effect, not a mistuned parameter.
+
+**Cloud-sep threshold: mildly sensitive, and a gap in the original sweep.**
+0.5% is best on the first half (matches what was deployed). On the second
+half, 0.4% would have done modestly better (36.3% WR / $6,232 vs 0.5%'s
+31.3% WR / $1,519) -- a real but modest difference. More importantly: **on
+the full window, 0.4% actually beats the deployed 0.5% on both total P&L
+($17,012 vs $12,365) and profit factor (2.05 vs 1.96)**, only losing on raw
+win rate (41.3% vs 42.9%). The original filter-tightening study
+(`run_tighter_filter_study.py`) only tested 0.3% vs 0.5%, skipping 0.4% --
+a real gap in that sweep's grid, not fatal, but worth correcting.
+
+**Conclusion**: the deployed parameters are not classically overfit -- the
+chandelier multiplier in particular remains the right choice when selected
+from an independent sub-sample, and the second-half weakness persists
+across every parameter value tested, pointing to the market itself being
+less favorable for a trend-following system in that window (likely
+choppier/less-trending) rather than to curve-fitting. The cloud-sep
+threshold is the one place with a legitimate, if modest, overfitting-
+adjacent concern, and 0.4% deserves a look as a possible improvement on
+0.5% independent of the regime question.
+
 ## Methodology notes / limitations for the paper
 
 - Universe: 41 tickers (mega-cap-tech-heavy but sector-diversified), ~60
